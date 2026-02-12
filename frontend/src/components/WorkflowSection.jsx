@@ -65,11 +65,8 @@ export const WorkflowSection = () => {
                   whileHover={{ scale: 1.15 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <motion.div 
-                    className="absolute inset-0 border-2 border-gold/30 rotate-45 group-hover:border-gold/70 transition-colors duration-300"
-                    initial={{ scale: 0 }}
-                    animate={isInView ? { scale: 1 } : {}}
-                    transition={{ duration: 0.4, delay: 0.5 + index * 0.15 }}
+                  <div 
+                    className="absolute inset-0 border-2 border-gold/40 rotate-45 group-hover:border-gold/80 transition-colors duration-300"
                   />
                   {/* Inner glow on hover */}
                   <div className="absolute inset-0 rotate-45 bg-gold/0 group-hover:bg-gold/10 transition-colors duration-300" />
