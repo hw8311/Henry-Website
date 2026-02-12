@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "title": "Henry Wilke | AI-Systemarchitekt",
+    "description": "Strategische KI-Implementierung und Systemdesign für skalierbare Organisationen"
+  },
+  "navigation": {
+    "links": [
+      { "id": "positionierung", "label": "Positionierung" },
+      { "id": "unterschied", "label": "Der Unterschied" },
+      { "id": "arbeitsweise", "label": "Arbeitsweise" },
+      { "id": "kontakt", "label": "Kontakt" }
+    ]
+  },
+  "hero": {
+    "overline": "AI-Systemarchitektur",
+    "headline": "Ich baue Systeme, die denken.",
+    "subline": "Nicht Tools. Nicht Hype. Sondern skalierbare KI-Strukturen mit strategischer Tiefe.",
+    "cta_primary": "Systemgespräch starten",
+    "cta_secondary": "Ansatz verstehen",
+    "image": "https://customer-assets.emergentagent.com/job_ai-systems-henry/artifacts/4tf3zkmz_file_000000005b706246860393db18f7484a~7.png"
+  },
+  "positioning": {
+    "overline": "Positionierung",
+    "headline": "Was ich tue – und was nicht.",
+    "content": [
+      "Keine KI-Beratung. Kein ChatGPT-Coaching. Keine Buzzwords.",
+      "Sondern: Systemdesign. Integration. Prozessintelligenz.",
+      "Ich entwickle KI-Architekturen, die nicht nur funktionieren – sondern wachsen. Strukturen, die Entscheidungen automatisieren und Komplexität beherrschbar machen."
+    ]
+  },
+  "difference": {
+    "overline": "Der Unterschied",
+    "headline": "Strategie statt Spielerei.",
+    "cards": [
+      {
+        "title": "Strategische KI-Architektur",
+        "description": "Keine isolierten Tools. Durchdachte Systemstrukturen, die alle Komponenten intelligent verbinden und skalierbar orchestrieren."
+      },
+      {
+        "title": "Automatisierte Denkprozesse",
+        "description": "Regelbasierte Intelligenz, die repetitive Entscheidungen übernimmt. Ihr Team konzentriert sich auf das Wesentliche."
+      },
+      {
+        "title": "Entscheidungsintelligenz",
+        "description": "Datengetriebene Logik, die nicht rät – sondern ableitet. Fundierte Empfehlungen auf Basis realer Muster."
+      },
+      {
+        "title": "Skalierbare Systemlogik",
+        "description": "Architekturen, die mit Ihrem Unternehmen wachsen. Keine Insellösungen, sondern zukunftsfähige Infrastruktur."
+      }
+    ]
+  },
+  "workflow": {
+    "overline": "Arbeitsweise",
+    "headline": "Von der Analyse zur Skalierung.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Analyse",
+        "description": "Tiefgreifende Systemanalyse Ihrer aktuellen Prozesse und Potenziale."
+      },
+      {
+        "number": "02",
+        "title": "Systemmodell",
+        "description": "Konzeption der optimalen KI-Architektur für Ihre spezifischen Anforderungen."
+      },
+      {
+        "number": "03",
+        "title": "Prototyp",
+        "description": "Schnelle Validierung der Kernfunktionen mit messbaren Ergebnissen."
+      },
+      {
+        "number": "04",
+        "title": "Integration",
+        "description": "Nahtlose Einbindung in bestehende Systeme und Workflows."
+      },
+      {
+        "number": "05",
+        "title": "Skalierung",
+        "description": "Systematische Erweiterung und kontinuierliche Optimierung."
+      }
+    ]
+  },
+  "audience": {
+    "overline": "Zielgruppe",
+    "headline": "Für wen das relevant ist.",
+    "for": {
+      "title": "Ideal für",
+      "items": [
+        "Unternehmer mit Systemdenken",
+        "Strategen, die Komplexität reduzieren wollen",
+        "Skalierende Organisationen",
+        "Teams, die KI als Infrastruktur verstehen"
+      ]
+    },
+    "not_for": {
+      "title": "Nicht für",
+      "items": [
+        "Tool-Sammler",
+        "Schnellstart-Hacker",
+        "Buzzword-Enthusiasten",
+        "Einmal-Projekte ohne strategischen Kontext"
+      ]
+    }
+  },
+  "stance": {
+    "quote": "KI ist kein Feature.",
+    "emphasis": "Sie ist Infrastruktur."
+  },
+  "contact": {
+    "overline": "Kontakt",
+    "headline": "Systemgespräch anfragen.",
+    "description": "Lassen Sie uns über Ihre Herausforderungen sprechen – und wie durchdachte KI-Architektur sie lösen kann.",
+    "fields": {
+      "name": "Ihr Name",
+      "email": "E-Mail-Adresse",
+      "company": "Unternehmen (optional)",
+      "message": "Beschreiben Sie kurz Ihre Situation"
+    },
+    "submit": "Anfrage senden"
+  },
+  "footer": {
+    "copyright": "© 2025 Henry Wilke",
+    "tagline": "AI-Systemarchitekt"
+  }
+}
