@@ -24,8 +24,8 @@ export const HeroSection = () => {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy/90 to-navy pointer-events-none" />
       
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Text Content */}
           <div className="lg:col-span-7 order-2 lg:order-1">
             {/* Overline */}
@@ -55,18 +55,18 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg md:text-xl text-muted-gray max-w-xl mb-12 leading-relaxed"
+              className="text-base md:text-xl text-muted-gray max-w-xl mb-10 md:mb-12 leading-relaxed px-1"
               data-testid="hero-subline"
             >
               {hero.subline}
             </motion.p>
 
-            {/* CTAs */}
+            {/* CTAs - Mobile Optimized */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-5"
             >
               <button
                 data-testid="hero-cta-primary"
@@ -92,30 +92,77 @@ export const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <div className="relative">
-              {/* Blueprint Frame */}
-              <div className="absolute -inset-4 border border-blueprint opacity-50" />
-              <div className="absolute -inset-8 border border-blueprint opacity-25" />
+            <motion.div 
+              className="relative group"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* Animated Blueprint Frame */}
+              <motion.div 
+                className="absolute -inset-4 border border-blueprint"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.5 }}
+                whileHover={{ opacity: 0.8, borderColor: 'rgba(212, 175, 55, 0.3)' }}
+                transition={{ duration: 0.5 }}
+              />
+              <motion.div 
+                className="absolute -inset-8 border border-blueprint"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.25 }}
+                whileHover={{ opacity: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              />
               
-              {/* Image Container */}
+              {/* Image Container with Dynamic Effects */}
               <div 
                 data-testid="hero-image-container"
                 className="relative aspect-[4/5] overflow-hidden bg-navy-light"
               >
-                <img
+                {/* Blurred Background Layer */}
+                <div 
+                  className="absolute inset-0 scale-110"
+                  style={{
+                    backgroundImage: `url(${hero.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: 'blur(20px) brightness(0.4)',
+                  }}
+                />
+                
+                {/* Main Image */}
+                <motion.img
                   src={hero.image}
                   alt="Henry Wilke - AI-Systemarchitekt"
-                  className="w-full h-full object-cover object-center"
+                  className="relative w-full h-full object-cover object-center"
                   data-testid="hero-image"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.8 }}
                 />
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-60" />
+                
+                {/* Color Overlay - subtle blue tint */}
+                <div className="absolute inset-0 bg-gradient-to-br from-navy/20 via-transparent to-gold/5 mix-blend-overlay" />
+                
+                {/* Bottom Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-70" />
+                
+                {/* Animated Glow on Hover */}
+                <motion.div 
+                  className="absolute inset-0 bg-gold/0 group-hover:bg-gold/5 transition-colors duration-700"
+                />
               </div>
               
-              {/* Corner Accents */}
-              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-gold" />
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-gold" />
-            </div>
+              {/* Animated Corner Accents */}
+              <motion.div 
+                className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-gold"
+                whileHover={{ width: 48, height: 48 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.div 
+                className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-gold"
+                whileHover={{ width: 48, height: 48 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
           </motion.div>
         </div>
 

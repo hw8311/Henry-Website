@@ -37,60 +37,63 @@ export const AudienceSection = () => {
           </h2>
         </motion.div>
 
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {/* For Column */}
+        {/* Two Column Layout - Asymmetric Focus */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
+          {/* For Column - Larger, Primary Focus */}
           <motion.div
             data-testid="audience-for-section"
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative p-8 md:p-10 bg-navy-light/30 border border-gold/20"
+            className="md:col-span-7 relative p-8 md:p-12 bg-navy-light/40 border border-gold/30 hover:border-gold/50 transition-colors duration-500"
           >
-            <h3 className="font-display text-2xl text-offwhite mb-8">
+            <h3 className="font-display text-2xl md:text-3xl text-offwhite mb-10">
               {audience.for.title}
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               {audience.for.items.map((item, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                  className="flex items-start gap-4"
+                  className="flex items-start gap-4 group"
                 >
-                  <Check size={20} weight="bold" className="text-gold mt-1 flex-shrink-0" />
-                  <span className="text-offwhite">{item}</span>
+                  <div className="w-6 h-6 flex items-center justify-center bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300 flex-shrink-0 mt-0.5">
+                    <Check size={16} weight="bold" className="text-gold" />
+                  </div>
+                  <span className="text-offwhite text-lg">{item}</span>
                 </motion.li>
               ))}
             </ul>
             
-            {/* Corner Accent */}
-            <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-gold" />
+            {/* Corner Accents */}
+            <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-gold" />
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-gold/30" />
           </motion.div>
 
-          {/* Not For Column */}
+          {/* Not For Column - Smaller, Subdued */}
           <motion.div
             data-testid="audience-not-for-section"
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative p-8 md:p-10 bg-navy-light/30 border border-white/5"
+            className="md:col-span-5 relative p-6 md:p-8 bg-navy-light/20 border border-white/5 opacity-80 hover:opacity-100 transition-opacity duration-500"
           >
-            <h3 className="font-display text-2xl text-muted-gray mb-8">
+            <h3 className="font-display text-xl text-muted-gray/80 mb-6">
               {audience.not_for.title}
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {audience.not_for.items.map((item, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, x: 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                  className="flex items-start gap-4"
+                  className="flex items-start gap-3"
                 >
-                  <X size={20} weight="bold" className="text-muted-gray/50 mt-1 flex-shrink-0" />
-                  <span className="text-muted-gray">{item}</span>
+                  <X size={16} weight="light" className="text-muted-gray/40 mt-1 flex-shrink-0" />
+                  <span className="text-muted-gray/70 text-sm">{item}</span>
                 </motion.li>
               ))}
             </ul>

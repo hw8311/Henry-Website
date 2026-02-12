@@ -172,13 +172,13 @@ export const ContactSection = () => {
             />
           </div>
 
-          {/* Submit Button */}
-          <div className="flex flex-col sm:flex-row items-center gap-6">
+          {/* Submit Button - Mobile Optimized */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
             <button
               type="submit"
               data-testid="contact-submit-button"
               disabled={isSubmitting}
-              className="btn-primary flex items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-primary flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto min-h-[56px]"
             >
               {isSubmitting ? (
                 <>
