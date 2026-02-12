@@ -1,0 +1,176 @@
+{
+  "project_name": "Henry Wilke - AI System Architect",
+  "persona": "E1 - The Anti-AI Designer",
+  "theme": "dark",
+  "design_philosophy": {
+    "core_concept": "The Intelligent System",
+    "tone": "Authoritative, Strategic, Intellectual, Premium",
+    "visual_style": "Editorial Minimalism meets Blueprint Architecture",
+    "key_principles": [
+      "Fusion over Imitation: Mixing Magazine Editorial with Technical Blueprints",
+      "Negative Space: Generous padding to create luxury",
+      "Content is King: Every section tells a strategic story",
+      "Contrast: Deep backgrounds vs Sharp Gold/White types"
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Playfair Display, serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "font_weights": {
+      "heading": "400 (Regular) to 700 (Bold)",
+      "body": "300 (Light) to 500 (Medium)"
+    },
+    "scale": {
+      "display": "text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[0.9]",
+      "h1": "text-4xl md:text-6xl tracking-tight",
+      "h2": "text-3xl md:text-5xl tracking-tight",
+      "h3": "text-2xl md:text-3xl tracking-normal",
+      "body_large": "text-lg md:text-xl leading-relaxed",
+      "body_base": "text-base leading-relaxed",
+      "label": "text-xs md:text-sm font-mono tracking-[0.2em] uppercase"
+    },
+    "instructions": "Import 'Playfair Display', 'Inter', and 'JetBrains Mono' from Google Fonts. Use Playfair for all major headings. Use Inter for body text. Use JetBrains Mono for small labels, tags, and technical details."
+  },
+  "colors": {
+    "palette": {
+      "background": {
+        "default": "#020617",
+        "secondary": "#0F172A",
+        "card": "#1E293B"
+      },
+      "foreground": {
+        "default": "#F8FAFC",
+        "muted": "#94A3B8",
+        "accent": "#E2E8F0"
+      },
+      "brand": {
+        "primary": "#0F172A",
+        "accent": "#D4AF37",
+        "blueprint": "rgba(56, 189, 248, 0.15)"
+      }
+    },
+    "gradients": {
+      "gold_shine": "linear-gradient(135deg, #D4AF37 0%, #FDE047 50%, #D4AF37 100%)",
+      "blueprint_fade": "linear-gradient(to bottom, transparent, rgba(56, 189, 248, 0.05))"
+    },
+    "borders": {
+      "subtle": "rgba(255, 255, 255, 0.1)",
+      "gold": "#D4AF37"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "container_padding": "p-6 md:p-12 lg:p-24",
+      "section_gap": "gap-24 md:gap-32 lg:gap-40"
+    },
+    "grid_system": {
+      "mode_a": "grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 (The Tetris Grid)",
+      "mode_b": "grid grid-cols-1 md:grid-cols-3 gap-8 (Feature Grid)"
+    },
+    "container": {
+      "max_width": "max-w-7xl mx-auto"
+    }
+  },
+  "ui_components": {
+    "buttons": {
+      "primary": "bg-[#D4AF37] text-[#020617] hover:bg-[#FDE047] rounded-none px-8 py-4 font-mono text-sm tracking-widest uppercase transition-all duration-300 hover:tracking-[0.25em]",
+      "secondary": "bg-transparent border border-white/20 text-white hover:border-[#D4AF37] hover:text-[#D4AF37] rounded-none px-8 py-4 font-mono text-sm tracking-widest uppercase transition-all duration-300"
+    },
+    "cards": {
+      "style": "bg-[#0F172A]/50 backdrop-blur-md border border-white/5 hover:border-[#D4AF37]/50 transition-all duration-500",
+      "blueprint_overlay": "relative overflow-hidden before:absolute before:inset-0 before:bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] before:opacity-5"
+    },
+    "inputs": {
+      "style": "bg-transparent border-b border-white/20 focus:border-[#D4AF37] text-white px-0 py-4 rounded-none placeholder:text-white/30 focus:outline-none focus:ring-0 transition-colors font-mono"
+    }
+  },
+  "assets": {
+    "images": [
+      {
+        "category": "hero_portrait",
+        "url": "https://images.unsplash.com/photo-1644353224392-7e532d7b8f4b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBwb3J0cmFpdCUyMGRhcmslMjBibHVlJTIwc3R1ZGlvJTIwYmFja2dyb3VuZCUyMGNvbmZpZGVudHxlbnwwfHx8fDE3NzA5MjY1MTN8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Professional portrait of Henry Wilke (placeholder) - Man standing with arms crossed, dark blue background",
+        "placement": "Hero Section - Right side or Centered overlap"
+      },
+      {
+        "category": "background_texture",
+        "url": "https://images.unsplash.com/photo-1538806932492-b6ac36ccfa28?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGFyY2hpdGVjdHVyYWwlMjBibHVlcHJpbnQlMjBncmlkJTIwbGluZXMlMjBtaW5pbWFsJTIwZGFyayUyMGJsdWV8ZW58MHx8fHwxNzcwOTI2NTE0fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract blueprint grid lines",
+        "placement": "Section Backgrounds (Low Opacity Overlay)"
+      }
+    ],
+    "icons": {
+      "library": "Phosphor Icons",
+      "style": "Thin or Light weight",
+      "instructions": "Use @phosphor-icons/react. Install if missing."
+    }
+  },
+  "sections_structure": [
+    {
+      "name": "Hero",
+      "elements": [
+        "Headline: 'Ich baue Systeme, die denken.'",
+        "Sub: 'AI System Architect | Problem Solver'",
+        "Visual: Portrait with blueprint overlay lines",
+        "CTA: 'Zusammenarbeit anfragen'"
+      ]
+    },
+    {
+      "name": "Positioning",
+      "elements": [
+        "Text-heavy editorial layout",
+        "Keywords: Systemdesign, Integration, Prozessintelligenz"
+      ]
+    },
+    {
+      "name": "The Difference",
+      "layout": "Grid 2x2",
+      "content": [
+        "Strategische KI-Architektur",
+        "Automatisierte Denkprozesse",
+        "Entscheidungsintelligenz",
+        "Skalierbare Systemlogik"
+      ]
+    },
+    {
+      "name": "Workflow (Blueprint)",
+      "visual": "Horizontal timeline or connected nodes",
+      "steps": ["Analyse", "Systemmodell", "Prototyp", "Integration", "Skalierung"]
+    },
+    {
+      "name": "Stance",
+      "style": "Large typography quote",
+      "text": "KI ist kein Feature. Sie ist Infrastruktur."
+    },
+    {
+      "name": "Contact",
+      "style": "Minimalist form",
+      "fields": ["Name", "Email", "Project details"]
+    }
+  ],
+  "animations": {
+    "library": "Framer Motion",
+    "preferences": {
+      "hero_entrance": "Staggered fade-up with slow duration (0.8s)",
+      "scroll_reveal": "WhileInView opacity-0 to opacity-100, y-20 to y-0",
+      "lines": "SVG lines drawing themselves (pathLength animation)"
+    }
+  },
+  "universal_guidelines": {
+    "do_not": [
+      "Use generic AI stock photos (robots, brains)",
+      "Use standard gradients (purple/blue)",
+      "Center align long text",
+      "Use 'Inter' for headings"
+    ],
+    "must_do": [
+      "Use 'data-testid' on all interactive elements",
+      "Ensure high contrast for accessibility",
+      "Use 'sonner' for toasts"
+    ]
+  },
+  "instructions_to_main_agent": "1. Install required packages (@phosphor-icons/react, framer-motion, sonner). 2. Setup Tailwind theme with new colors and fonts. 3. Build the 'BlueprintGrid' background component first. 4. Implement sections sequentially. 5. Ensure the 'Gold' accent is used sparingly for maximum impact."
+}
