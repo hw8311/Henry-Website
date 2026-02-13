@@ -1,0 +1,171 @@
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Check, X } from '@phosphor-icons/react';
+import BlueprintGrid from '../components/BlueprintGrid';
+import content from '../data/content.json';
+
+const UeberPage = () => {
+  const { audience, stance } = content;
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <>
+      {/* Hero Banner */}
+      <section className="relative py-32 bg-navy overflow-hidden">
+        <BlueprintGrid opacity={0.02} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="label-mono text-gold block mb-4"
+          >
+            Über mich
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite"
+          >
+            Wer dahinter steht
+          </motion.h1>
+        </div>
+      </section>
+
+      {/* Audience Section */}
+      <section className="relative py-24 md:py-32 bg-navy-light overflow-hidden" ref={ref}>
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="label-mono text-gold block mb-4">
+              {audience.overline}
+            </span>
+            <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite">
+              {audience.headline}
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
+            {/* For Column */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="md:col-span-7 relative p-8 md:p-12 bg-navy/40 border border-gold/30 hover:border-gold/50 transition-colors duration-500"
+            >
+              <h3 className="font-display text-2xl md:text-3xl text-offwhite mb-10">
+                {audience.for.title}
+              </h3>
+              <ul className="space-y-5">
+                {audience.for.items.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                    className="flex items-start gap-4 group"
+                  >
+                    <div className="w-6 h-6 flex items-center justify-center bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300 flex-shrink-0 mt-0.5">
+                      <Check size={16} weight="bold" className="text-gold" />
+                    </div>
+                    <span className="text-offwhite text-lg">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+              
+              <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-gold" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-gold/30" />
+            </motion.div>
+
+            {/* Not For Column */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="md:col-span-5 relative p-6 md:p-8 bg-navy/20 border border-white/5 opacity-80 hover:opacity-100 transition-opacity duration-500"
+            >
+              <h3 className="font-display text-xl text-muted-gray/80 mb-6">
+                {audience.not_for.title}
+              </h3>
+              <ul className="space-y-3">
+                {audience.not_for.items.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                    className="flex items-start gap-3"
+                  >
+                    <X size={16} weight="light" className="text-muted-gray/40 mt-1 flex-shrink-0" />
+                    <span className="text-muted-gray/70 text-sm">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stance Section */}
+      <section className="relative py-32 md:py-48 bg-navy overflow-hidden">
+        <BlueprintGrid opacity={0.015} />
+        
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <motion.span 
+              className="block font-display text-6xl md:text-8xl text-gold/20 mb-4"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              "
+            </motion.span>
+
+            <h2 className="heading-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-offwhite mb-4">
+              {stance.quote}
+            </h2>
+            <h2 className="heading-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl gold-text">
+              {stance.emphasis}
+            </h2>
+
+            <motion.span 
+              className="block font-display text-6xl md:text-8xl text-gold/20 mt-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              "
+            </motion.span>
+          </motion.div>
+
+          <motion.div 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] pointer-events-none"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <div className="absolute top-0 left-1/4 w-px h-16 bg-gradient-to-b from-gold/30 to-transparent" />
+            <div className="absolute bottom-0 right-1/4 w-px h-16 bg-gradient-to-t from-gold/30 to-transparent" />
+            <div className="absolute left-0 top-1/3 w-16 h-px bg-gradient-to-r from-gold/30 to-transparent" />
+            <div className="absolute right-0 bottom-1/3 w-16 h-px bg-gradient-to-l from-gold/30 to-transparent" />
+          </motion.div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default UeberPage;
