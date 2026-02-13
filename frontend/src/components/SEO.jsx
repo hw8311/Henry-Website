@@ -5,6 +5,7 @@ const siteConfig = {
   siteName: 'Henry Wilke | AI-Systemarchitekt',
   siteUrl: 'https://henrywilke.de', // Anpassen wenn Domain bekannt
   defaultImage: 'https://customer-assets.emergentagent.com/job_ai-systems-henry/artifacts/4tf3zkmz_file_000000005b706246860393db18f7484a~7.png',
+  defaultDescription: 'Ich baue Systeme, die denken. Strategische KI-Implementierung und Systemdesign für skalierbare Organisationen.',
   twitterHandle: '@henrywilke', // Anpassen
   locale: 'de_DE',
 };
