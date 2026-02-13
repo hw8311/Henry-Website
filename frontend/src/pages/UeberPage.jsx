@@ -38,28 +38,28 @@ const UeberPage = () => {
         <BlueprintGrid opacity={0.01} />
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* Image Column */}
+            {/* Image Column - Smaller */}
             <motion.div 
-              className="lg:col-span-4"
+              className="lg:col-span-3"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="relative">
+              <div className="relative max-w-[280px] mx-auto lg:mx-0">
                 <div className="absolute -inset-3 border border-gold/20" />
                 <img
-                  src={hero.image}
+                  src="https://customer-assets.emergentagent.com/job_ai-systems-henry/artifacts/u496axd7_IMG_20251224_034057_661.jpg"
                   alt="Henry Wilke"
-                  className="w-full aspect-[3/4] object-cover object-center"
+                  className="w-full aspect-square object-cover object-top"
                 />
-                <div className="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-gold" />
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 border-b-2 border-r-2 border-gold" />
               </div>
             </motion.div>
 
             {/* Text Column */}
             <motion.div 
-              className="lg:col-span-8"
+              className="lg:col-span-9"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
