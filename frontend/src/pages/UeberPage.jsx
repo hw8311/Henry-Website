@@ -5,7 +5,7 @@ import BlueprintGrid from '../components/BlueprintGrid';
 import content from '../data/content.json';
 
 const UeberPage = () => {
-  const { audience, stance } = content;
+  const { audience, stance, hero } = content;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -33,8 +33,86 @@ const UeberPage = () => {
         </div>
       </section>
 
+      {/* About Me Section */}
+      <section className="relative py-24 md:py-32 bg-navy-light overflow-hidden">
+        <BlueprintGrid opacity={0.01} />
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Image Column */}
+            <motion.div 
+              className="lg:col-span-4"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative">
+                <div className="absolute -inset-3 border border-gold/20" />
+                <img
+                  src={hero.image}
+                  alt="Henry Wilke"
+                  className="w-full aspect-[3/4] object-cover object-center"
+                />
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-gold" />
+              </div>
+            </motion.div>
+
+            {/* Text Column */}
+            <motion.div 
+              className="lg:col-span-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <p className="text-lg md:text-xl text-offwhite leading-relaxed mb-8">
+                Ich unterstütze Unternehmen dabei, KI sinnvoll in ihre Abläufe zu integrieren – <span className="text-gold">strukturiert, verständlich</span> und mit klarem wirtschaftlichem Fokus.
+              </p>
+
+              <div className="space-y-6 text-muted-gray leading-relaxed">
+                <p>
+                  Mein beruflicher Hintergrund ist bewusst nicht klassisch IT-lastig. Ich habe zwei IHK-Ausbildungen absolviert: als <span className="text-offwhite">Anlagenmechaniker</span> mit technischem Fundament und als <span className="text-offwhite">Immobilienkaufmann</span> mit kaufmännischem und organisatorischem Schwerpunkt. Diese Kombination hat mir früh vermittelt, wie Prozesse entstehen, wo Reibungspunkte liegen und wie technische Lösungen wirtschaftlich gedacht werden müssen.
+                </p>
+
+                {/* Highlight Box */}
+                <div className="relative p-6 bg-navy/50 border-l-2 border-gold my-8">
+                  <p className="text-offwhite text-lg">
+                    Gerade im Bereich KI-Automatisierung ist das entscheidend.
+                  </p>
+                </div>
+
+                <p>
+                  Künstliche Intelligenz ist heute nicht mehr mit traditioneller IT gleichzusetzen. Es geht nicht primär um Programmierung, Serverstrukturen oder tiefgreifende Systemarchitektur. Es geht darum, <span className="text-offwhite">Anforderungen klar zu formulieren</span>, Prozesse logisch zu strukturieren und zwischen Mensch und System präzise zu übersetzen.
+                </p>
+
+                <p className="text-offwhite text-lg font-display">
+                  Und genau hier liegt meine Stärke.
+                </p>
+
+                <p>
+                  Ich arbeite analytisch, strukturiert und kommunikationsstark. Komplexe Abläufe kann ich so herunterbrechen, dass sie für Menschen verständlich – und für KI-Systeme präzise verwertbar – werden. Man könnte sagen: <span className="text-gold">Ich denke in Prozessen und formuliere in einer Klarheit, die maschinenlesbar wird.</span>
+                </p>
+
+                <p>
+                  Seit rund zwei Jahren beschäftige ich mich intensiv mit KI-gestützter Automatisierung und digitalen Workflows. Dabei verbinde ich technisches Verständnis, wirtschaftliches Denken und praktische Erfahrung aus realen Unternehmensstrukturen.
+                </p>
+
+                {/* Final Statement */}
+                <div className="pt-8 mt-8 border-t border-white/10">
+                  <p className="text-muted-gray mb-2">
+                    Für mich ist KI kein Selbstzweck und kein Hype-Thema.
+                  </p>
+                  <p className="text-offwhite text-xl font-display">
+                    Sie ist ein Werkzeug – und Werkzeuge müssen <span className="gold-text">sinnvoll eingesetzt</span> werden.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
       {/* Audience Section */}
-      <section className="relative py-24 md:py-32 bg-navy-light overflow-hidden" ref={ref}>
+      <section className="relative py-24 md:py-32 bg-navy overflow-hidden" ref={ref}>
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div 
             className="text-center mb-16"
