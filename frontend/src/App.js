@@ -4,7 +4,6 @@ import { Toaster } from "sonner";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import CookieConsent from "./components/CookieConsent";
-import { pageview } from "./utils/analytics";
 
 // Pages
 import HomePage from "./pages/HomePage";
