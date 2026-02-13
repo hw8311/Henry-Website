@@ -15,16 +15,12 @@ import ImpressumPage from "./pages/ImpressumPage";
 import AGBPage from "./pages/AGBPage";
 import DatenschutzPage from "./pages/DatenschutzPage";
 
-// Scroll to top und Analytics tracking bei Route-Wechsel
+// Scroll to top bei Route-Wechsel
 const RouteChangeHandler = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to top
     window.scrollTo(0, 0);
-    
-    // Analytics pageview tracken
-    pageview(pathname);
   }, [pathname]);
 
   return null;
