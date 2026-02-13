@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import BlueprintGrid from '../components/BlueprintGrid';
+import SEO, { seoData } from '../components/SEO';
 import content from '../data/content.json';
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
 
   return (
     <>
+      <SEO {...seoData.home} />
       {/* Hero Section */}
       <section 
         data-testid="hero-section"

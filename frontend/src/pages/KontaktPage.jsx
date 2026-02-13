@@ -4,6 +4,8 @@ import { PaperPlaneTilt, CircleNotch, CheckCircle, WarningCircle } from '@phosph
 import axios from 'axios';
 import { toast } from 'sonner';
 import BlueprintGrid from '../components/BlueprintGrid';
+import SEO, { seoData } from '../components/SEO';
+import { trackEvents } from '../utils/analytics';
 import content from '../data/content.json';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -42,6 +44,9 @@ const KontaktPage = () => {
       setSubmitStatus('success');
       toast.success('Anfrage erfolgreich gesendet!');
       setFormData({ name: '', email: '', company: '', message: '' });
+      
+      // Analytics Event tracken
+      trackEvents.contactFormSubmit();
     } catch (error) {
       console.error('Contact form error:', error);
       setSubmitStatus('error');
@@ -53,6 +58,7 @@ const KontaktPage = () => {
 
   return (
     <>
+      <SEO {...seoData.kontakt} />
       {/* Hero Banner */}
       <section className="relative py-32 bg-navy overflow-hidden">
         <BlueprintGrid opacity={0.02} />

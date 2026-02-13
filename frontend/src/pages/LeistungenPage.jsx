@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Blueprint, Brain, ChartLine, TreeStructure } from '@phosphor-icons/react';
 import BlueprintGrid from '../components/BlueprintGrid';
+import SEO, { seoData } from '../components/SEO';
 import content from '../data/content.json';
 
 const icons = [Blueprint, Brain, ChartLine, TreeStructure];
@@ -13,6 +14,7 @@ const LeistungenPage = () => {
 
   return (
     <>
+      <SEO {...seoData.leistungen} />
       {/* Hero Banner */}
       <section className="relative py-32 bg-navy overflow-hidden">
         <BlueprintGrid opacity={0.02} />

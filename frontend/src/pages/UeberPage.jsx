@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Check, X } from '@phosphor-icons/react';
 import BlueprintGrid from '../components/BlueprintGrid';
+import SEO, { seoData } from '../components/SEO';
 import content from '../data/content.json';
 
 const UeberPage = () => {
@@ -11,6 +12,7 @@ const UeberPage = () => {
 
   return (
     <>
+      <SEO {...seoData.ueber} />
       {/* Hero Banner */}
       <section className="relative py-32 bg-navy overflow-hidden">
         <BlueprintGrid opacity={0.02} />
