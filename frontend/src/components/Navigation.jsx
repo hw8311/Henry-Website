@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { List, X } from '@phosphor-icons/react';
-import content from '../data/content.json';
+import { Link, useLocation } from 'react-router-dom';
+
+const navLinks = [
+  { path: '/', label: 'Start' },
+  { path: '/leistungen', label: 'Leistungen' },
+  { path: '/ueber', label: 'Über mich' },
+  { path: '/automatisierung', label: 'Automatisierung' },
+];
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,13 +23,10 @@ export const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  // Close mobile menu on route change
+  useEffect(() => {
     setIsMobileMenuOpen(false);
-  };
+  }, [location.pathname]);
 
   return (
     <>
@@ -39,34 +44,37 @@ export const Navigation = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <motion.button
+            <Link
+              to="/"
               data-testid="nav-logo"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="font-display text-xl md:text-2xl text-offwhite hover:text-gold transition-colors cursor-pointer"
-              whileHover={{ scale: 1.02 }}
+              className="font-display text-xl md:text-2xl text-offwhite hover:text-gold transition-colors"
             >
               Henry Wilke
-            </motion.button>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              {content.navigation.links.map((link) => (
-                <button
-                  key={link.id}
-                  data-testid={`nav-link-${link.id}`}
-                  onClick={() => scrollToSection(link.id)}
-                  className="label-mono text-muted-gray hover:text-gold transition-colors cursor-pointer"
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  data-testid={`nav-link-${link.path.replace('/', '') || 'home'}`}
+                  className={`label-mono transition-colors ${
+                    location.pathname === link.path 
+                      ? 'text-gold' 
+                      : 'text-muted-gray hover:text-gold'
+                  }`}
                 >
                   {link.label}
-                </button>
+                </Link>
               ))}
-              <button
+              <Link
+                to="/kontakt"
                 data-testid="nav-cta-button"
-                onClick={() => scrollToSection('kontakt')}
                 className="btn-primary"
               >
                 Kontakt
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -93,29 +101,39 @@ export const Navigation = () => {
             className="fixed inset-0 z-40 bg-navy/98 backdrop-blur-lg md:hidden pt-24"
           >
             <div className="flex flex-col items-center gap-8 p-6">
-              {content.navigation.links.map((link, index) => (
-                <motion.button
-                  key={link.id}
-                  data-testid={`mobile-nav-link-${link.id}`}
+              {navLinks.map((link, index) => (
+                <motion.div
+                  key={link.path}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(link.id)}
-                  className="font-display text-2xl text-offwhite hover:text-gold transition-colors"
                 >
-                  {link.label}
-                </motion.button>
+                  <Link
+                    to={link.path}
+                    data-testid={`mobile-nav-link-${link.path.replace('/', '') || 'home'}`}
+                    className={`font-display text-2xl transition-colors ${
+                      location.pathname === link.path 
+                        ? 'text-gold' 
+                        : 'text-offwhite hover:text-gold'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
-              <motion.button
-                data-testid="mobile-cta-button"
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                onClick={() => scrollToSection('kontakt')}
-                className="btn-primary mt-4"
               >
-                Kontakt
-              </motion.button>
+                <Link
+                  to="/kontakt"
+                  data-testid="mobile-cta-button"
+                  className="btn-primary mt-4"
+                >
+                  Kontakt
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}
