@@ -193,16 +193,17 @@ const UeberPage = () => {
 
       {/* Stance Section */}
       <section className="relative py-32 md:py-48 bg-navy overflow-hidden">
-        {/* Background Image - subtle and dimmed */}
+        {/* Background Image - 60% brightness */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08]"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ 
             backgroundImage: 'url(/assets/ki-infrastruktur-bg.png)',
-            filter: 'grayscale(30%) brightness(0.7)'
+            opacity: 0.6,
+            filter: 'grayscale(20%)'
           }}
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-transparent to-navy/60" />
+        <div className="absolute inset-0 bg-navy/40" />
         
         <BlueprintGrid opacity={0.015} />
         
