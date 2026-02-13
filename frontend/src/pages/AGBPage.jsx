@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from '@phosphor-icons/react';
 import BlueprintGrid from '../components/BlueprintGrid';
-import SEO, { seoData } from '../components/SEO';
+import { useSEO } from '../components/SEO';
 
 const AGBPage = () => {
+  useSEO('agb');
+  
   return (
     <>
-      <SEO {...seoData.agb} />
       {/* Hero Banner */}
       <section className="relative py-24 bg-navy overflow-hidden">
         <BlueprintGrid opacity={0.02} />

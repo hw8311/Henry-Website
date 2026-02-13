@@ -4,7 +4,7 @@ import { PaperPlaneTilt, CircleNotch, CheckCircle, WarningCircle } from '@phosph
 import axios from 'axios';
 import { toast } from 'sonner';
 import BlueprintGrid from '../components/BlueprintGrid';
-import SEO, { seoData } from '../components/SEO';
+import { useSEO } from '../components/SEO';
 import { trackEvents } from '../utils/analytics';
 import content from '../data/content.json';
 
@@ -13,6 +13,7 @@ const API = `${BACKEND_URL}/api`;
 
 const KontaktPage = () => {
   const { contact } = content;
+  useSEO('kontakt');
   
   const [formData, setFormData] = useState({
     name: '',
@@ -58,7 +59,6 @@ const KontaktPage = () => {
 
   return (
     <>
-      <SEO {...seoData.kontakt} />
       {/* Hero Banner */}
       <section className="relative py-32 bg-navy overflow-hidden">
         <BlueprintGrid opacity={0.02} />

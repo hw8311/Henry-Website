@@ -1,14 +1,11 @@
 import React from 'react';
 import KIAutomationSection from '../components/KIAutomationSection';
-import SEO, { seoData } from '../components/SEO';
+import { useSEO } from '../components/SEO';
 
 const AutomatisierungPage = () => {
-  return (
-    <>
-      <SEO {...seoData.automatisierung} />
-      <KIAutomationSection />
-    </>
-  );
+  useSEO('automatisierung');
+  
+  return <KIAutomationSection />;
 };
 
 export default AutomatisierungPage;

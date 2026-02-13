@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Blueprint, Brain, ChartLine, TreeStructure } from '@phosphor-icons/react';
 import BlueprintGrid from '../components/BlueprintGrid';
-import SEO, { seoData } from '../components/SEO';
+import { useSEO } from '../components/SEO';
 import content from '../data/content.json';
 
 const icons = [Blueprint, Brain, ChartLine, TreeStructure];
@@ -11,10 +11,10 @@ const LeistungenPage = () => {
   const { difference, workflow } = content;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  useSEO('leistungen');
 
   return (
     <>
-      <SEO {...seoData.leistungen} />
       {/* Hero Banner */}
       <section className="relative py-32 bg-navy overflow-hidden">
         <BlueprintGrid opacity={0.02} />
