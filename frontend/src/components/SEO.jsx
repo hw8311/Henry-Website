@@ -19,16 +19,17 @@ export const SEO = ({
 }) => {
   const fullTitle = title 
     ? `${title} | Henry Wilke` 
-    : siteConfig.siteName;
+    : 'Henry Wilke | AI-Systemarchitekt';
   
   const fullUrl = `${siteConfig.siteUrl}${path}`;
   const imageUrl = image || siteConfig.defaultImage;
+  const metaDescription = description || siteConfig.defaultDescription;
 
   return (
     <Helmet>
       {/* Basis Meta Tags */}
       <title>{fullTitle}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={metaDescription} />
       <link rel="canonical" href={fullUrl} />
       
       {/* Robots */}
