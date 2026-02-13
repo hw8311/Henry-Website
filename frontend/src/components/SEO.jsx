@@ -62,7 +62,7 @@ export const SEO = ({
 // Vordefinierte SEO-Daten für alle Seiten
 export const seoData = {
   home: {
-    title: null, // Nutzt Standard-Titel
+    title: 'AI-Systemarchitekt',
     description: 'Ich baue Systeme, die denken. Strategische KI-Implementierung und Systemdesign für skalierbare Organisationen. Keine Tools, kein Hype – sondern durchdachte KI-Architektur.',
     path: '/',
   },
