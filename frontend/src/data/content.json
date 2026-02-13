@@ -8,6 +8,7 @@
       { "id": "positionierung", "label": "Positionierung" },
       { "id": "unterschied", "label": "Der Unterschied" },
       { "id": "arbeitsweise", "label": "Arbeitsweise" },
+      { "id": "ki-automatisierung", "label": "KI-Automatisierung" },
       { "id": "kontakt", "label": "Kontakt" }
     ]
   },

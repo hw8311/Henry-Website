@@ -5,6 +5,7 @@ import HeroSection from "./components/HeroSection";
 import PositioningSection from "./components/PositioningSection";
 import DifferenceSection from "./components/DifferenceSection";
 import WorkflowSection from "./components/WorkflowSection";
+import KIAutomationSection from "./components/KIAutomationSection";
 import AudienceSection from "./components/AudienceSection";
 import StanceSection from "./components/StanceSection";
 import ContactSection from "./components/ContactSection";
@@ -35,6 +36,7 @@ function App() {
         <PositioningSection />
         <DifferenceSection />
         <WorkflowSection />
+        <KIAutomationSection />
         <AudienceSection />
         <StanceSection />
         <ContactSection />
