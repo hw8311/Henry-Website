@@ -32,6 +32,8 @@ export const Navigation = () => {
     <>
       <motion.nav
         data-testid="main-navigation"
+        role="navigation"
+        aria-label="Hauptnavigation"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
