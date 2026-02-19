@@ -6,6 +6,8 @@ export const Footer = () => {
   return (
     <footer 
       data-testid="footer"
+      role="contentinfo"
+      aria-label="Fußbereich"
       className="relative py-16 bg-navy border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
