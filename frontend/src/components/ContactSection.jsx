@@ -196,28 +196,32 @@ export const ContactSection = () => {
             </button>
 
             {/* Status Message */}
-            {submitStatus === 'success' && (
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="flex items-center gap-2 text-green-400"
-                data-testid="contact-success-message"
-              >
-                <CheckCircle size={20} weight="fill" />
-                <span className="text-sm">Erfolgreich gesendet!</span>
-              </motion.div>
-            )}
-            {submitStatus === 'error' && (
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="flex items-center gap-2 text-red-400"
-                data-testid="contact-error-message"
-              >
-                <WarningCircle size={20} weight="fill" />
-                <span className="text-sm">Fehler beim Senden</span>
-              </motion.div>
-            )}
+            <div aria-live="polite" aria-atomic="true">
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="flex items-center gap-2 text-green-400"
+                  data-testid="contact-success-message"
+                  role="status"
+                >
+                  <CheckCircle size={20} weight="fill" aria-hidden="true" />
+                  <span className="text-sm">Erfolgreich gesendet!</span>
+                </motion.div>
+              )}
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="flex items-center gap-2 text-red-400"
+                  data-testid="contact-error-message"
+                  role="alert"
+                >
+                  <WarningCircle size={20} weight="fill" aria-hidden="true" />
+                  <span className="text-sm">Fehler beim Senden</span>
+                </motion.div>
+              )}
+            </div>
           </div>
         </motion.form>
       </div>
