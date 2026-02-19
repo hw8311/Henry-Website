@@ -92,10 +92,11 @@ export const ContactSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative bg-navy-light/30 border border-white/5 p-8 md:p-12"
+          aria-label="Kontaktformular"
         >
-          {/* Blueprint Corner */}
-          <div className="absolute top-0 right-0 w-24 h-24 border-t border-r border-blueprint opacity-30" />
-          <div className="absolute bottom-0 left-0 w-24 h-24 border-b border-l border-blueprint opacity-30" />
+          {/* Blueprint Corner - dekorativ */}
+          <div className="absolute top-0 right-0 w-24 h-24 border-t border-r border-blueprint opacity-30" aria-hidden="true" />
+          <div className="absolute bottom-0 left-0 w-24 h-24 border-b border-l border-blueprint opacity-30" aria-hidden="true" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             {/* Name */}
