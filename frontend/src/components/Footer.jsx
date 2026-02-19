@@ -30,10 +30,11 @@ export const Footer = () => {
           </motion.div>
 
           {/* Navigation */}
-          <motion.div 
+          <motion.nav 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            aria-label="Footer Navigation"
           >
             <h3 className="label-mono text-gold mb-4">Navigation</h3>
             <ul className="space-y-3">
