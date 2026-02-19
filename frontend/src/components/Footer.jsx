@@ -64,13 +64,14 @@ export const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </motion.div>
+          </motion.nav>
 
           {/* Legal */}
-          <motion.div 
+          <motion.nav 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            aria-label="Rechtliche Informationen"
           >
             <h3 className="label-mono text-gold mb-4">Rechtliches</h3>
             <ul className="space-y-3">
