@@ -29,6 +29,11 @@ const RouteChangeHandler = () => {
 function App() {
   return (
     <div className="App bg-navy min-h-screen" data-testid="app-container">
+      {/* Skip-Link für Barrierefreiheit */}
+      <a href="#main-content" className="skip-link">
+        Zum Hauptinhalt springen
+      </a>
+      
       <Toaster 
         position="top-right"
         toastOptions={{
@@ -43,7 +48,7 @@ function App() {
       <BrowserRouter>
         <RouteChangeHandler />
         <Navigation />
-        <main className="pt-20">
+        <main id="main-content" className="pt-20" role="main">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/leistungen" element={<LeistungenPage />} />
