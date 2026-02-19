@@ -81,19 +81,24 @@ export const Navigation = () => {
             <button
               data-testid="mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-offwhite hover:text-gold transition-colors"
+              className="md:hidden p-2 text-offwhite hover:text-gold transition-colors focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy"
+              aria-label={isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
-              {isMobileMenuOpen ? <X size={28} weight="light" /> : <List size={28} weight="light" />}
+              {isMobileMenuOpen ? <X size={28} weight="light" aria-hidden="true" /> : <List size={28} weight="light" aria-hidden="true" />}
             </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-menu"
             data-testid="mobile-menu"
+            role="navigation"
+            aria-label="Mobile Navigation"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
