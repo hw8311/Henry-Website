@@ -175,20 +175,21 @@ export const ContactSection = () => {
 
           {/* Submit Button - Mobile Optimized */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
-            <button
+              <button
               type="submit"
               data-testid="contact-submit-button"
               disabled={isSubmitting}
+              aria-busy={isSubmitting}
               className="btn-primary flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto min-h-[56px]"
             >
               {isSubmitting ? (
                 <>
-                  <CircleNotch size={18} className="animate-spin" />
+                  <CircleNotch size={18} className="animate-spin" aria-hidden="true" />
                   Wird gesendet...
                 </>
               ) : (
                 <>
-                  <PaperPlaneTilt size={18} weight="bold" />
+                  <PaperPlaneTilt size={18} weight="bold" aria-hidden="true" />
                   {contact.submit}
                 </>
               )}
