@@ -94,10 +94,10 @@ export const Footer = () => {
             
             <div className="mt-6 pt-6 border-t border-white/5">
               <p className="text-muted-gray text-sm">
-                E-Mail: <a href="mailto:henry-triangle@outlook.com" className="text-gold hover:text-gold-light transition-colors">henry-triangle@outlook.com</a>
+                E-Mail: <a href="mailto:henry-triangle@outlook.com" className="text-gold hover:text-gold-light transition-colors" aria-label="E-Mail an Henry Wilke senden">henry-triangle@outlook.com</a>
               </p>
             </div>
-          </motion.div>
+          </motion.nav>
         </div>
 
         {/* Bottom Bar */}
