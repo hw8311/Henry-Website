@@ -11,6 +11,7 @@ import LeistungenPage from "./pages/LeistungenPage";
 import UeberPage from "./pages/UeberPage";
 import AutomatisierungPage from "./pages/AutomatisierungPage";
 import KontaktPage from "./pages/KontaktPage";
+import ReferenzenPage from "./pages/ReferenzenPage";
 import ImpressumPage from "./pages/ImpressumPage";
 import AGBPage from "./pages/AGBPage";
 import DatenschutzPage from "./pages/DatenschutzPage";

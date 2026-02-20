@@ -6,6 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 const navLinks = [
   { path: '/', label: 'Start' },
   { path: '/leistungen', label: 'Leistungen' },
+  { path: '/referenzen', label: 'Referenzen' },
   { path: '/ueber', label: 'Über mich' },
   { path: '/automatisierung', label: 'Automatisierung' },
 ];
