@@ -55,6 +55,7 @@ function App() {
             <Route path="/leistungen" element={<LeistungenPage />} />
             <Route path="/ueber" element={<UeberPage />} />
             <Route path="/automatisierung" element={<AutomatisierungPage />} />
+            <Route path="/referenzen" element={<ReferenzenPage />} />
             <Route path="/kontakt" element={<KontaktPage />} />
             <Route path="/impressum" element={<ImpressumPage />} />
             <Route path="/agb" element={<AGBPage />} />
