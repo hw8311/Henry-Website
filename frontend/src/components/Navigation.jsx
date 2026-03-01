@@ -130,21 +130,29 @@ export const Navigation = () => {
                         : 'text-offwhite hover:text-gold'
                     }`}
                   >
-                    {link.label}
+                    {language === 'de' ? link.labelDe : link.labelEn}
                   </Link>
                 </motion.div>
               ))}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.5 }}
+                className="mt-4"
+              >
+                <LanguageSwitcher />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
               >
                 <Link
                   to="/kontakt"
                   data-testid="mobile-cta-button"
                   className="btn-primary mt-4"
                 >
-                  Kontakt
+                  {language === 'de' ? 'Kontakt' : 'Contact'}
                 </Link>
               </motion.div>
             </div>
