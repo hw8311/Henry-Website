@@ -26,7 +26,9 @@ const ReferenzenPage = () => {
       ],
       technologies: ['Vertex AI', 'Document AI', 'Cloud SQL', 'PWA'],
       icon: ChartLineUp,
-      highlight: 'Das einfache Aufzeigen von Möglichkeiten'
+      highlight: 'Das einfache Aufzeigen von Möglichkeiten',
+      logo: '/assets/taxopti-logo.webp',
+      logoAlt: 'TaxOpti Logo'
     },
     {
       id: 'energieunternehmen',
@@ -45,7 +47,9 @@ const ReferenzenPage = () => {
       ],
       technologies: ['KI-Agenten', 'Chatbot', 'CRM-Integration', 'Workflow-Automation'],
       icon: Lightning,
-      highlight: 'Freisetzung von Fachexpertise durch Automatisierung'
+      highlight: 'Freisetzung von Fachexpertise durch Automatisierung',
+      logo: '/assets/tbs-logo.jpg',
+      logoAlt: 'Triangle Business Solution Logo'
     }
   ];
 
