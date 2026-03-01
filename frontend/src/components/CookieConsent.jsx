@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Cookie } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const CONSENT_KEY = 'cookie_consent';
 
 export const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
-    // Prüfen ob bereits Consent gegeben wurde
     const consent = localStorage.getItem(CONSENT_KEY);
     if (!consent) {
-      // Kurze Verzögerung bevor Banner erscheint
       const timer = setTimeout(() => setShowBanner(true), 1500);
       return () => clearTimeout(timer);
     }
@@ -25,7 +25,6 @@ export const CookieConsent = () => {
       timestamp: new Date().toISOString()
     }));
     setShowBanner(false);
-    // Analytics aktivieren wenn implementiert
     if (window.gtag) {
       window.gtag('consent', 'update', {
         'analytics_storage': 'granted'
@@ -58,7 +57,7 @@ export const CookieConsent = () => {
             <button
               onClick={acceptEssential}
               className="absolute top-4 right-4 text-muted-gray hover:text-offwhite transition-colors"
-              aria-label="Schließen"
+              aria-label={language === 'de' ? 'Schließen' : 'Close'}
             >
               <X size={20} weight="light" />
             </button>
@@ -72,12 +71,12 @@ export const CookieConsent = () => {
               {/* Content */}
               <div className="flex-1">
                 <h3 className="font-display text-xl text-offwhite mb-3">
-                  Cookie-Einstellungen
+                  {language === 'de' ? 'Cookie-Einstellungen' : 'Cookie Settings'}
                 </h3>
                 <p className="text-muted-gray text-sm leading-relaxed mb-4">
-                  Diese Website verwendet Cookies, um Ihnen das beste Erlebnis zu bieten. 
-                  Essenzielle Cookies sind für die Grundfunktionen erforderlich. 
-                  Analyse-Cookies helfen uns, die Website zu verbessern.{' '}
+                  {language === 'de' 
+                    ? 'Diese Website verwendet Cookies, um Ihnen das beste Erlebnis zu bieten. Essenzielle Cookies sind für die Grundfunktionen erforderlich. Analyse-Cookies helfen uns, die Website zu verbessern. '
+                    : 'This website uses cookies to provide you with the best experience. Essential cookies are required for basic functions. Analytics cookies help us improve the website. '}
                   <Link to="/datenschutz" className="text-gold hover:text-gold-light transition-colors">
                     Mehr erfahren
                   </Link>
