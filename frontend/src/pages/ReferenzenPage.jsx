@@ -66,7 +66,7 @@ const ReferenzenPage = () => {
             transition={{ delay: 0.1 }}
             className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite mb-6"
           >
-            Projekte mit Substanz
+            {t.heroTitle[language]}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -74,8 +74,7 @@ const ReferenzenPage = () => {
             transition={{ delay: 0.2 }}
             className="text-muted-gray text-lg max-w-2xl mx-auto"
           >
-            Von der Problemanalyse bis zur marktreifen Lösung – 
-            durchdachte KI-Architekturen, die echten Mehrwert schaffen.
+            {t.heroSubtitle[language]}
           </motion.p>
         </div>
       </section>
