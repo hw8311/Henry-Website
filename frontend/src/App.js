@@ -59,6 +59,9 @@ function App() {
             <Route path="/ueber" element={<UeberPage />} />
             <Route path="/automatisierung" element={<AutomatisierungPage />} />
             <Route path="/referenzen" element={<ReferenzenPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/produktivitaet-ki-erkenntnisse" element={<BlogProduktivitaet />} />
+            <Route path="/blog/neurodivergent-ki-partnerschaft" element={<BlogNeurodivergent />} />
             <Route path="/kontakt" element={<KontaktPage />} />
             <Route path="/impressum" element={<ImpressumPage />} />
             <Route path="/agb" element={<AGBPage />} />
