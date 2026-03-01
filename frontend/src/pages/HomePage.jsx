@@ -153,10 +153,10 @@ const HomePage = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="label-mono text-gold block mb-4">
-                {positioning.overline}
+                {t.positioning.label[language]}
               </span>
-              <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite">
-                {positioning.headline}
+              <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite whitespace-pre-line">
+                {t.positioning.title[language]}
               </h2>
             </motion.div>
 
@@ -168,18 +168,9 @@ const HomePage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="space-y-6">
-                {positioning.content.map((paragraph, index) => (
-                  <p
-                    key={index}
-                    className={`text-lg md:text-xl leading-relaxed ${
-                      index === positioning.content.length - 1 
-                        ? 'text-offwhite' 
-                        : 'text-muted-gray'
-                    }`}
-                  >
-                    {paragraph}
-                  </p>
-                ))}
+                <p className="text-lg md:text-xl leading-relaxed text-muted-gray">
+                  {t.positioning.text[language]}
+                </p>
               </div>
 
               <motion.div 
