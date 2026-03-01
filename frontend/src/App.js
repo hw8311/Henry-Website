@@ -33,10 +33,20 @@ const RouteChangeHandler = () => {
 
 function App() {
   return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
+  );
+}
+
+function AppContent() {
+  const { language } = require('./context/LanguageContext').useLanguage();
+  
+  return (
     <div className="App bg-navy min-h-screen" data-testid="app-container">
       {/* Skip-Link für Barrierefreiheit */}
       <a href="#main-content" className="skip-link">
-        Zum Hauptinhalt springen
+        {language === 'de' ? 'Zum Hauptinhalt springen' : 'Skip to main content'}
       </a>
       
       <Toaster 
