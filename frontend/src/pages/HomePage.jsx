@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { ArrowDown } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import BlueprintGrid from '../components/BlueprintGrid';
-import { useSEO } from '../components/SEO';
-import content from '../data/content.json';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../data/translations';
 
 const HomePage = () => {
-  const { hero, positioning } = content;
-  useSEO('home');
+  const { language } = useLanguage();
+  const t = translations;
 
   return (
     <>
@@ -30,7 +30,7 @@ const HomePage = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="label-mono text-gold mb-6 block"
               >
-                {hero.overline}
+                {t.hero.label[language]}
               </motion.span>
 
               <motion.h1
@@ -39,7 +39,7 @@ const HomePage = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="heading-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-offwhite mb-8"
               >
-                {hero.headline}
+                {t.hero.title[language]}
               </motion.h1>
 
               <motion.p
@@ -48,7 +48,7 @@ const HomePage = () => {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-base md:text-xl text-muted-gray max-w-xl mb-10 md:mb-12 leading-relaxed px-1"
               >
-                {hero.subline}
+                {t.hero.subtitle[language]}
               </motion.p>
 
               <motion.div
