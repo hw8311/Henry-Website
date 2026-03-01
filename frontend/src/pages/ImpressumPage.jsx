@@ -44,8 +44,13 @@ const ImpressumPage = () => {
               <div>
                 <h2 className="font-display text-2xl text-offwhite mb-4">Angaben gemäß § 5 TMG</h2>
                 <p className="text-lg">
-                  Henry Wilke<br />
-                  <span className="text-gold">Status: Noch nicht gegründet</span>
+                  Triangle Business Solutions LLC<br />
+                  115 West 27th Street<br />
+                  New York, NY 10001<br />
+                  United States
+                </p>
+                <p className="mt-4 text-offwhite">
+                  vertreten durch Henry Wilke
                 </p>
                 <p className="mt-4">
                   E-Mail: <a href="mailto:henry-triangle@outlook.com" className="text-gold hover:text-gold-light transition-colors">henry-triangle@outlook.com</a>
@@ -56,7 +61,13 @@ const ImpressumPage = () => {
 
               <div>
                 <h2 className="font-display text-2xl text-offwhite mb-4">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-                <p>Henry Wilke</p>
+                <p>
+                  Henry Wilke<br />
+                  Triangle Business Solutions LLC<br />
+                  115 West 27th Street<br />
+                  New York, NY 10001<br />
+                  United States
+                </p>
               </div>
 
               <div className="h-px bg-white/10" />
