@@ -72,15 +72,16 @@ export const Navigation = () => {
                       : 'text-muted-gray hover:text-gold'
                   }`}
                 >
-                  {link.label}
+                  {language === 'de' ? link.labelDe : link.labelEn}
                 </Link>
               ))}
+              <LanguageSwitcher />
               <Link
                 to="/kontakt"
                 data-testid="nav-cta-button"
                 className="btn-primary"
               >
-                Kontakt
+                {language === 'de' ? 'Kontakt' : 'Contact'}
               </Link>
             </div>
 
