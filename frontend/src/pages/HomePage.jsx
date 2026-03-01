@@ -97,14 +97,14 @@ const HomePage = () => {
                   <div 
                     className="absolute inset-0 scale-110"
                     style={{
-                      backgroundImage: 'url(/assets/hero-henry.jpg)',
+                      backgroundImage: 'url(https://customer-assets.emergentagent.com/job_ai-systems-henry/artifacts/4tf3zkmz_file_000000005b706246860393db18f7484a~7.png)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       filter: 'blur(20px) brightness(0.4)',
                     }}
                   />
                   <motion.img
-                    src="/assets/hero-henry.jpg"
+                    src="https://customer-assets.emergentagent.com/job_ai-systems-henry/artifacts/4tf3zkmz_file_000000005b706246860393db18f7484a~7.png"
                     alt={language === 'de' ? 'Henry Wilke - AI-Systemarchitekt' : 'Henry Wilke - AI System Architect'}
                     className="relative w-full h-full object-cover object-center"
                     whileHover={{ scale: 1.03 }}
