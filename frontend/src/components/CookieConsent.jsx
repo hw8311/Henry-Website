@@ -78,7 +78,7 @@ export const CookieConsent = () => {
                     ? 'Diese Website verwendet Cookies, um Ihnen das beste Erlebnis zu bieten. Essenzielle Cookies sind für die Grundfunktionen erforderlich. Analyse-Cookies helfen uns, die Website zu verbessern. '
                     : 'This website uses cookies to provide you with the best experience. Essential cookies are required for basic functions. Analytics cookies help us improve the website. '}
                   <Link to="/datenschutz" className="text-gold hover:text-gold-light transition-colors">
-                    Mehr erfahren
+                    {language === 'de' ? 'Mehr erfahren' : 'Learn more'}
                   </Link>
                 </p>
 
@@ -89,14 +89,14 @@ export const CookieConsent = () => {
                     className="btn-primary text-sm py-3"
                     data-testid="cookie-accept-all"
                   >
-                    Alle akzeptieren
+                    {language === 'de' ? 'Alle akzeptieren' : 'Accept all'}
                   </button>
                   <button
                     onClick={acceptEssential}
                     className="btn-secondary text-sm py-3"
                     data-testid="cookie-accept-essential"
                   >
-                    Nur essenzielle
+                    {language === 'de' ? 'Nur essenzielle' : 'Essential only'}
                   </button>
                 </div>
               </div>
