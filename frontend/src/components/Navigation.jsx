@@ -7,6 +7,7 @@ const navLinks = [
   { path: '/', label: 'Start' },
   { path: '/leistungen', label: 'Leistungen' },
   { path: '/referenzen', label: 'Referenzen' },
+  { path: '/blog', label: 'Blog' },
   { path: '/ueber', label: 'Über mich' },
   { path: '/automatisierung', label: 'Automatisierung' },
 ];
