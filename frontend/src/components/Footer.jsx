@@ -1,13 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Footer = () => {
+  const { language } = useLanguage();
+  
   return (
     <footer 
       data-testid="footer"
       role="contentinfo"
-      aria-label="Fußbereich"
+      aria-label={language === 'de' ? 'Fußbereich' : 'Footer'}
       className="relative py-16 bg-navy border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -22,10 +25,12 @@ export const Footer = () => {
               Henry Wilke
             </Link>
             <p className="label-mono text-muted-gray mt-2">
-              AI-Systemarchitekt
+              {language === 'de' ? 'AI-Systemarchitekt' : 'AI System Architect'}
             </p>
             <p className="text-muted-gray text-sm mt-4 max-w-xs">
-              Strategische KI-Implementierung und Systemdesign für skalierbare Organisationen.
+              {language === 'de' 
+                ? 'Strategische KI-Implementierung und Systemdesign für skalierbare Organisationen.'
+                : 'Strategic AI implementation and system design for scalable organizations.'}
             </p>
           </motion.div>
 
@@ -36,21 +41,21 @@ export const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             aria-label="Footer Navigation"
           >
-            <h3 className="label-mono text-gold mb-4">Navigation</h3>
+            <h3 className="label-mono text-gold mb-4">{language === 'de' ? 'Navigation' : 'Navigation'}</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-muted-gray hover:text-offwhite transition-colors">
-                  Start
+                  {language === 'de' ? 'Start' : 'Home'}
                 </Link>
               </li>
               <li>
                 <Link to="/leistungen" className="text-muted-gray hover:text-offwhite transition-colors">
-                  Leistungen
+                  {language === 'de' ? 'Leistungen' : 'Services'}
                 </Link>
               </li>
               <li>
                 <Link to="/referenzen" className="text-muted-gray hover:text-offwhite transition-colors">
-                  Referenzen
+                  {language === 'de' ? 'Referenzen' : 'Portfolio'}
                 </Link>
               </li>
               <li>
@@ -60,17 +65,17 @@ export const Footer = () => {
               </li>
               <li>
                 <Link to="/ueber" className="text-muted-gray hover:text-offwhite transition-colors">
-                  Über mich
+                  {language === 'de' ? 'Über mich' : 'About'}
                 </Link>
               </li>
               <li>
                 <Link to="/automatisierung" className="text-muted-gray hover:text-offwhite transition-colors">
-                  Automatisierung erklärt
+                  {language === 'de' ? 'Automatisierung erklärt' : 'Automation explained'}
                 </Link>
               </li>
               <li>
                 <Link to="/kontakt" className="text-muted-gray hover:text-offwhite transition-colors">
-                  Kontakt
+                  {language === 'de' ? 'Kontakt' : 'Contact'}
                 </Link>
               </li>
             </ul>
@@ -81,30 +86,33 @@ export const Footer = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            aria-label="Rechtliche Informationen"
+            aria-label={language === 'de' ? 'Rechtliche Informationen' : 'Legal Information'}
           >
-            <h3 className="label-mono text-gold mb-4">Rechtliches</h3>
+            <h3 className="label-mono text-gold mb-4">{language === 'de' ? 'Rechtliches' : 'Legal'}</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/impressum" className="text-muted-gray hover:text-offwhite transition-colors">
-                  Impressum
+                  {language === 'de' ? 'Impressum' : 'Imprint'}
                 </Link>
               </li>
               <li>
                 <Link to="/agb" className="text-muted-gray hover:text-offwhite transition-colors">
-                  AGB
+                  {language === 'de' ? 'AGB' : 'Terms'}
                 </Link>
               </li>
               <li>
                 <Link to="/datenschutz" className="text-muted-gray hover:text-offwhite transition-colors">
-                  Datenschutzerklärung
+                  {language === 'de' ? 'Datenschutzerklärung' : 'Privacy Policy'}
                 </Link>
               </li>
             </ul>
             
             <div className="mt-6 pt-6 border-t border-white/5">
               <p className="text-muted-gray text-sm">
-                E-Mail: <a href="mailto:henry-triangle@outlook.com" className="text-gold hover:text-gold-light transition-colors" aria-label="E-Mail an Henry Wilke senden">henry-triangle@outlook.com</a>
+                {language === 'de' ? 'E-Mail: ' : 'Email: '}
+                <a href="mailto:henry-triangle@outlook.com" className="text-gold hover:text-gold-light transition-colors" aria-label={language === 'de' ? 'E-Mail an Henry Wilke senden' : 'Send email to Henry Wilke'}>
+                  henry-triangle@outlook.com
+                </a>
               </p>
             </div>
           </motion.nav>
@@ -118,17 +126,17 @@ export const Footer = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <p className="text-muted-gray/60 text-sm">
-            © 2026 Henry Wilke. Alle Rechte vorbehalten.
+            © 2026 Henry Wilke. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
           </p>
           <div className="flex items-center gap-6">
             <Link to="/impressum" className="text-muted-gray/60 text-sm hover:text-muted-gray transition-colors">
-              Impressum
+              {language === 'de' ? 'Impressum' : 'Imprint'}
             </Link>
             <Link to="/datenschutz" className="text-muted-gray/60 text-sm hover:text-muted-gray transition-colors">
-              Datenschutz
+              {language === 'de' ? 'Datenschutz' : 'Privacy'}
             </Link>
             <Link to="/agb" className="text-muted-gray/60 text-sm hover:text-muted-gray transition-colors">
-              AGB
+              {language === 'de' ? 'AGB' : 'Terms'}
             </Link>
           </div>
         </motion.div>
