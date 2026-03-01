@@ -2,20 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { List, X } from '@phosphor-icons/react';
 import { Link, useLocation } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const navLinks = [
-  { path: '/', label: 'Start' },
-  { path: '/leistungen', label: 'Leistungen' },
-  { path: '/referenzen', label: 'Referenzen' },
-  { path: '/blog', label: 'Blog' },
-  { path: '/ueber', label: 'Über mich' },
-  { path: '/automatisierung', label: 'Automatisierung' },
+  { path: '/', labelDe: 'Start', labelEn: 'Home' },
+  { path: '/leistungen', labelDe: 'Leistungen', labelEn: 'Services' },
+  { path: '/referenzen', labelDe: 'Referenzen', labelEn: 'Portfolio' },
+  { path: '/blog', labelDe: 'Blog', labelEn: 'Blog' },
+  { path: '/ueber', labelDe: 'Über mich', labelEn: 'About' },
+  { path: '/automatisierung', labelDe: 'Automatisierung', labelEn: 'Automation' },
 ];
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
