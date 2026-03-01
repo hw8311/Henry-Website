@@ -134,7 +134,7 @@ const ReferenzenPage = () => {
                           <div className="flex items-start gap-4">
                             <Icon size={32} weight="light" className="text-gold flex-shrink-0 mt-1" aria-hidden="true" />
                             <div>
-                              <span className="label-mono text-gold/80 text-xs block mb-2">Kernfokus</span>
+                              <span className="label-mono text-gold/80 text-xs block mb-2">{t.coreFocus[language]}</span>
                               <p className="text-offwhite font-display text-lg">
                                 {project.highlight}
                               </p>
@@ -155,7 +155,7 @@ const ReferenzenPage = () => {
                         <div className="absolute top-0 left-0 w-12 h-12 border-t border-l border-gold/30" aria-hidden="true" />
                         <h3 className="font-display text-xl text-offwhite mb-4 flex items-center gap-3">
                           <Gear size={24} weight="light" className="text-gold" aria-hidden="true" />
-                          Herausforderung
+                          {t.challenge[language]}
                         </h3>
                         <p className="text-muted-gray leading-relaxed">
                           {project.challenge}
@@ -167,7 +167,7 @@ const ReferenzenPage = () => {
                         <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold/30" aria-hidden="true" />
                         <h3 className="font-display text-xl text-offwhite mb-4 flex items-center gap-3">
                           <Cpu size={24} weight="light" className="text-gold" aria-hidden="true" />
-                          Lösung
+                          {t.solution[language]}
                         </h3>
                         <p className="text-muted-gray leading-relaxed">
                           {project.solution}
@@ -178,7 +178,7 @@ const ReferenzenPage = () => {
                       <div className="relative p-8 bg-navy/40 border border-white/5">
                         <h3 className="font-display text-xl text-offwhite mb-4 flex items-center gap-3">
                           <Robot size={24} weight="light" className="text-gold" aria-hidden="true" />
-                          Mein Ansatz
+                          {t.approach[language]}
                         </h3>
                         <p className="text-muted-gray leading-relaxed">
                           {project.approach}
