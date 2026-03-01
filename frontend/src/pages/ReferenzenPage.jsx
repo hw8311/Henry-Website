@@ -106,6 +106,22 @@ const ReferenzenPage = () => {
                     0{index + 1}
                   </div>
 
+                  {/* Logo - positioned at right edge */}
+                  <motion.div 
+                    className="absolute right-0 md:right-8 top-0 hidden lg:block"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.3 + index * 0.2 }}
+                  >
+                    <div className="w-24 h-24 xl:w-28 xl:h-28 rounded-lg overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl">
+                      <img 
+                        src={project.logo} 
+                        alt={project.logoAlt}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </motion.div>
+
                   <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
                     {/* Left Column - Overview */}
                     <div className="lg:col-span-5">
