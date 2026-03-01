@@ -106,22 +106,6 @@ const ReferenzenPage = () => {
                     0{index + 1}
                   </div>
 
-                  {/* Logo - positioned at right edge, aligned with title */}
-                  <motion.div 
-                    className="absolute right-0 md:right-8 top-8 hidden lg:block z-10"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.8, delay: 0.3 + index * 0.2 }}
-                  >
-                    <div className="w-20 h-20 xl:w-24 xl:h-24 rounded-lg overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl">
-                      <img 
-                        src={project.logo} 
-                        alt={project.logoAlt}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </motion.div>
-
                   <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
                     {/* Left Column - Overview */}
                     <div className="lg:col-span-5">
@@ -129,12 +113,25 @@ const ReferenzenPage = () => {
                         <span className="label-mono text-gold block mb-3">
                           {project.category}
                         </span>
-                        <h2 
-                          id={`project-title-${project.id}`}
-                          className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite mb-2"
-                        >
-                          {project.title}
-                        </h2>
+                        
+                        {/* Title with Logo */}
+                        <div className="flex items-start justify-between gap-4 mb-2">
+                          <h2 
+                            id={`project-title-${project.id}`}
+                            className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite"
+                          >
+                            {project.title}
+                          </h2>
+                          {/* Logo next to title */}
+                          <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden bg-white/5 border border-white/10 shadow-lg">
+                            <img 
+                              src={project.logo} 
+                              alt={project.logoAlt}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        
                         <p className="text-muted-gray text-lg mb-6">
                           {project.subtitle}
                         </p>
