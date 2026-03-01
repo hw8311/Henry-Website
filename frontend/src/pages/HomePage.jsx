@@ -58,10 +58,10 @@ const HomePage = () => {
                 className="flex flex-col sm:flex-row gap-4 sm:gap-5"
               >
                 <Link to="/kontakt" className="btn-primary text-center" data-testid="hero-cta-primary">
-                  {hero.cta_primary}
+                  {t.hero.cta[language]}
                 </Link>
                 <Link to="/leistungen" className="btn-secondary text-center" data-testid="hero-cta-secondary">
-                  {hero.cta_secondary}
+                  {language === 'de' ? 'Mehr erfahren' : 'Learn more'}
                 </Link>
               </motion.div>
             </div>
@@ -97,15 +97,15 @@ const HomePage = () => {
                   <div 
                     className="absolute inset-0 scale-110"
                     style={{
-                      backgroundImage: `url(${hero.image})`,
+                      backgroundImage: 'url(/assets/hero-henry.jpg)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       filter: 'blur(20px) brightness(0.4)',
                     }}
                   />
                   <motion.img
-                    src={hero.image}
-                    alt="Henry Wilke - AI-Systemarchitekt"
+                    src="/assets/hero-henry.jpg"
+                    alt={language === 'de' ? 'Henry Wilke - AI-Systemarchitekt' : 'Henry Wilke - AI System Architect'}
                     className="relative w-full h-full object-cover object-center"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.8 }}
