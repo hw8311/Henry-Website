@@ -3,30 +3,29 @@ import { motion, useInView } from 'framer-motion';
 import { Cpu, ChartLineUp, Lightning, Users, ShieldCheck, Gear, Robot, ArrowRight } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import BlueprintGrid from '../components/BlueprintGrid';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../data/translations';
 
 const ReferenzenPage = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { language } = useLanguage();
+  const t = translations.portfolio;
 
   const projects = [
     {
       id: 'taxopti',
-      category: 'SaaS-Produkt',
+      category: t.taxopti.category[language],
       title: 'TaxOpti Pro',
-      subtitle: 'Das Steuer-Alpha für Unternehmer',
-      description: 'Ein strategisches Betriebssystem, das die steuerliche Pflicht in einen strategischen Vermögenswert verwandelt. Von der Problemanalyse bis zur marktreifen Lösung entwickelt.',
-      challenge: 'Unternehmer und GmbH-Inhaber leiden unter Informationsasymmetrie: Zu klein für große Kanzleien, zu komplex für reine Buchhaltungssoftware. Steueroptimierung bleibt reaktiv statt strategisch.',
-      solution: 'Eine proaktive KI-Plattform, die komplexes Konzernwissen demokratisiert und in konkrete Handlungsempfehlungen übersetzt.',
-      approach: 'Problemanalyse, Konkretisierung der Anforderungen, Generalisierung der Lösungsarchitektur und Entwicklung einer skalierbaren SaaS-Lösung.',
-      results: [
-        'Simulationen für Rechtsformwechsel und Holding-Strukturen',
-        'Proaktive Steuerfallen-Warnungen',
-        'Personalisierte KPIs und priorisierte To-Do-Listen',
-        'KI-gestützte Belegverarbeitung mit Document AI'
-      ],
+      subtitle: t.taxopti.subtitle[language],
+      description: t.taxopti.description[language],
+      challenge: t.taxopti.challenge[language],
+      solution: t.taxopti.solutionText[language],
+      approach: t.taxopti.approachText[language],
+      results: t.taxopti.results.map(r => r[language]),
       technologies: ['Vertex AI', 'Document AI', 'Cloud SQL', 'PWA'],
       icon: ChartLineUp,
-      highlight: 'Das einfache Aufzeigen von Möglichkeiten',
+      highlight: t.taxopti.highlight[language],
       logo: '/assets/taxopti-logo.webp',
       logoAlt: 'TaxOpti Logo'
     },
