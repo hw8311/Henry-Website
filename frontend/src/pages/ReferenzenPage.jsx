@@ -31,22 +31,17 @@ const ReferenzenPage = () => {
     },
     {
       id: 'energieunternehmen',
-      category: 'Prozessautomatisierung',
-      title: 'KI-Automatisierung',
-      subtitle: 'Mittelständisches Energieunternehmen',
-      description: 'Strategische KI-Implementation zur Effizienzsteigerung und Wachstumsförderung in einem wachsenden PV-Markt mit steigenden Kundenerwartungen.',
-      challenge: 'Kunden erwarten sofortige Transparenz zum Projektstatus. Behörden digitalisieren Prozesse. Interne Ressourcen sind begrenzt, repetitive Aufgaben binden wertvolle Fachexpertise.',
-      solution: 'KI-Agenten mit Human-in-the-Loop-Ansatz, die Fachexpertise freisetzen, ohne die Qualitätskontrolle zu verlieren.',
-      approach: 'Vollständige Analyse der Ist-Prozesse, Identifikation von Automatisierungspotenzialen, Konkretisierung der Anforderungen und Implementierung mit menschlicher Kontrolle an kritischen Punkten.',
-      results: [
-        '70% Aufwandsreduzierung bei Angebotserstellung',
-        '50% weniger Aufwand pro qualifiziertem Lead',
-        '30-50% höhere Conversion-Rates',
-        '24/7 Kundenakquise via Chatbot'
-      ],
+      category: t.energy.category[language],
+      title: t.energy.title[language],
+      subtitle: t.energy.subtitle[language],
+      description: t.energy.description[language],
+      challenge: t.energy.challenge[language],
+      solution: t.energy.solutionText[language],
+      approach: t.energy.approachText[language],
+      results: t.energy.results.map(r => r[language]),
       technologies: ['KI-Agenten', 'Chatbot', 'CRM-Integration', 'Workflow-Automation'],
       icon: Lightning,
-      highlight: 'Freisetzung von Fachexpertise durch Automatisierung',
+      highlight: t.energy.highlight[language],
       logo: '/assets/tbs-logo.jpg',
       logoAlt: 'Triangle Business Solution Logo'
     }
@@ -63,7 +58,7 @@ const ReferenzenPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="label-mono text-gold block mb-4"
           >
-            Referenzen
+            {t.heroLabel[language]}
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
