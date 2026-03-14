@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { List, X } from '@phosphor-icons/react';
+import { List, X, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -12,6 +12,19 @@ const navLinks = [
   { path: '/blog', labelDe: 'Blog', labelEn: 'Blog' },
   { path: '/ueber', labelDe: 'Über mich', labelEn: 'About' },
   { path: '/automatisierung', labelDe: 'Automatisierung', labelEn: 'Automation' },
+];
+
+const socialLinks = [
+  { 
+    name: 'Instagram', 
+    url: 'https://www.instagram.com/tbs.olutions?igsh=bGw0NTY1eXc2MWN2',
+    icon: InstagramLogo
+  },
+  { 
+    name: 'LinkedIn', 
+    url: 'https://www.linkedin.com/in/henry-wilke-776839369',
+    icon: LinkedinLogo
+  }
 ];
 
 export const Navigation = () => {
@@ -75,6 +88,27 @@ export const Navigation = () => {
                   {language === 'de' ? link.labelDe : link.labelEn}
                 </Link>
               ))}
+              
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-1">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 text-muted-gray hover:text-gold transition-colors"
+                      aria-label={social.name}
+                      data-testid={`social-${social.name.toLowerCase()}`}
+                    >
+                      <Icon size={20} weight="regular" />
+                    </a>
+                  );
+                })}
+              </div>
+              
               <LanguageSwitcher />
               <Link
                 to="/kontakt"
@@ -134,18 +168,43 @@ export const Navigation = () => {
                   </Link>
                 </motion.div>
               ))}
+              
+              {/* Social Media Icons - Mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="mt-4"
+                className="flex items-center gap-6 mt-4"
+              >
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 text-muted-gray hover:text-gold transition-colors border border-white/10 hover:border-gold/30"
+                      aria-label={social.name}
+                    >
+                      <Icon size={28} weight="regular" />
+                    </a>
+                  );
+                })}
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="mt-2"
               >
                 <LanguageSwitcher />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
+                transition={{ delay: 0.7 }}
               >
                 <Link
                   to="/kontakt"

@@ -1,7 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
 import { useLanguage } from '../context/LanguageContext';
+
+const socialLinks = [
+  { 
+    name: 'Instagram', 
+    url: 'https://www.instagram.com/tbs.olutions?igsh=bGw0NTY1eXc2MWN2',
+    icon: InstagramLogo
+  },
+  { 
+    name: 'LinkedIn', 
+    url: 'https://www.linkedin.com/in/henry-wilke-776839369',
+    icon: LinkedinLogo
+  }
+];
 
 export const Footer = () => {
   const { language } = useLanguage();
@@ -32,6 +46,26 @@ export const Footer = () => {
                 ? 'Strategische KI-Implementierung und Systemdesign für skalierbare Organisationen.'
                 : 'Strategic AI implementation and system design for scalable organizations.'}
             </p>
+            
+            {/* Social Media Links */}
+            <div className="flex items-center gap-3 mt-6">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 bg-white/5 border border-white/10 text-muted-gray hover:text-gold hover:border-gold/30 transition-all duration-300"
+                    aria-label={social.name}
+                    data-testid={`footer-social-${social.name.toLowerCase()}`}
+                  >
+                    <Icon size={20} weight="regular" />
+                  </a>
+                );
+              })}
+            </div>
           </motion.div>
 
           {/* Navigation */}
