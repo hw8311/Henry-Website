@@ -190,7 +190,7 @@ const ReferenzenPage = () => {
                         <div className="absolute bottom-0 right-0 w-12 h-12 border-b border-r border-gold/30" aria-hidden="true" />
                         <h3 className="font-display text-xl text-offwhite mb-6 flex items-center gap-3">
                           <ShieldCheck size={24} weight="light" className="text-gold" aria-hidden="true" />
-                          Ergebnisse
+                          {t.results[language]}
                         </h3>
                         <ul className="space-y-4">
                           {project.results.map((result, i) => (
@@ -244,18 +244,17 @@ const ReferenzenPage = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="heading-display text-3xl md:text-4xl text-offwhite mb-6">
-              Haben Sie ein ähnliches Projekt?
+              {t.ctaTitle[language]}
             </h2>
             <p className="text-muted-gray text-lg mb-10 max-w-2xl mx-auto">
-              Ich analysiere, konkretisiere und automatisiere – von der ersten Idee 
-              bis zur funktionsfähigen Lösung.
+              {t.ctaText[language]}
             </p>
             <Link 
               to="/kontakt" 
               className="btn-primary inline-flex items-center gap-3"
               data-testid="referenzen-cta"
             >
-              Projekt besprechen
+              {t.ctaButton[language]}
               <ArrowRight size={18} weight="bold" aria-hidden="true" />
             </Link>
           </motion.div>

@@ -18,57 +18,59 @@ import {
   TreeStructure
 } from '@phosphor-icons/react';
 import BlueprintGrid from './BlueprintGrid';
+import { useLanguage } from '../context/LanguageContext';
 
 const applicationFields = [
-  { icon: FileText, text: "Dokumenten- und Informationsverarbeitung" },
-  { icon: ChartBar, text: "Analyse großer Datenmengen" },
-  { icon: Gear, text: "Prozessoptimierung in Verwaltung und Produktion" },
-  { icon: Brain, text: "Wissenssysteme und Entscheidungsunterstützung" },
-  { icon: Plugs, text: "Intelligente Schnittstellen zwischen Software-Systemen" }
+  { icon: FileText, de: 'Dokumenten- und Informationsverarbeitung', en: 'Document and information processing' },
+  { icon: ChartBar, de: 'Analyse großer Datenmengen', en: 'Large-scale data analysis' },
+  { icon: Gear, de: 'Prozessoptimierung in Verwaltung und Produktion', en: 'Process optimization in administration and production' },
+  { icon: Brain, de: 'Wissenssysteme und Entscheidungsunterstützung', en: 'Knowledge systems and decision support' },
+  { icon: Plugs, de: 'Intelligente Schnittstellen zwischen Software-Systemen', en: 'Intelligent interfaces between software systems' }
 ];
 
 const benefits = [
   {
     icon: Lightning,
-    title: "Effizienzsteigerung",
-    description: "Routinetätigkeiten werden automatisiert, Mitarbeitende gewinnen Zeit für strategische Aufgaben."
+    title: { de: 'Effizienzsteigerung', en: 'Efficiency Gains' },
+    description: { de: 'Routinetätigkeiten werden automatisiert, Mitarbeitende gewinnen Zeit für strategische Aufgaben.', en: 'Routine tasks are automated, giving employees time for strategic work.' }
   },
   {
     icon: ChartLineUp,
-    title: "Skalierbarkeit",
-    description: "Systeme können steigende Datenmengen oder Anfragen verarbeiten, ohne proportional mehr Personal zu benötigen."
+    title: { de: 'Skalierbarkeit', en: 'Scalability' },
+    description: { de: 'Systeme können steigende Datenmengen oder Anfragen verarbeiten, ohne proportional mehr Personal zu benötigen.', en: 'Systems can handle increasing data volumes or requests without proportionally more staff.' }
   },
   {
     icon: ShieldCheck,
-    title: "Konsistenz und Fehlerreduktion",
-    description: "Standardisierte Prozesse laufen reproduzierbar und stabil."
+    title: { de: 'Konsistenz und Fehlerreduktion', en: 'Consistency and Error Reduction' },
+    description: { de: 'Standardisierte Prozesse laufen reproduzierbar und stabil.', en: 'Standardized processes run reproducibly and stably.' }
   },
   {
     icon: Scales,
-    title: "Schnellere Entscheidungsgrundlagen",
-    description: "KI kann Informationen vorstrukturieren, bewerten und priorisieren."
+    title: { de: 'Schnellere Entscheidungsgrundlagen', en: 'Faster Decision-Making' },
+    description: { de: 'KI kann Informationen vorstrukturieren, bewerten und priorisieren.', en: 'AI can pre-structure, evaluate, and prioritize information.' }
   },
   {
     icon: Trophy,
-    title: "Wettbewerbsvorteil",
-    description: "Unternehmen, die intelligente Infrastruktur einsetzen, reagieren schneller und flexibler auf Marktveränderungen."
+    title: { de: 'Wettbewerbsvorteil', en: 'Competitive Advantage' },
+    description: { de: 'Unternehmen, die intelligente Infrastruktur einsetzen, reagieren schneller und flexibler auf Marktveränderungen.', en: 'Companies using intelligent infrastructure respond faster and more flexibly to market changes.' }
   }
 ];
 
 const architecturePoints = [
-  { icon: Cube, text: "Klare Systemlogik" },
-  { icon: Plugs, text: "Saubere Schnittstellen" },
-  { icon: CheckSquare, text: "Definierte Verantwortlichkeiten" },
-  { icon: TreeStructure, text: "Skalierbare Infrastruktur" }
+  { icon: Cube, de: 'Klare Systemlogik', en: 'Clear system logic' },
+  { icon: Plugs, de: 'Saubere Schnittstellen', en: 'Clean interfaces' },
+  { icon: CheckSquare, de: 'Definierte Verantwortlichkeiten', en: 'Defined responsibilities' },
+  { icon: TreeStructure, de: 'Skalierbare Infrastruktur', en: 'Scalable infrastructure' }
 ];
 
 const conclusionPoints = [
-  "Robuste Prozesse",
-  "Datenbasierte Entscheidungsfähigkeit",
-  "Nachhaltige Skalierbarkeit"
+  { de: 'Robuste Prozesse', en: 'Robust processes' },
+  { de: 'Datenbasierte Entscheidungsfähigkeit', en: 'Data-driven decision-making' },
+  { de: 'Nachhaltige Skalierbarkeit', en: 'Sustainable scalability' }
 ];
 
 export const KIAutomationSection = () => {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -90,10 +92,12 @@ export const KIAutomationSection = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="label-mono text-gold block mb-4" data-testid="ki-automation-overline">
-            Grundlagen
+            {language === 'de' ? 'Grundlagen' : 'Fundamentals'}
           </span>
           <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite mb-8" data-testid="ki-automation-headline">
-            Was bedeutet KI-Automatisierung – und warum wird sie strategisch relevant?
+            {language === 'de'
+              ? 'Was bedeutet KI-Automatisierung – und warum wird sie strategisch relevant?'
+              : 'What does AI automation mean – and why is it becoming strategically relevant?'}
           </h2>
         </motion.div>
 
@@ -105,10 +109,14 @@ export const KIAutomationSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p className="text-lg md:text-xl text-offwhite leading-relaxed mb-6">
-            Künstliche Intelligenz ist kein Zukunftsthema mehr. Sie ist Gegenwart – und zunehmend <span className="text-gold">Infrastruktur</span>.
+            {language === 'de'
+              ? <>Künstliche Intelligenz ist kein Zukunftsthema mehr. Sie ist Gegenwart – und zunehmend <span className="text-gold">Infrastruktur</span>.</>
+              : <>Artificial intelligence is no longer a future topic. It is the present – and increasingly <span className="text-gold">infrastructure</span>.</>}
           </p>
           <p className="text-muted-gray leading-relaxed mb-6">
-            Unter KI-Automatisierung versteht man den gezielten Einsatz lernfähiger Systeme, um wiederkehrende, komplexe oder datenintensive Prozesse teilweise oder vollständig zu automatisieren. Anders als klassische Automatisierung arbeitet KI nicht nur regelbasiert, sondern kann Muster erkennen, Inhalte verstehen, Entscheidungen vorbereiten und Prozesse dynamisch anpassen.
+            {language === 'de'
+              ? 'Unter KI-Automatisierung versteht man den gezielten Einsatz lernfähiger Systeme, um wiederkehrende, komplexe oder datenintensive Prozesse teilweise oder vollständig zu automatisieren. Anders als klassische Automatisierung arbeitet KI nicht nur regelbasiert, sondern kann Muster erkennen, Inhalte verstehen, Entscheidungen vorbereiten und Prozesse dynamisch anpassen.'
+              : 'AI automation refers to the targeted use of learning systems to partially or fully automate recurring, complex, or data-intensive processes. Unlike classical automation, AI doesn\'t just work rule-based – it can recognize patterns, understand content, prepare decisions, and dynamically adjust processes.'}
           </p>
           
           {/* Highlight Box */}
@@ -119,7 +127,9 @@ export const KIAutomationSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <p className="text-offwhite text-lg md:text-xl font-display">
-              Das bedeutet: Nicht nur „Wenn A, dann B", sondern <span className="gold-text">kontextabhängiges Handeln</span> auf Basis von Daten.
+              {language === 'de'
+                ? <>Das bedeutet: Nicht nur &bdquo;Wenn A, dann B&ldquo;, sondern <span className="gold-text">kontextabhängiges Handeln</span> auf Basis von Daten.</>
+                : <>This means: Not just &ldquo;If A, then B&rdquo;, but <span className="gold-text">context-dependent action</span> based on data.</>}
             </p>
           </motion.div>
         </motion.div>
@@ -132,7 +142,7 @@ export const KIAutomationSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <h3 className="font-display text-2xl text-offwhite mb-8">
-            Typische Anwendungsfelder
+            {language === 'de' ? 'Typische Anwendungsfelder' : 'Typical Application Areas'}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {applicationFields.map((field, index) => {
@@ -148,7 +158,7 @@ export const KIAutomationSection = () => {
                   <div className="w-10 h-10 flex items-center justify-center bg-gold/10 group-hover:bg-gold/20 transition-colors">
                     <Icon size={20} weight="light" className="text-gold" />
                   </div>
-                  <span className="text-offwhite">{field.text}</span>
+                  <span className="text-offwhite">{field[language]}</span>
                 </motion.div>
               );
             })}
@@ -165,7 +175,9 @@ export const KIAutomationSection = () => {
           <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-gold" />
           <Lightbulb size={32} weight="light" className="text-gold mb-4" />
           <p className="text-muted-gray leading-relaxed">
-            Der entscheidende Unterschied zur bisherigen IT-Automatisierung liegt in der Fähigkeit, mit <span className="text-offwhite">unstrukturierten Informationen</span> umzugehen – also Texten, Bildern, Sprache oder komplexen Zusammenhängen.
+            {language === 'de'
+              ? <>Der entscheidende Unterschied zur bisherigen IT-Automatisierung liegt in der Fähigkeit, mit <span className="text-offwhite">unstrukturierten Informationen</span> umzugehen – also Texten, Bildern, Sprache oder komplexen Zusammenhängen.</>
+              : <>The crucial difference from previous IT automation lies in the ability to handle <span className="text-offwhite">unstructured information</span> – such as texts, images, speech, or complex contexts.</>}
           </p>
         </motion.div>
 
@@ -177,7 +189,7 @@ export const KIAutomationSection = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           <h3 className="heading-display text-2xl md:text-3xl text-offwhite mb-10">
-            Welche Vorteile entstehen konkret?
+            {language === 'de' ? 'Welche Vorteile entstehen konkret?' : 'What are the concrete benefits?'}
           </h3>
           <div className="space-y-6">
             {benefits.map((benefit, index) => {
@@ -195,10 +207,10 @@ export const KIAutomationSection = () => {
                   </div>
                   <div>
                     <h4 className="font-display text-xl text-offwhite mb-2 group-hover:text-gold transition-colors duration-300">
-                      {benefit.title}
+                      {benefit.title[language]}
                     </h4>
                     <p className="text-muted-gray leading-relaxed">
-                      {benefit.description}
+                      {benefit.description[language]}
                     </p>
                   </div>
                 </motion.div>
@@ -215,10 +227,14 @@ export const KIAutomationSection = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
         >
           <h3 className="heading-display text-2xl md:text-3xl text-offwhite mb-8">
-            Warum reicht „ein Tool einsetzen" nicht aus?
+            {language === 'de'
+              ? 'Warum reicht "ein Tool einsetzen" nicht aus?'
+              : 'Why isn\'t "using a tool" enough?'}
           </h3>
           <p className="text-muted-gray leading-relaxed mb-8">
-            Viele Organisationen starten mit isolierten KI-Tools. Doch ohne saubere Architektur bleiben diese Insellösungen. Der nachhaltige Nutzen entsteht erst, wenn KI strukturell integriert wird – in bestehende Prozesse, Datenflüsse und Entscheidungswege.
+            {language === 'de'
+              ? 'Viele Organisationen starten mit isolierten KI-Tools. Doch ohne saubere Architektur bleiben diese Insellösungen. Der nachhaltige Nutzen entsteht erst, wenn KI strukturell integriert wird – in bestehende Prozesse, Datenflüsse und Entscheidungswege.'
+              : 'Many organizations start with isolated AI tools. But without clean architecture, these remain siloed solutions. Sustainable value only emerges when AI is structurally integrated – into existing processes, data flows, and decision paths.'}
           </p>
           
           {/* Architecture Statement */}
@@ -229,10 +245,10 @@ export const KIAutomationSection = () => {
             transition={{ duration: 0.8, delay: 1 }}
           >
             <p className="font-display text-2xl md:text-3xl text-offwhite mb-2">
-              KI ist kein Add-on.
+              {language === 'de' ? 'KI ist kein Add-on.' : 'AI is not an add-on.'}
             </p>
             <p className="font-display text-2xl md:text-3xl gold-text">
-              Sie ist ein Architekturthema.
+              {language === 'de' ? 'Sie ist ein Architekturthema.' : 'It\'s an architecture topic.'}
             </p>
           </motion.div>
 
@@ -249,14 +265,16 @@ export const KIAutomationSection = () => {
                   className="text-center p-4 border border-white/5 hover:border-gold/30 transition-colors duration-300 group"
                 >
                   <Icon size={28} weight="thin" className="text-gold mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="text-sm text-muted-gray group-hover:text-offwhite transition-colors duration-300">{point.text}</span>
+                  <span className="text-sm text-muted-gray group-hover:text-offwhite transition-colors duration-300">{point[language]}</span>
                 </motion.div>
               );
             })}
           </div>
           
           <p className="text-muted-gray leading-relaxed mt-8 text-center">
-            Nur so entsteht echte Automatisierung – <span className="text-offwhite">nicht nur ein experimentelles Feature</span>.
+            {language === 'de'
+              ? <>Nur so entsteht echte Automatisierung – <span className="text-offwhite">nicht nur ein experimentelles Feature</span>.</>
+              : <>Only this way does real automation emerge – <span className="text-offwhite">not just an experimental feature</span>.</>}
           </p>
         </motion.div>
 
@@ -268,20 +286,34 @@ export const KIAutomationSection = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
         >
           <div className="absolute top-0 right-0 w-20 h-20 border-t border-r border-blueprint opacity-40" />
-          <span className="label-mono text-gold block mb-4">Stand heute</span>
+          <span className="label-mono text-gold block mb-4">
+            {language === 'de' ? 'Stand heute' : 'State of today'}
+          </span>
           <h3 className="font-display text-2xl text-offwhite mb-6">
-            Realität statt Science-Fiction
+            {language === 'de' ? 'Realität statt Science-Fiction' : 'Reality, not science fiction'}
           </h3>
           <p className="text-muted-gray leading-relaxed mb-6">
-            Moderne Sprachmodelle, Automatisierungsplattformen und API-basierte Systeme ermöglichen bereits heute leistungsfähige Lösungen – ohne futuristische Visionen oder übertriebene Versprechen.
+            {language === 'de'
+              ? 'Moderne Sprachmodelle, Automatisierungsplattformen und API-basierte Systeme ermöglichen bereits heute leistungsfähige Lösungen – ohne futuristische Visionen oder übertriebene Versprechen.'
+              : 'Modern language models, automation platforms, and API-based systems already enable powerful solutions today – without futuristic visions or exaggerated promises.'}
           </p>
           <p className="text-offwhite text-lg">
-            Wichtig ist nicht die Technologie allein, sondern ihr <span className="text-gold">strukturierter Einsatz</span>.
+            {language === 'de'
+              ? <>Wichtig ist nicht die Technologie allein, sondern ihr <span className="text-gold">strukturierter Einsatz</span>.</>
+              : <>What matters is not the technology alone, but its <span className="text-gold">structured deployment</span>.</>}
           </p>
           
           <div className="mt-8 pt-6 border-t border-white/10">
-            <p className="text-muted-gray">KI-Automatisierung bedeutet nicht, Menschen zu ersetzen.</p>
-            <p className="text-offwhite text-lg mt-2">Sie bedeutet, <span className="gold-text">Systeme intelligenter</span> zu machen.</p>
+            <p className="text-muted-gray">
+              {language === 'de'
+                ? 'KI-Automatisierung bedeutet nicht, Menschen zu ersetzen.'
+                : 'AI automation doesn\'t mean replacing humans.'}
+            </p>
+            <p className="text-offwhite text-lg mt-2">
+              {language === 'de'
+                ? <>Sie bedeutet, <span className="gold-text">Systeme intelligenter</span> zu machen.</>
+                : <>It means making <span className="gold-text">systems smarter</span>.</>}
+            </p>
           </div>
         </motion.div>
 
@@ -292,13 +324,19 @@ export const KIAutomationSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.3 }}
         >
-          <span className="label-mono text-gold block mb-4">Fazit</span>
+          <span className="label-mono text-gold block mb-4">
+            {language === 'de' ? 'Fazit' : 'Conclusion'}
+          </span>
           <p className="text-muted-gray text-lg mb-8 max-w-3xl mx-auto">
-            Unternehmen stehen nicht vor der Frage, <span className="text-offwhite">ob</span> KI relevant wird, sondern <span className="text-offwhite">wie</span> sie strategisch integriert wird.
+            {language === 'de'
+              ? <>Unternehmen stehen nicht vor der Frage, <span className="text-offwhite">ob</span> KI relevant wird, sondern <span className="text-offwhite">wie</span> sie strategisch integriert wird.</>
+              : <>Companies don't face the question of <span className="text-offwhite">whether</span> AI becomes relevant, but <span className="text-offwhite">how</span> it gets strategically integrated.</>}
           </p>
           
           <p className="text-offwhite text-lg mb-8">
-            Wer frühzeitig auf durchdachte KI-Architektur setzt, schafft:
+            {language === 'de'
+              ? 'Wer frühzeitig auf durchdachte KI-Architektur setzt, schafft:'
+              : 'Those who invest early in thoughtful AI architecture create:'}
           </p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-12">
@@ -311,7 +349,7 @@ export const KIAutomationSection = () => {
                 className="flex items-center gap-3"
               >
                 <div className="w-2 h-2 bg-gold rotate-45" />
-                <span className="text-offwhite">{point}</span>
+                <span className="text-offwhite">{point[language]}</span>
               </motion.div>
             ))}
           </div>
@@ -323,8 +361,12 @@ export const KIAutomationSection = () => {
             transition={{ duration: 1, delay: 1.6 }}
             className="pt-8 border-t border-white/5"
           >
-            <p className="text-muted-gray text-lg">Nicht als Trend.</p>
-            <p className="font-display text-3xl md:text-4xl gold-text mt-2">Sondern als Infrastruktur.</p>
+            <p className="text-muted-gray text-lg">
+              {language === 'de' ? 'Nicht als Trend.' : 'Not as a trend.'}
+            </p>
+            <p className="font-display text-3xl md:text-4xl gold-text mt-2">
+              {language === 'de' ? 'Sondern als Infrastruktur.' : 'But as infrastructure.'}
+            </p>
           </motion.div>
         </motion.div>
       </div>

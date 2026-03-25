@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown } from '@phosphor-icons/react';
+import { ArrowDown, FileArrowDown } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import BlueprintGrid from '../components/BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';

@@ -4,16 +4,14 @@ import { PaperPlaneTilt, CircleNotch, CheckCircle, WarningCircle } from '@phosph
 import axios from 'axios';
 import { toast } from 'sonner';
 import BlueprintGrid from '../components/BlueprintGrid';
-import { useSEO } from '../components/SEO';
+import { useLanguage } from '../context/LanguageContext';
 import { trackEvents } from '../utils/analytics';
-import content from '../data/content.json';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const KontaktPage = () => {
-  const { contact } = content;
-  useSEO('kontakt');
+  const { language } = useLanguage();
   
   const [formData, setFormData] = useState({
     name: '',
@@ -43,15 +41,13 @@ const KontaktPage = () => {
       });
 
       setSubmitStatus('success');
-      toast.success('Anfrage erfolgreich gesendet!');
+      toast.success(language === 'de' ? 'Anfrage erfolgreich gesendet!' : 'Request sent successfully!');
       setFormData({ name: '', email: '', company: '', message: '' });
-      
-      // Analytics Event tracken
       trackEvents.contactFormSubmit();
     } catch (error) {
       console.error('Contact form error:', error);
       setSubmitStatus('error');
-      toast.error('Fehler beim Senden. Bitte versuchen Sie es erneut.');
+      toast.error(language === 'de' ? 'Fehler beim Senden. Bitte versuchen Sie es erneut.' : 'Error sending. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -68,7 +64,7 @@ const KontaktPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="label-mono text-gold block mb-4"
           >
-            {contact.overline}
+            {language === 'de' ? 'Kontakt' : 'Contact'}
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -76,7 +72,7 @@ const KontaktPage = () => {
             transition={{ delay: 0.1 }}
             className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite mb-6"
           >
-            {contact.headline}
+            {language === 'de' ? 'Systemgespräch anfragen.' : 'Request a consultation.'}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -84,7 +80,9 @@ const KontaktPage = () => {
             transition={{ delay: 0.2 }}
             className="text-muted-gray text-lg max-w-2xl mx-auto"
           >
-            {contact.description}
+            {language === 'de'
+              ? 'Lassen Sie uns über Ihre Herausforderungen sprechen – und wie durchdachte KI-Architektur sie lösen kann.'
+              : 'Let\'s talk about your challenges – and how thoughtful AI architecture can solve them.'}
           </motion.p>
         </div>
       </section>
@@ -106,7 +104,7 @@ const KontaktPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
                 <label htmlFor="name" className="label-mono text-muted-gray block mb-2">
-                  {contact.fields.name} *
+                  {language === 'de' ? 'Ihr Name' : 'Your Name'} *
                 </label>
                 <input
                   type="text"
@@ -124,7 +122,7 @@ const KontaktPage = () => {
 
               <div>
                 <label htmlFor="email" className="label-mono text-muted-gray block mb-2">
-                  {contact.fields.email} *
+                  {language === 'de' ? 'E-Mail-Adresse' : 'Email Address'} *
                 </label>
                 <input
                   type="email"
@@ -135,14 +133,14 @@ const KontaktPage = () => {
                   onChange={handleChange}
                   required
                   className="input-minimal"
-                  placeholder="max@unternehmen.de"
+                  placeholder={language === 'de' ? 'max@unternehmen.de' : 'max@company.com'}
                 />
               </div>
             </div>
 
             <div className="mb-8">
               <label htmlFor="company" className="label-mono text-muted-gray block mb-2">
-                {contact.fields.company}
+                {language === 'de' ? 'Unternehmen (optional)' : 'Company (optional)'}
               </label>
               <input
                 type="text"
@@ -152,13 +150,13 @@ const KontaktPage = () => {
                 value={formData.company}
                 onChange={handleChange}
                 className="input-minimal"
-                placeholder="Unternehmen GmbH"
+                placeholder={language === 'de' ? 'Unternehmen GmbH' : 'Company Ltd.'}
               />
             </div>
 
             <div className="mb-10">
               <label htmlFor="message" className="label-mono text-muted-gray block mb-2">
-                {contact.fields.message} *
+                {language === 'de' ? 'Beschreiben Sie kurz Ihre Situation' : 'Briefly describe your situation'} *
               </label>
               <textarea
                 id="message"
@@ -170,7 +168,9 @@ const KontaktPage = () => {
                 minLength={10}
                 rows={5}
                 className="input-minimal resize-none"
-                placeholder="Beschreiben Sie Ihre Herausforderung und was Sie erreichen möchten..."
+                placeholder={language === 'de'
+                  ? 'Beschreiben Sie Ihre Herausforderung und was Sie erreichen möchten...'
+                  : 'Describe your challenge and what you want to achieve...'}
               />
             </div>
 
@@ -184,12 +184,12 @@ const KontaktPage = () => {
                 {isSubmitting ? (
                   <>
                     <CircleNotch size={18} className="animate-spin" />
-                    Wird gesendet...
+                    {language === 'de' ? 'Wird gesendet...' : 'Sending...'}
                   </>
                 ) : (
                   <>
                     <PaperPlaneTilt size={18} weight="bold" />
-                    {contact.submit}
+                    {language === 'de' ? 'Anfrage senden' : 'Send request'}
                   </>
                 )}
               </button>
@@ -201,7 +201,7 @@ const KontaktPage = () => {
                   className="flex items-center gap-2 text-green-400"
                 >
                   <CheckCircle size={20} weight="fill" />
-                  <span className="text-sm">Erfolgreich gesendet!</span>
+                  <span className="text-sm">{language === 'de' ? 'Erfolgreich gesendet!' : 'Successfully sent!'}</span>
                 </motion.div>
               )}
               {submitStatus === 'error' && (
@@ -211,7 +211,7 @@ const KontaktPage = () => {
                   className="flex items-center gap-2 text-red-400"
                 >
                   <WarningCircle size={20} weight="fill" />
-                  <span className="text-sm">Fehler beim Senden</span>
+                  <span className="text-sm">{language === 'de' ? 'Fehler beim Senden' : 'Error sending'}</span>
                 </motion.div>
               )}
             </div>
@@ -225,7 +225,8 @@ const KontaktPage = () => {
             className="mt-12 text-center"
           >
             <p className="text-muted-gray">
-              Oder direkt per E-Mail: <a href="mailto:henry-triangle@outlook.com" className="text-gold hover:text-gold-light transition-colors">henry-triangle@outlook.com</a>
+              {language === 'de' ? 'Oder direkt per E-Mail: ' : 'Or directly via email: '}
+              <a href="mailto:henry-triangle@outlook.com" className="text-gold hover:text-gold-light transition-colors">henry-triangle@outlook.com</a>
             </p>
           </motion.div>
         </div>

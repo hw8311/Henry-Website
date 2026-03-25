@@ -2,16 +2,53 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Blueprint, Brain, ChartLine, TreeStructure } from '@phosphor-icons/react';
 import BlueprintGrid from '../components/BlueprintGrid';
-import { useSEO } from '../components/SEO';
-import content from '../data/content.json';
+import { useLanguage } from '../context/LanguageContext';
 
 const icons = [Blueprint, Brain, ChartLine, TreeStructure];
 
+const cards = [
+  {
+    title: { de: 'Strategische KI-Architektur', en: 'Strategic AI Architecture' },
+    description: {
+      de: 'Keine isolierten Tools. Durchdachte Systemstrukturen, die alle Komponenten intelligent verbinden und skalierbar orchestrieren.',
+      en: 'No isolated tools. Thoughtful system structures that intelligently connect all components and orchestrate them scalably.'
+    }
+  },
+  {
+    title: { de: 'Automatisierte Denkprozesse', en: 'Automated Thinking Processes' },
+    description: {
+      de: 'Regelbasierte Intelligenz, die repetitive Entscheidungen übernimmt. Ihr Team konzentriert sich auf das Wesentliche.',
+      en: 'Rule-based intelligence that handles repetitive decisions. Your team focuses on what matters.'
+    }
+  },
+  {
+    title: { de: 'Entscheidungsintelligenz', en: 'Decision Intelligence' },
+    description: {
+      de: 'Datengetriebene Logik, die nicht rät – sondern ableitet. Fundierte Empfehlungen auf Basis realer Muster.',
+      en: 'Data-driven logic that doesn\'t guess – it derives. Informed recommendations based on real patterns.'
+    }
+  },
+  {
+    title: { de: 'Skalierbare Systemlogik', en: 'Scalable System Logic' },
+    description: {
+      de: 'Architekturen, die mit Ihrem Unternehmen wachsen. Keine Insellösungen, sondern zukunftsfähige Infrastruktur.',
+      en: 'Architectures that grow with your business. No isolated solutions, but future-proof infrastructure.'
+    }
+  }
+];
+
+const steps = [
+  { number: '01', title: { de: 'Analyse', en: 'Analysis' }, description: { de: 'Tiefgreifende Systemanalyse Ihrer aktuellen Prozesse und Potenziale.', en: 'In-depth system analysis of your current processes and potential.' } },
+  { number: '02', title: { de: 'Systemmodell', en: 'System Model' }, description: { de: 'Konzeption der optimalen KI-Architektur für Ihre spezifischen Anforderungen.', en: 'Designing the optimal AI architecture for your specific requirements.' } },
+  { number: '03', title: { de: 'Prototyp', en: 'Prototype' }, description: { de: 'Schnelle Validierung der Kernfunktionen mit messbaren Ergebnissen.', en: 'Rapid validation of core functions with measurable results.' } },
+  { number: '04', title: { de: 'Integration', en: 'Integration' }, description: { de: 'Nahtlose Einbindung in bestehende Systeme und Workflows.', en: 'Seamless integration into existing systems and workflows.' } },
+  { number: '05', title: { de: 'Skalierung', en: 'Scaling' }, description: { de: 'Systematische Erweiterung und kontinuierliche Optimierung.', en: 'Systematic expansion and continuous optimization.' } }
+];
+
 const LeistungenPage = () => {
-  const { difference, workflow } = content;
+  const { language } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  useSEO('leistungen');
 
   return (
     <>
@@ -24,7 +61,7 @@ const LeistungenPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="label-mono text-gold block mb-4"
           >
-            Leistungen
+            {language === 'de' ? 'Leistungen' : 'Services'}
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -32,7 +69,7 @@ const LeistungenPage = () => {
             transition={{ delay: 0.1 }}
             className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite"
           >
-            Was ich anbiete
+            {language === 'de' ? 'Was ich anbiete' : 'What I offer'}
           </motion.h1>
         </div>
       </section>
@@ -47,15 +84,15 @@ const LeistungenPage = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="label-mono text-gold block mb-4">
-              {difference.overline}
+              {language === 'de' ? 'Der Unterschied' : 'The Difference'}
             </span>
             <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite">
-              {difference.headline}
+              {language === 'de' ? 'Strategie statt Spielerei.' : 'Strategy, not gimmicks.'}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {difference.cards.map((card, index) => {
+            {cards.map((card, index) => {
               const Icon = icons[index];
               return (
                 <motion.div
@@ -72,11 +109,11 @@ const LeistungenPage = () => {
                   </div>
 
                   <h3 className="font-display text-xl md:text-2xl text-offwhite mb-4">
-                    {card.title}
+                    {card.title[language]}
                   </h3>
 
                   <p className="text-muted-gray leading-relaxed">
-                    {card.description}
+                    {card.description[language]}
                   </p>
 
                   <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500" />
@@ -100,10 +137,10 @@ const LeistungenPage = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="label-mono text-gold block mb-4">
-              {workflow.overline}
+              {language === 'de' ? 'Arbeitsweise' : 'Approach'}
             </span>
             <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite">
-              {workflow.headline}
+              {language === 'de' ? 'Von der Analyse zur Skalierung.' : 'From analysis to scaling.'}
             </h2>
           </motion.div>
 
@@ -118,7 +155,7 @@ const LeistungenPage = () => {
             />
             
             <div className="grid grid-cols-5 gap-8 lg:gap-12">
-              {workflow.steps.map((step, index) => (
+              {steps.map((step, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
@@ -140,14 +177,14 @@ const LeistungenPage = () => {
                   </motion.div>
 
                   <h3 className="font-display text-xl text-offwhite mb-3 group-hover:text-gold transition-colors duration-300">
-                    {step.title}
+                    {step.title[language]}
                   </h3>
 
                   <p className="text-sm text-muted-gray leading-relaxed group-hover:text-offwhite/80 transition-colors duration-300 px-2">
-                    {step.description}
+                    {step.description[language]}
                   </p>
 
-                  {index < workflow.steps.length - 1 && (
+                  {index < steps.length - 1 && (
                     <motion.div 
                       className="absolute top-10 -right-4 lg:-right-6 text-gold/40 text-xl"
                       initial={{ opacity: 0, x: -10 }}
@@ -156,7 +193,7 @@ const LeistungenPage = () => {
                       transition={{ delay: 0.8 + index * 0.15 }}
                     >
                       <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 2, delay: index * 0.2 }}>
-                        →
+                        &rarr;
                       </motion.span>
                     </motion.div>
                   )}
@@ -178,7 +215,7 @@ const LeistungenPage = () => {
               />
               
               <div className="space-y-10">
-                {workflow.steps.map((step, index) => (
+                {steps.map((step, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
@@ -194,8 +231,8 @@ const LeistungenPage = () => {
                     </div>
 
                     <div className="pt-1">
-                      <h3 className="font-display text-xl text-offwhite mb-3">{step.title}</h3>
-                      <p className="text-muted-gray leading-relaxed text-base">{step.description}</p>
+                      <h3 className="font-display text-xl text-offwhite mb-3">{step.title[language]}</h3>
+                      <p className="text-muted-gray leading-relaxed text-base">{step.description[language]}</p>
                     </div>
                   </motion.div>
                 ))}
