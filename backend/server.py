@@ -55,6 +55,31 @@ class ContactSubmissionResponse(BaseModel):
     status: str
 
 
+# Whitepaper Download Model
+class WhitepaperDownload(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    email: EmailStr
+    name: Optional[str] = Field(None, max_length=100)
+    company: Optional[str] = Field(None, max_length=200)
+    whitepaper: str = Field(default="architektur-der-effizienz")
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    source: str = Field(default="website")
+
+
+class WhitepaperDownloadCreate(BaseModel):
+    email: EmailStr
+    name: Optional[str] = Field(None, max_length=100)
+    company: Optional[str] = Field(None, max_length=200)
+
+
+class WhitepaperDownloadResponse(BaseModel):
+    success: bool
+    download_url: str
+    message: str
+
+
 # Routes
 @api_router.get("/")
 async def root():
@@ -105,6 +130,38 @@ async def get_contact_submissions():
 async def health_check():
     """Health check endpoint"""
     return {"status": "healthy", "service": "henry-wilke-api"}
+
+
+@api_router.post("/whitepaper/download", response_model=WhitepaperDownloadResponse)
+async def request_whitepaper_download(input: WhitepaperDownloadCreate):
+    """Request whitepaper download - captures email for lead generation"""
+    try:
+        download = WhitepaperDownload(**input.model_dump())
+        
+        # Prepare document for MongoDB
+        doc = {
+            "id": download.id,
+            "email": download.email,
+            "name": download.name,
+            "company": download.company,
+            "whitepaper": download.whitepaper,
+            "created_at": download.created_at.isoformat(),
+            "source": download.source
+        }
+        
+        await db.whitepaper_downloads.insert_one(doc)
+        
+        # Return the download URL
+        download_url = "https://customer-assets.emergentagent.com/job_e9028209-13f7-4abf-a23f-2045f44b0be4/artifacts/p885d60c_Die%20Architektur%20der%20Effizienz.pdf"
+        
+        return WhitepaperDownloadResponse(
+            success=True,
+            download_url=download_url,
+            message="Vielen Dank! Ihr Download startet gleich."
+        )
+    except Exception as e:
+        logging.error(f"Error processing whitepaper download: {e}")
+        raise HTTPException(status_code=500, detail="Fehler bei der Anfrage")
 
 
 # Include the router in the main app

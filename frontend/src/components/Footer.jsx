@@ -112,6 +112,11 @@ export const Footer = () => {
                   {language === 'de' ? 'Kontakt' : 'Contact'}
                 </Link>
               </li>
+              <li>
+                <Link to="/whitepaper" className="text-gold hover:text-gold-light transition-colors">
+                  {language === 'de' ? 'Whitepaper' : 'Whitepaper'}
+                </Link>
+              </li>
             </ul>
           </motion.nav>
 
