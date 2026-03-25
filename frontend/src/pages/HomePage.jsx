@@ -185,6 +185,48 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Whitepaper CTA Banner */}
+      <section className="relative py-16 bg-navy overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-transparent to-gold/5" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative p-8 md:p-10 border border-gold/20 bg-navy-light/50 backdrop-blur-sm"
+          >
+            {/* Corner decorations */}
+            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold" />
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold" />
+            
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="flex-1">
+                <span className="label-mono text-gold block mb-2">
+                  {language === 'de' ? 'Kostenloses Whitepaper' : 'Free Whitepaper'}
+                </span>
+                <h3 className="font-display text-2xl md:text-3xl text-offwhite mb-2">
+                  {language === 'de' ? 'Die Architektur der Effizienz' : 'The Architecture of Efficiency'}
+                </h3>
+                <p className="text-muted-gray">
+                  {language === 'de' 
+                    ? 'Prozessautomatisierung für den deutschen Mittelstand – 24 Seiten strategisches Know-how.'
+                    : 'Process automation for German SMEs – 24 pages of strategic know-how.'}
+                </p>
+              </div>
+              <Link 
+                to="/whitepaper" 
+                className="btn-primary inline-flex items-center gap-3 flex-shrink-0"
+                data-testid="whitepaper-cta"
+              >
+                <FileArrowDown size={20} weight="bold" />
+                {language === 'de' ? 'Jetzt herunterladen' : 'Download now'}
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 };

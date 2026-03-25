@@ -1,0 +1,120 @@
+<analysis>**original_problem_statement:**
+Erstelle eine hochwertige, moderne, modulare und wartbare Website für Henry Wilke (AI-Systemarchitekt). Die Website soll hochwertig und editorial wirken (Blueprint-Ästhetik, Nachtblau/Gold). Die App ist eine Multi-Page-Struktur. In den letzten Schritten wurden spezifische Erweiterungen angefordert: Barrierefreiheit, ein Referenzen-Bereich mit Logos, ein mehrsprachiger Blog-Bereich, ein Sprachauswahlmenü (DE/EN) für die gesamte Seite, Social-Media-Verlinkungen und ein Lead-Magnet (Whitepaper-Download gegen E-Mail).
+
+**User's preferred language**: German (You MUST respond to the user in German only).
+
+**what currently exists?** 
+Ein voll funktionsfähiges Full-Stack-Portfolio (React, FastAPI, MongoDB). Es beinhaltet die Seiten Start, Leistungen, Referenzen (inkl. Logos), Blog (3 Artikel), Über mich, Automatisierung, Kontakt, Datenschutz/Impressum/AGB und eine dedizierte Whitepaper-Landingpage. Features umfassen Framer-Motion-Animationen, einen Cookie-Banner, Barrierefreiheit (WCAG-optimiert), Social-Media-Links und ein funktionales DE/EN-Sprachauswahlmenü. Backend-Endpoints existieren für das Kontaktformular und die Whitepaper-Lead-Erfassung.
+
+**Last working item**:
+- **Last item agent was working:** Einfügen eines Whitepaper-Download-Banners (CTA) auf der Startseite (). Der Agent fügte den JSX-Code ein, merkte aber im letzten Moment, dass die Imports für die Icons () und Routing () noch fehlen.
+- **Status:** IN PROGRESS
+- **Agent Testing Done:** N
+- **Which testing method agent to use?** screenshot tool
+- **User Testing Done:** N
+
+**All Pending/In progress Issue list**:
+Issue 1: Fehlende Imports in  nach letztem Edit (P0)
+  
+Issues Detail:
+- Issue 1:
+   - Attempted fixes: Der Agent bemerkte im letzten Thought: Ich muss noch den Import für FileArrowDown und Link hinzufügen, aber das Kontextfenster/die Sitzung endete vor der Ausführung.
+   - Next debug checklist: Öffne , prüfe Zeilen 1-20 und füge  (von ) und  (falls nicht ohnehin vorhanden) ein. Danach Frontend mit Screenshot-Tool testen.
+   - Why fix this issue and what will be achieved with the fix? Verhindert, dass die Startseite aufgrund eines undefined import Errors komplett abstürzt (Blank Screen).
+   - Status: IN PROGRESS
+   - Is recurring issue? N
+   - Should Test frontend/backend/both after fix? frontend
+   - Blocked on other issue: None
+
+**In progress Task List**:
+Keine weiteren in-progress Tasks.
+
+**Upcoming and Future Tasks**
+- **Vollständige Übersetzung aller Unterseiten ins Englische** (P1) - Das Sprach-Framework (DE/EN) steht und wurde für Startseite, Navigation, Footer und Blog implementiert. Einige Textbausteine auf Unterseiten (Leistungen, Über mich, Automatisierung) müssen noch übersetzt werden.
+- **Calendly-Integration** (P2) - Zur direkten Terminbuchung auf der Kontaktseite.
+
+**Completed work in this session**
+- Fehlerhafte SEO-Implementierung () entfernt und App repariert (DONE)
+- Hintergrundbild zur Section KI ist kein Feature hinzugefügt (60% Helligkeit) (DONE)
+- Barrierefreiheit implementiert (Skip-Link, ARIA-Labels, Focus-States) (DONE)
+- Referenzen-Seite mit TaxOpti Pro und KI-Automatisierung inkl. Logos erstellt (DONE)
+- Blog-Sektion mit 3 umfangreichen Artikeln erstellt (DONE)
+- Mehrsprachigkeit (DE/EN) via Context und LanguageSwitcher implementiert (DONE)
+- Social Media Links (Instagram, LinkedIn) in Navigation und Footer integriert (DONE)
+- Whitepaper-Download-Seite als Lead-Magnet erstellt inkl.  Backend-Endpoint und Speicherung in MongoDB (DONE)
+
+**Earlier issues found/mentioned but not fixed**
+- Issue 1: 
+   - Debug checklist: Backend nutzt in  den  anstatt einer produktspezifischen Benennung wie . Dies wurde vom Agenten festgestellt, aber belassen.
+   - Why to solve this issue and what will be achieved with this? Vermeidung von Datenüberschneidungen in Produktionsumgebungen, wenn mehrere Apps laufen. (Optional, aber empfohlen).
+   - Should Test frontend/backend/both after fix: backend
+   - Is recurring issue? N
+
+**Known issue recurrence from previous fork**
+- Issue recurrence in previous fork: Keines
+- Recurrence count: 0
+- Status: RESOLVED
+
+**Code Architecture**
+
+
+**Key Technical Concepts**
+- **Frontend:** React 19, Tailwind CSS, Framer Motion, React Router DOM, Context API (für i18n).
+- **Backend:** FastAPI (Python), Motor (Async MongoDB Client).
+- **Architecture:** Multi-Page App. Lead Magnet Flow speichert E-Mail in DB und gibt statischen Download-Link zurück.
+
+**key DB schema**
+- : 
+- : 
+
+**changes in tech stack**
+- Context API für Mehrsprachigkeit (i18n) eingeführt.
+
+**All files of reference**
+- : Wurde zuletzt bearbeitet; benötigt fehlende Imports für den Whitepaper-Banner.
+-  & : Neue Basis für i18n.
+- : Neu erstellte Lead-Magnet Landingpage.
+- : Neuer Endpoint  hinzugefügt.
+
+**Areas that need refactoring**:
+- : Bisher sind nur Startseite, Navigation und allgemeine UI-Elemente ausgelagert. Eine saubere Trennung von DE/EN für lange Seiten wie  oder  muss noch in die JSON/JS Struktur überführt werden.
+
+**key api endpoints**
+- : Formularübermittlung
+- : Lead-Generierung (Speichert Daten und gibt Download-Link zurück).
+
+**Critical Info for New Agent**
+Das Frontend könnte direkt nach dem Fork gebrochen sein (Blank Page / Compilation Error), weil das letzte  auf  Code einfügte, der  und  nutzt, ohne diese im Datei-Kopf zu importieren. Behebe dies (P0) vor allen anderen Arbeiten. Antworte dem User stets auf Deutsch.
+
+**documents and test reports created in this job**
+- /app/memory/PRD.md (Aktualisiert im Verlauf der Sitzung)
+
+**Last 10 User Messages and any pending HUMAN messages**
+1. User: Bitte auf der Startseite zusätzlich einen Downloadlink des Whitepapers passend platzieren (IN PROGRESS - Imports fehlen)
+2. User: Bestätigt Ja bitte zur Entwicklung der Whitepaper-Seite (DONE)
+3. User: Wie ist der Stand der Website ? (DONE)
+4. User: Bestätigt Option 3 klingt fair und sinnvoll. für das Whitepaper Lead Magnet (DONE)
+5. User: Fragt nach einer Möglichkeit, ein Whitepaper zum Download anzubieten (DONE)
+6. User: Fordert das Hinzufügen von LinkedIn- und Instagram-Links in der Navigation und im Footer (DONE)
+7. User: Stellt einen dritten Blogartikel (KI-Automatisierung im kleinen Unternehmen) zur Verfügung (DONE)
+8. User: Mir gefällt deine Idee der Sprachauswahl immer besser. Kannst du mir ein Auswahlmenü erstellen... (DONE)
+9. User: Call Deployer Agent and Run Health Check (DONE)
+10. User: Ja sind sie. Gut gemacht und sauber platziert -> Bestätigung zur Logo-Platzierung (DONE)
+
+**Project Health Check:**
+Broken (Frontend kompiliert voraussichtlich nicht aufgrund eines fehlenden Imports in  nach der letzten Änderung).
+
+**3rd Party Integrations**
+- Keine API Keys externer Provider im Einsatz. (Icons stammen von Phosphor Icons, Backend nutzt Emergent-MongoDB).
+
+**Testing status**
+- Testing agent used after significant changes: NO
+- Troubleshoot agent used after agent stuck in loop: NO
+- Test files created: None
+- Known regressions:  fehlt Import für .
+
+**Credentials to test flow:**
+N/A
+
+**What agent forgot to execute**
+Der Agent hat vergessen, die notwendigen Import-Statements ( und ggf. ) am Anfang der  einzufügen, bevor die Sitzung beendet wurde.</analysis>
