@@ -1,48 +1,33 @@
 # Henry Wilke - AI-Systemarchitekt Website
 
-## Status: FERTIGGESTELLT
+## Status: AKTIV
 
 ## Original Problem Statement
-Premium-Website für Henry Wilke - AI-Systemarchitekt mit Editorial-Blueprint-Ästhetik (Nachtblau/Gold), modular und wartbar. Multi-Page-Struktur mit Barrierefreiheit, Referenzen, Blog, Sprachauswahl (DE/EN), Social-Media-Links und Lead-Magnet (Whitepaper-Download).
+Premium-Website für Henry Wilke - AI-Systemarchitekt. Multi-Page-Struktur mit Barrierefreiheit, Referenzen, Blog, Sprachauswahl (DE/EN), Social-Media-Links und Lead-Magnet (Whitepaper-Download).
 
-## User Personas
-- **Primär:** Unternehmer, Systemdenker, Strategen, skalierende Organisationen
-- **Nicht für:** Tool-Sammler, Schnellstart-Hacker, Buzzword-Enthusiasten
+## Design (Aktuell - Mär 2026)
+- **Farbschema:** Void Black (#050505) + Neon Cyan (#00E5FF) + Violet (#9D4CDD) - Zeitlos, technisch, markant
+- **Typografie:** Satoshi (Headlines), Space Grotesk (Claims/Labels), Inter (Body), JetBrains Mono (Code)
+- **Hero:** Animierter Neural-Network-Canvas-Hintergrund, sequenzieller Text-Reveal, Typing-Animation, Neon-Glow
+- **Navigation:** Glassmorphism (backdrop-blur) beim Scrollen
+- **Buttons:** Cyan-Outline mit Hover-Glow und Sweep-Animation
+- **Akzente:** Gradient von Cyan→Violet für Highlights, Neon-Textschatten
 
-## Core Requirements
-- Multi-Page Struktur mit React Router
-- Zweisprachig: Deutsch (Standard) + Englisch
-- JSON-basierte Content-Struktur + translations.js für i18n
-- Kontaktformular mit Backend-Speicherung
-- Whitepaper Lead-Magnet (E-Mail-Erfassung + Download)
-- Tiefes Nachtblau + Gold Farbschema
-- Playfair Display (Headlines) + Inter (Body) Typography
-
-## Vollständig Implementiert (Feb-Mär 2026)
-- [x] Navigation (Sticky, Mobile Menu, i18n)
-- [x] Hero Section mit eigenem Foto
-- [x] Positionierung Section
-- [x] Der Unterschied (4 Kacheln mit Icons)
-- [x] Arbeitsweise (Blueprint-Workflow 5 Steps)
-- [x] Zielgruppen Section (Ideal für / Nicht für)
-- [x] Haltung/Statement Section mit Hintergrundbild
+## Vollständig Implementiert
+- [x] Multi-Page Routing (React Router): Start, Leistungen, Referenzen, Blog, Über mich, Automatisierung, Kontakt, Whitepaper, Legal
+- [x] Zweisprachig DE/EN (Context API + translations.js) für alle Hauptseiten
 - [x] Kontaktformular mit MongoDB-Speicherung
-- [x] Footer mit rechtlichen Links + Social Media
-- [x] Framer Motion Animationen
-- [x] Multi-Page Routing (React Router)
-- [x] Leistungen Seite (zweisprachig)
-- [x] Über mich Seite (zweisprachig, mit persönlichem Text und Bild)
-- [x] Automatisierung Seite (zweisprachig)
-- [x] Kontakt Seite (zweisprachig)
-- [x] Referenzen Seite (zweisprachig, mit Logos)
-- [x] Blog-Übersicht (zweisprachig, 3 Artikel)
-- [x] Whitepaper-Landingpage (Lead-Magnet, zweisprachig)
-- [x] Whitepaper-CTA Banner auf Startseite
-- [x] Impressum, AGB, Datenschutz (Legal Pages)
-- [x] Cookie-Consent Banner (DSGVO, zweisprachig)
+- [x] Whitepaper Lead-Magnet (E-Mail-Erfassung + Download)
 - [x] Barrierefreiheit (Skip-Link, ARIA-Labels, Focus-States)
-- [x] Sprachauswahl DE/EN (LanguageSwitcher, Context API)
+- [x] Cookie-Consent Banner (DSGVO)
 - [x] Social Media Links (Instagram, LinkedIn)
+- [x] Framer Motion Animationen
+- [x] Neural-Network Canvas-Hintergrund (Hero)
+- [x] Typing-Animation (Hero Subtitle)
+- [x] Sequential Text-Reveal (Hero Title)
+- [x] Glassmorphism Navigation
+- [x] Visuelles Redesign: Void Black + Cyan + Violet Farbschema
+- [x] Neue Typografie: Satoshi + Space Grotesk
 
 ## Architecture
 - **Frontend:** React 19 + Tailwind CSS + Framer Motion + React Router + Phosphor Icons + Context API (i18n)
@@ -51,18 +36,8 @@ Premium-Website für Henry Wilke - AI-Systemarchitekt mit Editorial-Blueprint-Ä
 
 ## API Endpoints
 - `POST /api/contact`: Kontaktformular-Übermittlung
-- `POST /api/whitepaper/download`: Lead-Generierung (Speichert Daten, gibt Download-Link zurück)
-
-## DB Schema
-- `contacts`: {name, email, message, created_at, status}
-- `leads`: {email, name, company, whitepaper, created_at, source}
-
-## Bewusst nicht implementiert
-- SEO Meta-Tags (Nutzer erhält Links per persönlicher Empfehlung)
-- Blog-Artikel Fließtext-Übersetzung (3 sehr lange Artikel, ~1200 Zeilen, nur Navigation/Header zweisprachig)
+- `POST /api/whitepaper/download`: Lead-Generierung
 
 ## Backlog / Zukünftige Tasks
-- P1: Blog-Artikel Fließtext komplett ins Englische übersetzen (BlogKMU, BlogNeurodivergent, BlogProduktivitaet - je 300-520 Zeilen)
-- P2: Calendly-Integration auf der Kontaktseite
-- P3: Legal Pages (Impressum, AGB, Datenschutz) optional ins Englische übersetzen
-- P3: DB-Name von test_database auf henry_wilke_db umstellen
+- P2: Calendly-Integration auf der Kontaktseite (Terminbuchung)
+- P3: DB-Name von test_database auf henry_wilke_db umstellen (optional)
