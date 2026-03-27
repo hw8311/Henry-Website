@@ -1,176 +1,109 @@
 {
-  "project_name": "Henry Wilke - AI System Architect",
-  "persona": "E1 - The Anti-AI Designer",
-  "theme": "dark",
-  "design_philosophy": {
-    "core_concept": "The Intelligent System",
-    "tone": "Authoritative, Strategic, Intellectual, Premium",
-    "visual_style": "Editorial Minimalism meets Blueprint Architecture",
-    "key_principles": [
-      "Fusion over Imitation: Mixing Magazine Editorial with Technical Blueprints",
-      "Negative Space: Generous padding to create luxury",
-      "Content is King: Every section tells a strategic story",
-      "Contrast: Deep backgrounds vs Sharp Gold/White types"
-    ]
-  },
-  "typography": {
-    "font_family": {
-      "heading": "Playfair Display, serif",
-      "body": "Inter, sans-serif",
-      "mono": "JetBrains Mono, monospace"
-    },
-    "font_weights": {
-      "heading": "400 (Regular) to 700 (Bold)",
-      "body": "300 (Light) to 500 (Medium)"
-    },
-    "scale": {
-      "display": "text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[0.9]",
-      "h1": "text-4xl md:text-6xl tracking-tight",
-      "h2": "text-3xl md:text-5xl tracking-tight",
-      "h3": "text-2xl md:text-3xl tracking-normal",
-      "body_large": "text-lg md:text-xl leading-relaxed",
-      "body_base": "text-base leading-relaxed",
-      "label": "text-xs md:text-sm font-mono tracking-[0.2em] uppercase"
-    },
-    "instructions": "Import 'Playfair Display', 'Inter', and 'JetBrains Mono' from Google Fonts. Use Playfair for all major headings. Use Inter for body text. Use JetBrains Mono for small labels, tags, and technical details."
+  "theme_and_archetype": {
+    "domain": "AI System Architect Portfolio",
+    "theme": "DARK",
+    "archetype": "Archetype 5 (Jewel & Luxury) blended with subtle Archetype 7 (Electric & Neon) accents",
+    "rationale": "The user requested a timeless, elegant design (Archetype 5) that avoids mass-appealing generic layouts, but explicitly asked for an AI future vibe with Cyan and Violet accents. We ground the bright tech colors in a deep, luxurious 'void black' background to maintain seriousness and authority."
   },
   "colors": {
-    "palette": {
-      "background": {
-        "default": "#020617",
-        "secondary": "#0F172A",
-        "card": "#1E293B"
-      },
-      "foreground": {
-        "default": "#F8FAFC",
-        "muted": "#94A3B8",
-        "accent": "#E2E8F0"
-      },
-      "brand": {
-        "primary": "#0F172A",
-        "accent": "#D4AF37",
-        "blueprint": "rgba(56, 189, 248, 0.15)"
-      }
+    "background": {
+      "default": "#050505",
+      "gradient_start": "#050505",
+      "gradient_end": "#0A0A0F"
     },
-    "gradients": {
-      "gold_shine": "linear-gradient(135deg, #D4AF37 0%, #FDE047 50%, #D4AF37 100%)",
-      "blueprint_fade": "linear-gradient(to bottom, transparent, rgba(56, 189, 248, 0.05))"
+    "primary": {
+      "default": "#00E5FF",
+      "hover": "#33EEFF",
+      "description": "Neon Cyan - Used sparingly for key technical highlights, glows, and primary CTAs."
     },
-    "borders": {
-      "subtle": "rgba(255, 255, 255, 0.1)",
-      "gold": "#D4AF37"
+    "secondary": {
+      "default": "#9D4CDD",
+      "hover": "#B370E5",
+      "description": "Deep Violet - Used for abstract gradients, background blurs, and secondary interactive states."
+    },
+    "neutral": {
+      "900": "#121215",
+      "800": "#1C1C21",
+      "400": "#A1A1AA",
+      "100": "#F4F4F5"
+    },
+    "surface": {
+      "glass": "bg-white/5 backdrop-blur-xl border-white/10",
+      "solid": "bg-[#121215] border-[#1C1C21]"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "accent": "#00E5FF"
     }
   },
-  "layout": {
-    "spacing": {
-      "container_padding": "p-6 md:p-12 lg:p-24",
-      "section_gap": "gap-24 md:gap-32 lg:gap-40"
+  "typography": {
+    "fonts": {
+      "heading": "Satoshi, sans-serif",
+      "body": "Inter, sans-serif",
+      "claim_overline": "Space Grotesk, sans-serif"
     },
-    "grid_system": {
-      "mode_a": "grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 (The Tetris Grid)",
-      "mode_b": "grid grid-cols-1 md:grid-cols-3 gap-8 (Feature Grid)"
-    },
-    "container": {
-      "max_width": "max-w-7xl mx-auto"
+    "rules": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-white",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white",
+      "h3": "text-xl sm:text-2xl font-semibold tracking-tight text-white",
+      "body": "text-base lg:text-lg leading-relaxed text-neutral-400",
+      "overline": "text-xs font-bold uppercase tracking-[0.2em] text-cyan-400 font-['Space_Grotesk']"
     }
   },
-  "ui_components": {
-    "buttons": {
-      "primary": "bg-[#D4AF37] text-[#020617] hover:bg-[#FDE047] rounded-none px-8 py-4 font-mono text-sm tracking-widest uppercase transition-all duration-300 hover:tracking-[0.25em]",
-      "secondary": "bg-transparent border border-white/20 text-white hover:border-[#D4AF37] hover:text-[#D4AF37] rounded-none px-8 py-4 font-mono text-sm tracking-widest uppercase transition-all duration-300"
-    },
-    "cards": {
-      "style": "bg-[#0F172A]/50 backdrop-blur-md border border-white/5 hover:border-[#D4AF37]/50 transition-all duration-500",
-      "blueprint_overlay": "relative overflow-hidden before:absolute before:inset-0 before:bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] before:opacity-5"
-    },
-    "inputs": {
-      "style": "bg-transparent border-b border-white/20 focus:border-[#D4AF37] text-white px-0 py-4 rounded-none placeholder:text-white/30 focus:outline-none focus:ring-0 transition-colors font-mono"
-    }
+  "layout_and_spacing": {
+    "philosophy": "Full-bleed hero, asymmetric sections, massive whitespace.",
+    "spacing_scale": "Use p-8, p-12, py-24, py-32 to create breathing room.",
+    "grids": "Use Mode A 'Tetris Grid' for portfolio bento boxes and asymmetric layouts (e.g. grid-cols-12 with col-span-8 and col-span-4).",
+    "alignment": "Left-align dense text and claims. Avoid center-everything disease. Create visual tension via offset positioning."
   },
-  "assets": {
-    "images": [
+  "motion_and_interactions": {
+    "hero_reveal": "Framer Motion: Sequential text reveal with scale (0.95 to 1) and blur (10px to 0) over 0.8s.",
+    "typing_animation": "For the subheadline/claim, use a Framer Motion staggered character reveal to simulate typing.",
+    "buttons": "Magnetic hover effect using Framer Motion useMouse tracking. Include a subtle neon cyan drop-shadow on hover.",
+    "scroll": "All sections should fade-in and slide-up (y: 40) using whileInView. Stagger children for lists.",
+    "text_scroll": "Line-by-line reveal for the Stance/Statement section."
+  },
+  "components": {
+    "navigation": "Sticky glassmorphism header (z-50, backdrop-blur-xl, bg-[#050505]/60, border-b border-white/10). Desktop links visible, mobile hamburger.",
+    "cards": "Cardless or 'Tracing Beam' border style. bg-white/5 with 1px border-white/10. Add subtle inner glow.",
+    "buttons_primary": "bg-transparent border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all shadow-[0_0_15px_rgba(0,229,255,0)] hover:shadow-[0_0_20px_rgba(0,229,255,0.4)]"
+  },
+  "media": {
+    "hero_background": {
+      "type": "code-driven",
+      "library": "react-tsparticles",
+      "instructions": "Implement a subtle, slow-moving neural network/constellation background using tsparticles. Particles should be small (1-2px), connected by thin lines, colored pure white or cyan, with 10-20% opacity. Do not overpower the text."
+    },
+    "image_urls": [
       {
-        "category": "hero_portrait",
-        "url": "https://images.unsplash.com/photo-1644353224392-7e532d7b8f4b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBwb3J0cmFpdCUyMGRhcmslMjBibHVlJTIwc3R1ZGlvJTIwYmFja2dyb3VuZCUyMGNvbmZpZGVudHxlbnwwfHx8fDE3NzA5MjY1MTN8MA&ixlib=rb-4.1.0&q=85",
-        "description": "Professional portrait of Henry Wilke (placeholder) - Man standing with arms crossed, dark blue background",
-        "placement": "Hero Section - Right side or Centered overlap"
+        "category": "stance_background",
+        "url": "https://images.unsplash.com/photo-1754738381783-f9a2847bfef2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjB0ZWNofGVufDB8fHx8MTc3NDU3MTcxMHww&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract swirling purple metallic texture with light reflections. Use with heavy black/gradient overlay (e.g. bg-black/70) for text legibility."
       },
       {
-        "category": "background_texture",
-        "url": "https://images.unsplash.com/photo-1538806932492-b6ac36ccfa28?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGFyY2hpdGVjdHVyYWwlMjBibHVlcHJpbnQlMjBncmlkJTIwbGluZXMlMjBtaW5pbWFsJTIwZGFyayUyMGJsdWV8ZW58MHx8fHwxNzcwOTI2NTE0fDA&ixlib=rb-4.1.0&q=85",
-        "description": "Abstract blueprint grid lines",
-        "placement": "Section Backgrounds (Low Opacity Overlay)"
+        "category": "about_portrait",
+        "url": "https://images.unsplash.com/photo-1614010966237-74489a16848b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3NDU3MTcxMHww&ixlib=rb-4.1.0&q=85",
+        "description": "High-end portrait of a man in a black button-up on a dark background. Represents the AI Architect."
+      },
+      {
+        "category": "client_logo_1",
+        "url": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NzQ1NzE3MTF8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Slack logo - Apply CSS filter grayscale invert brightness-0 to make it white."
+      },
+      {
+        "category": "client_logo_2",
+        "url": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NzQ1NzE3MTF8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Mercedes emblem - Apply CSS filter grayscale invert brightness-0 to make it white."
+      },
+      {
+        "category": "client_logo_3",
+        "url": "https://images.unsplash.com/photo-1562783912-21ad31ee2a83?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NzQ1NzE3MTF8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Jaguar emblem - Apply CSS filter grayscale invert brightness-0 to make it white."
       }
-    ],
-    "icons": {
-      "library": "Phosphor Icons",
-      "style": "Thin or Light weight",
-      "instructions": "Use @phosphor-icons/react. Install if missing."
-    }
-  },
-  "sections_structure": [
-    {
-      "name": "Hero",
-      "elements": [
-        "Headline: 'Ich baue Systeme, die denken.'",
-        "Sub: 'AI System Architect | Problem Solver'",
-        "Visual: Portrait with blueprint overlay lines",
-        "CTA: 'Zusammenarbeit anfragen'"
-      ]
-    },
-    {
-      "name": "Positioning",
-      "elements": [
-        "Text-heavy editorial layout",
-        "Keywords: Systemdesign, Integration, Prozessintelligenz"
-      ]
-    },
-    {
-      "name": "The Difference",
-      "layout": "Grid 2x2",
-      "content": [
-        "Strategische KI-Architektur",
-        "Automatisierte Denkprozesse",
-        "Entscheidungsintelligenz",
-        "Skalierbare Systemlogik"
-      ]
-    },
-    {
-      "name": "Workflow (Blueprint)",
-      "visual": "Horizontal timeline or connected nodes",
-      "steps": ["Analyse", "Systemmodell", "Prototyp", "Integration", "Skalierung"]
-    },
-    {
-      "name": "Stance",
-      "style": "Large typography quote",
-      "text": "KI ist kein Feature. Sie ist Infrastruktur."
-    },
-    {
-      "name": "Contact",
-      "style": "Minimalist form",
-      "fields": ["Name", "Email", "Project details"]
-    }
-  ],
-  "animations": {
-    "library": "Framer Motion",
-    "preferences": {
-      "hero_entrance": "Staggered fade-up with slow duration (0.8s)",
-      "scroll_reveal": "WhileInView opacity-0 to opacity-100, y-20 to y-0",
-      "lines": "SVG lines drawing themselves (pathLength animation)"
-    }
-  },
-  "universal_guidelines": {
-    "do_not": [
-      "Use generic AI stock photos (robots, brains)",
-      "Use standard gradients (purple/blue)",
-      "Center align long text",
-      "Use 'Inter' for headings"
-    ],
-    "must_do": [
-      "Use 'data-testid' on all interactive elements",
-      "Ensure high contrast for accessibility",
-      "Use 'sonner' for toasts"
     ]
   },
-  "instructions_to_main_agent": "1. Install required packages (@phosphor-icons/react, framer-motion, sonner). 2. Setup Tailwind theme with new colors and fonts. 3. Build the 'BlueprintGrid' background component first. 4. Implement sections sequentially. 5. Ensure the 'Gold' accent is used sparingly for maximum impact."
+  "testing": {
+    "attributes": "All interactive elements MUST include data-testid. Example: data-testid='hero-cta-button'."
+  }
 }
