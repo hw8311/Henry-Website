@@ -1,14 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, FileArrowDown } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
+import NeuralBackground from '../components/NeuralBackground';
 import BlueprintGrid from '../components/BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 
+// Typing animation component
+const TypingText = ({ text, delay = 0, className }) => {
+  const [displayed, setDisplayed] = useState('');
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const startTimer = setTimeout(() => setStarted(true), delay * 1000);
+    return () => clearTimeout(startTimer);
+  }, [delay]);
+
+  useEffect(() => {
+    if (!started) return;
+    setDisplayed('');
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < text.length) {
+        setDisplayed(text.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 30);
+    return () => clearInterval(interval);
+  }, [text, started]);
+
+  return (
+    <span className={className}>
+      {displayed}
+      {started && displayed.length < text.length && (
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{ repeat: Infinity, duration: 0.6 }}
+          className="inline-block w-[2px] h-[1em] bg-gold ml-0.5 align-middle"
+        />
+      )}
+    </span>
+  );
+};
+
 const HomePage = () => {
   const { language } = useLanguage();
   const t = translations;
+
+  const heroTitle = language === 'de' ? 'Systeme bauen,' : 'Building systems';
+  const heroTitleAccent = language === 'de' ? 'die denken.' : 'that think.';
 
   return (
     <>
@@ -17,8 +60,16 @@ const HomePage = () => {
         data-testid="hero-section"
         className="relative min-h-screen flex items-center overflow-hidden bg-navy"
       >
-        <BlueprintGrid opacity={0.02} />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy/90 to-navy pointer-events-none" />
+        {/* Neural Network Background */}
+        <NeuralBackground opacity={0.2} particleCount={50} />
+        
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-navy to-transparent pointer-events-none" />
+        
+        {/* Subtle violet gradient accent */}
+        <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-violet/5 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-gold/3 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
@@ -33,28 +84,43 @@ const HomePage = () => {
                 {t.hero.label[language]}
               </motion.span>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="heading-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-offwhite mb-8"
-              >
-                {t.hero.title[language]}
-              </motion.h1>
+              {/* Main title with sequential reveal */}
+              <div className="mb-8">
+                <motion.h1
+                  initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className="claim-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-offwhite"
+                >
+                  {heroTitle}
+                </motion.h1>
+                <motion.h1
+                  initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  transition={{ duration: 0.8, delay: 0.55 }}
+                  className="claim-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl gold-text neon-glow mt-1"
+                >
+                  {heroTitleAccent}
+                </motion.h1>
+              </div>
 
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-base md:text-xl text-muted-gray max-w-xl mb-10 md:mb-12 leading-relaxed px-1"
+              {/* Typing subtitle */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
+                className="text-base md:text-xl text-muted-gray max-w-xl mb-10 md:mb-12 leading-relaxed px-1 min-h-[3rem]"
               >
-                {t.hero.subtitle[language]}
-              </motion.p>
+                <TypingText 
+                  text={t.hero.subtitle[language]} 
+                  delay={1.2}
+                />
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
+                transition={{ duration: 0.8, delay: 2.2 }}
                 className="flex flex-col sm:flex-row gap-4 sm:gap-5"
               >
                 <Link to="/kontakt" className="btn-primary text-center" data-testid="hero-cta-primary">
@@ -78,19 +144,12 @@ const HomePage = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.6 }}
               >
+                {/* Border frames with new accent */}
                 <motion.div 
-                  className="absolute -inset-4 border border-blueprint"
+                  className="absolute -inset-4 border border-white/[0.06]"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.5 }}
-                  whileHover={{ opacity: 0.8, borderColor: 'rgba(212, 175, 55, 0.3)' }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
-                />
-                <motion.div 
-                  className="absolute -inset-8 border border-blueprint"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.25 }}
-                  whileHover={{ opacity: 0.5 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
                 />
                 
                 <div className="relative aspect-[4/5] overflow-hidden bg-navy-light">
@@ -100,7 +159,7 @@ const HomePage = () => {
                       backgroundImage: 'url(https://customer-assets.emergentagent.com/job_ai-systems-henry/artifacts/4tf3zkmz_file_000000005b706246860393db18f7484a~7.png)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
-                      filter: 'blur(20px) brightness(0.4)',
+                      filter: 'blur(20px) brightness(0.3)',
                     }}
                   />
                   <motion.img
@@ -110,11 +169,12 @@ const HomePage = () => {
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.8 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-navy/20 via-transparent to-gold/5 mix-blend-overlay" />
+                  {/* Gradient overlay with cyan/violet tint */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-navy/30 via-transparent to-violet/10 mix-blend-overlay" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-70" />
-                  <motion.div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/5 transition-colors duration-700" />
                 </div>
                 
+                {/* Corner accents */}
                 <motion.div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-gold" />
                 <motion.div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-gold" />
               </motion.div>
@@ -125,15 +185,15 @@ const HomePage = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
+            transition={{ delay: 3 }}
             className="absolute bottom-12 left-1/2 -translate-x-1/2"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="text-muted-gray"
+              className="text-gold/40"
             >
-              <ArrowDown size={32} weight="light" />
+              <ArrowDown size={28} weight="light" />
             </motion.div>
           </motion.div>
         </div>
@@ -174,7 +234,7 @@ const HomePage = () => {
               </div>
 
               <motion.div 
-                className="mt-12 h-px bg-gradient-to-r from-gold via-gold/50 to-transparent"
+                className="mt-12 h-px bg-gradient-to-r from-gold via-violet/50 to-transparent"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
@@ -188,18 +248,18 @@ const HomePage = () => {
 
       {/* Whitepaper CTA Banner */}
       <section className="relative py-16 bg-navy overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-transparent to-gold/5" />
+        <div className="absolute inset-0 bg-gradient-to-r from-gold/3 via-transparent to-violet/3" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative p-8 md:p-10 border border-gold/20 bg-navy-light/50 backdrop-blur-sm"
+            className="relative p-8 md:p-10 border border-white/[0.08] bg-navy-light/50 backdrop-blur-sm"
           >
             {/* Corner decorations */}
             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold" />
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold" />
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-violet" />
             
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div className="flex-1">

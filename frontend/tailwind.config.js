@@ -8,23 +8,28 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'display': ['"Playfair Display"', 'serif'],
+        'display': ['Satoshi', 'sans-serif'],
         'body': ['Inter', 'sans-serif'],
         'mono': ['"JetBrains Mono"', 'monospace'],
+        'claim': ['"Space Grotesk"', 'sans-serif'],
       },
       colors: {
         'navy': {
-          DEFAULT: '#020617',
-          light: '#0F172A',
-          card: '#1E293B',
+          DEFAULT: '#050505',
+          light: '#121215',
+          card: '#1C1C21',
         },
         'gold': {
-          DEFAULT: '#D4AF37',
-          light: '#FDE047',
+          DEFAULT: '#00E5FF',
+          light: '#33EEFF',
         },
-        'offwhite': '#F8FAFC',
-        'muted-gray': '#94A3B8',
-        'blueprint': 'rgba(56, 189, 248, 0.15)',
+        'violet': {
+          DEFAULT: '#9D4CDD',
+          light: '#B370E5',
+        },
+        'offwhite': '#F4F4F5',
+        'muted-gray': '#A1A1AA',
+        'blueprint': 'rgba(0, 229, 255, 0.08)',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -80,13 +85,18 @@ module.exports = {
         'fade-in-up': {
           from: { opacity: '0', transform: 'translateY(30px)' },
           to: { opacity: '1', transform: 'translateY(0)' }
+        },
+        'glow-pulse': {
+          '0%, 100%': { boxShadow: '0 0 15px rgba(0, 229, 255, 0.3)' },
+          '50%': { boxShadow: '0 0 25px rgba(0, 229, 255, 0.5)' }
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'draw-line': 'draw-line 2s ease-out forwards',
-        'fade-in-up': 'fade-in-up 0.8s ease-out forwards'
+        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+        'glow-pulse': 'glow-pulse 3s ease-in-out infinite'
       }
     }
   },

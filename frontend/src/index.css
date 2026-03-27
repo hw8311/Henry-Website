@@ -1,29 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: 222 47% 3%;
-  --foreground: 210 40% 98%;
-  --card: 222 47% 6%;
-  --card-foreground: 210 40% 98%;
-  --popover: 222 47% 6%;
-  --popover-foreground: 210 40% 98%;
-  --primary: 43 74% 52%;
-  --primary-foreground: 222 47% 3%;
-  --secondary: 222 47% 11%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 222 47% 11%;
-  --muted-foreground: 215 16% 57%;
-  --accent: 43 74% 52%;
-  --accent-foreground: 222 47% 3%;
+  --background: 0 0% 2%;
+  --foreground: 240 5% 96%;
+  --card: 240 4% 7%;
+  --card-foreground: 240 5% 96%;
+  --popover: 240 4% 7%;
+  --popover-foreground: 240 5% 96%;
+  --primary: 187 100% 50%;
+  --primary-foreground: 0 0% 2%;
+  --secondary: 270 62% 58%;
+  --secondary-foreground: 240 5% 96%;
+  --muted: 240 4% 10%;
+  --muted-foreground: 240 5% 65%;
+  --accent: 187 100% 50%;
+  --accent-foreground: 0 0% 2%;
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 222 47% 15%;
-  --input: 222 47% 15%;
-  --ring: 43 74% 52%;
+  --destructive-foreground: 240 5% 96%;
+  --border: 240 4% 15%;
+  --input: 240 4% 15%;
+  --ring: 187 100% 50%;
   --radius: 0rem;
 }
 
@@ -39,21 +39,21 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #020617;
-  color: #F8FAFC;
+  background-color: #050505;
+  color: #F4F4F5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Skip Link für Barrierefreiheit */
+/* Skip Link */
 .skip-link {
   position: absolute;
   top: -100px;
   left: 50%;
   transform: translateX(-50%);
-  background: #D4AF37;
-  color: #020617;
+  background: #00E5FF;
+  color: #050505;
   padding: 0.75rem 1.5rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.875rem;
@@ -64,18 +64,18 @@ body {
 
 .skip-link:focus {
   top: 1rem;
-  outline: 2px solid #FDE047;
+  outline: 2px solid #00E5FF;
   outline-offset: 2px;
 }
 
-/* Verbesserte Focus-States für Barrierefreiheit */
+/* Focus States */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #D4AF37;
+  outline: 2px solid #00E5FF;
   outline-offset: 2px;
 }
 
-/* Reduzierte Bewegung für Nutzer mit Vestibulären Störungen */
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -87,57 +87,66 @@ button:focus-visible {
   }
 }
 
-/* Scrollbar Styling */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #050505;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
-  border-radius: 0;
+  background: #1C1C21;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: #00E5FF;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(212, 175, 55, 0.3);
-  color: #F8FAFC;
+  background: rgba(0, 229, 255, 0.25);
+  color: #F4F4F5;
 }
 
-/* Blueprint Grid Pattern */
+/* Blueprint Grid Pattern - Cyan tinted */
 .blueprint-grid {
   background-image: 
-    linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
-/* Gold Gradient Text */
+/* Accent Gradient Text (was gold-text) */
 .gold-text {
-  background: linear-gradient(135deg, #D4AF37 0%, #FDE047 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #00E5FF 0%, #9D4CDD 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Heading Typography */
+/* Heading Typography - Satoshi */
 .heading-display {
-  font-family: 'Playfair Display', serif;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
 }
 
-/* Mono Labels */
+/* Claim Typography - Space Grotesk */
+.claim-display {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+/* Mono Labels - Space Grotesk overline */
 .label-mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 0.75rem;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -148,25 +157,27 @@ button:focus-visible {
 }
 
 .card-hover:hover {
-  border-color: rgba(212, 175, 55, 0.5);
+  border-color: rgba(0, 229, 255, 0.4);
   transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.05);
 }
 
-/* Button Styles */
+/* Button Primary - Neon Cyan Outline */
 .btn-primary {
-  background-color: #D4AF37;
-  color: #020617;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
+  background-color: transparent;
+  color: #00E5FF;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 1rem 2rem;
-  border: none;
+  padding: 0.875rem 2rem;
+  border: 1px solid #00E5FF;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
 }
 
 .btn-primary::before {
@@ -176,14 +187,15 @@ button:focus-visible {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.15), transparent);
   transition: left 0.5s ease;
 }
 
 .btn-primary:hover {
-  background-color: #FDE047;
-  letter-spacing: 0.2em;
-  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+  background-color: #00E5FF;
+  color: #050505;
+  letter-spacing: 0.15em;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
   transform: translateY(-2px);
 }
 
@@ -193,18 +205,20 @@ button:focus-visible {
 
 .btn-primary:active {
   transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
 }
 
+/* Button Secondary */
 .btn-secondary {
   background-color: transparent;
-  color: #F8FAFC;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
+  color: #F4F4F5;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 1rem 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.875rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -216,15 +230,15 @@ button:focus-visible {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background: #D4AF37;
+  height: 1px;
+  background: linear-gradient(90deg, #00E5FF, #9D4CDD);
   transition: width 0.4s ease;
 }
 
 .btn-secondary:hover {
-  border-color: #D4AF37;
-  color: #D4AF37;
-  background-color: rgba(212, 175, 55, 0.05);
+  border-color: rgba(0, 229, 255, 0.5);
+  color: #00E5FF;
+  background-color: rgba(0, 229, 255, 0.03);
   transform: translateY(-2px);
 }
 
@@ -240,22 +254,23 @@ button:focus-visible {
 .input-minimal {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   padding: 1rem 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
-  color: #F8FAFC;
+  color: #F4F4F5;
   width: 100%;
   transition: border-color 0.3s ease;
 }
 
 .input-minimal:focus {
   outline: none;
-  border-bottom-color: #D4AF37;
+  border-bottom-color: #00E5FF;
+  box-shadow: 0 1px 0 0 rgba(0, 229, 255, 0.3);
 }
 
 .input-minimal::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.2);
 }
 
 /* Workflow Line Animation */
@@ -266,6 +281,24 @@ button:focus-visible {
 
 .workflow-line.animate {
   animation: draw-line 2s ease-out forwards;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(5, 5, 5, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Subtle gradient background for sections */
+.gradient-section {
+  background: linear-gradient(180deg, #050505 0%, #0A0A0F 100%);
+}
+
+/* Neon glow for highlights */
+.neon-glow {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
 }
 
 @layer base {
