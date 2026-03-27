@@ -4,6 +4,7 @@ import { Blueprint, Brain, ChartLine, TreeStructure } from '@phosphor-icons/reac
 import BlueprintGrid from '../components/BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
 import { LineReveal, StaggerContainer, StaggerItem } from '../components/animations/ScrollAnimations';
+import TracingBeamCard from '../components/TracingBeamCard';
 
 const icons = [Blueprint, Brain, ChartLine, TreeStructure];
 
@@ -97,23 +98,23 @@ const LeistungenPage = () => {
               const Icon = icons[index];
               return (
                 <StaggerItem key={index}>
-                  <div className="group relative bg-navy/50 backdrop-blur-sm border border-white/5 p-8 md:p-10 card-hover h-full">
-                    <div className="absolute top-0 right-0 w-20 h-20 border-t border-r border-blueprint opacity-30 group-hover:opacity-60 transition-opacity" />
-                    
-                    <div className="mb-6">
-                      <Icon size={40} weight="thin" className="text-gold opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <TracingBeamCard className="bg-navy/50 backdrop-blur-sm border border-white/5 card-hover h-full">
+                    <div className="p-8 md:p-10 relative">
+                      <div className="absolute top-0 right-0 w-20 h-20 border-t border-r border-blueprint opacity-30" />
+                      
+                      <div className="mb-6">
+                        <Icon size={40} weight="thin" className="text-gold opacity-80" />
+                      </div>
+
+                      <h3 className="font-display text-xl md:text-2xl text-offwhite mb-4">
+                        {card.title[language]}
+                      </h3>
+
+                      <p className="text-muted-gray leading-relaxed">
+                        {card.description[language]}
+                      </p>
                     </div>
-
-                    <h3 className="font-display text-xl md:text-2xl text-offwhite mb-4">
-                      {card.title[language]}
-                    </h3>
-
-                    <p className="text-muted-gray leading-relaxed">
-                      {card.description[language]}
-                    </p>
-
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500" />
-                  </div>
+                  </TracingBeamCard>
                 </StaggerItem>
               );
             })}
