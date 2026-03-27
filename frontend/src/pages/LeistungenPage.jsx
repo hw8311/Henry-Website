@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { Blueprint, Brain, ChartLine, TreeStructure } from '@phosphor-icons/react';
 import BlueprintGrid from '../components/BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
+import { LineReveal, StaggerContainer, StaggerItem } from '../components/animations/ScrollAnimations';
 
 const icons = [Blueprint, Brain, ChartLine, TreeStructure];
 
@@ -91,36 +92,32 @@ const LeistungenPage = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" stagger={0.15} delay={0.2}>
             {cards.map((card, index) => {
               const Icon = icons[index];
               return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
-                  className="group relative bg-navy/50 backdrop-blur-sm border border-white/5 p-8 md:p-10 card-hover"
-                >
-                  <div className="absolute top-0 right-0 w-20 h-20 border-t border-r border-blueprint opacity-30 group-hover:opacity-60 transition-opacity" />
-                  
-                  <div className="mb-6">
-                    <Icon size={40} weight="thin" className="text-gold opacity-80 group-hover:opacity-100 transition-opacity" />
+                <StaggerItem key={index}>
+                  <div className="group relative bg-navy/50 backdrop-blur-sm border border-white/5 p-8 md:p-10 card-hover h-full">
+                    <div className="absolute top-0 right-0 w-20 h-20 border-t border-r border-blueprint opacity-30 group-hover:opacity-60 transition-opacity" />
+                    
+                    <div className="mb-6">
+                      <Icon size={40} weight="thin" className="text-gold opacity-80 group-hover:opacity-100 transition-opacity" />
+                    </div>
+
+                    <h3 className="font-display text-xl md:text-2xl text-offwhite mb-4">
+                      {card.title[language]}
+                    </h3>
+
+                    <p className="text-muted-gray leading-relaxed">
+                      {card.description[language]}
+                    </p>
+
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500" />
                   </div>
-
-                  <h3 className="font-display text-xl md:text-2xl text-offwhite mb-4">
-                    {card.title[language]}
-                  </h3>
-
-                  <p className="text-muted-gray leading-relaxed">
-                    {card.description[language]}
-                  </p>
-
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500" />
-                </motion.div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 

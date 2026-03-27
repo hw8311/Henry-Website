@@ -19,6 +19,7 @@ import {
 } from '@phosphor-icons/react';
 import BlueprintGrid from './BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
+import { LineReveal, StaggerContainer, StaggerItem } from './animations/ScrollAnimations';
 
 const applicationFields = [
   { icon: FileText, de: 'Dokumenten- und Informationsverarbeitung', en: 'Document and information processing' },
@@ -238,38 +239,29 @@ export const KIAutomationSection = () => {
           </p>
           
           {/* Architecture Statement */}
-          <motion.div 
-            className="text-center py-12 my-10 border-y border-white/5"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
+          <div className="text-center py-12 my-10 border-y border-white/5">
             <p className="font-display text-2xl md:text-3xl text-offwhite mb-2">
-              {language === 'de' ? 'KI ist kein Add-on.' : 'AI is not an add-on.'}
+              <LineReveal text={language === 'de' ? 'KI ist kein Add-on.' : 'AI is not an add-on.'} delay={0.1} />
             </p>
             <p className="font-display text-2xl md:text-3xl gold-text">
-              {language === 'de' ? 'Sie ist ein Architekturthema.' : 'It\'s an architecture topic.'}
+              <LineReveal text={language === 'de' ? 'Sie ist ein Architekturthema.' : "It's an architecture topic."} delay={0.35} />
             </p>
-          </motion.div>
+          </div>
 
           {/* Architecture Points */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10" stagger={0.1} delay={0.2}>
             {architecturePoints.map((point, index) => {
               const Icon = point.icon;
               return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.4, delay: 1.1 + index * 0.1 }}
-                  className="text-center p-4 border border-white/5 hover:border-gold/30 transition-colors duration-300 group"
-                >
-                  <Icon size={28} weight="thin" className="text-gold mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="text-sm text-muted-gray group-hover:text-offwhite transition-colors duration-300">{point[language]}</span>
-                </motion.div>
+                <StaggerItem key={index}>
+                  <div className="text-center p-4 border border-white/5 hover:border-gold/30 transition-colors duration-300 group">
+                    <Icon size={28} weight="thin" className="text-gold mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
+                    <span className="text-sm text-muted-gray group-hover:text-offwhite transition-colors duration-300">{point[language]}</span>
+                  </div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerContainer>
           
           <p className="text-muted-gray leading-relaxed mt-8 text-center">
             {language === 'de'
@@ -355,19 +347,14 @@ export const KIAutomationSection = () => {
           </div>
 
           {/* Final Statement */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 1, delay: 1.6 }}
-            className="pt-8 border-t border-white/5"
-          >
+          <div className="pt-8 border-t border-white/5">
             <p className="text-muted-gray text-lg">
-              {language === 'de' ? 'Nicht als Trend.' : 'Not as a trend.'}
+              <LineReveal text={language === 'de' ? 'Nicht als Trend.' : 'Not as a trend.'} delay={0.1} />
             </p>
             <p className="font-display text-3xl md:text-4xl gold-text mt-2">
-              {language === 'de' ? 'Sondern als Infrastruktur.' : 'But as infrastructure.'}
+              <LineReveal text={language === 'de' ? 'Sondern als Infrastruktur.' : 'But as infrastructure.'} delay={0.35} />
             </p>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

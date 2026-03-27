@@ -6,6 +6,7 @@ import NeuralBackground from '../components/NeuralBackground';
 import BlueprintGrid from '../components/BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
+import { LineReveal, SweepReveal } from '../components/animations/ScrollAnimations';
 
 // Typing animation component
 const TypingText = ({ text, delay = 0, className }) => {
@@ -207,16 +208,16 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             <motion.div 
               className="md:col-span-4"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <span className="label-mono text-gold block mb-4">
                 {t.positioning.label[language]}
               </span>
               <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite whitespace-pre-line">
-                {t.positioning.title[language]}
+                <LineReveal text={t.positioning.title[language]} delay={0.1} />
               </h2>
             </motion.div>
 
@@ -225,13 +226,13 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="space-y-6">
+              <SweepReveal delay={0.5}>
                 <p className="text-lg md:text-xl leading-relaxed text-muted-gray">
                   {t.positioning.text[language]}
                 </p>
-              </div>
+              </SweepReveal>
 
               <motion.div 
                 className="mt-12 h-px bg-gradient-to-r from-gold via-violet/50 to-transparent"

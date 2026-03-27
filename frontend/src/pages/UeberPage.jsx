@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { Check, X } from '@phosphor-icons/react';
 import BlueprintGrid from '../components/BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
+import { LineReveal, StaggerContainer, StaggerItem } from '../components/animations/ScrollAnimations';
 
 const audienceFor = [
   { de: 'Unternehmer mit Systemdenken', en: 'Entrepreneurs with systems thinking' },
@@ -170,22 +171,18 @@ const UeberPage = () => {
               <h3 className="font-display text-2xl md:text-3xl text-offwhite mb-10">
                 {language === 'de' ? 'Ideal für' : 'Ideal for'}
               </h3>
-              <ul className="space-y-5">
+              <StaggerContainer stagger={0.12} delay={0.3} className="space-y-5">
                 {audienceFor.map((item, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                    className="flex items-start gap-4 group"
-                  >
-                    <div className="w-6 h-6 flex items-center justify-center bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300 flex-shrink-0 mt-0.5">
-                      <Check size={16} weight="bold" className="text-gold" />
+                  <StaggerItem key={index}>
+                    <div className="flex items-start gap-4 group">
+                      <div className="w-6 h-6 flex items-center justify-center bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300 flex-shrink-0 mt-0.5">
+                        <Check size={16} weight="bold" className="text-gold" />
+                      </div>
+                      <span className="text-offwhite text-lg">{item[language]}</span>
                     </div>
-                    <span className="text-offwhite text-lg">{item[language]}</span>
-                  </motion.li>
+                  </StaggerItem>
                 ))}
-              </ul>
+              </StaggerContainer>
               
               <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-gold" />
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-gold/30" />
@@ -237,34 +234,34 @@ const UeberPage = () => {
         
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5 }}
           >
             <motion.span 
               className="block font-display text-6xl md:text-8xl text-gold/20 mb-4"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
             >
               &ldquo;
             </motion.span>
 
             <h2 className="heading-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-offwhite mb-4">
-              {language === 'de' ? 'KI ist kein Feature.' : 'AI is not a feature.'}
+              <LineReveal text={language === 'de' ? 'KI ist kein Feature.' : 'AI is not a feature.'} delay={0.2} />
             </h2>
             <h2 className="heading-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl gold-text">
-              {language === 'de' ? 'Sie ist Infrastruktur.' : 'It\'s infrastructure.'}
+              <LineReveal text={language === 'de' ? 'Sie ist Infrastruktur.' : "It's infrastructure."} delay={0.5} />
             </h2>
 
             <motion.span 
               className="block font-display text-6xl md:text-8xl text-gold/20 mt-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
               &rdquo;
             </motion.span>
