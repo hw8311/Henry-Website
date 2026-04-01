@@ -15,9 +15,9 @@ module.exports = {
       },
       colors: {
         'navy': {
-          DEFAULT: '#050505',
-          light: '#121215',
-          card: '#1C1C21',
+          DEFAULT: '#4A4A4E',
+          light: '#525256',
+          card: '#3C3C40',
         },
         'gold': {
           DEFAULT: '#00E5FF',
@@ -28,8 +28,8 @@ module.exports = {
           light: '#B370E5',
         },
         'offwhite': '#F4F4F5',
-        'muted-gray': '#A1A1AA',
-        'blueprint': 'rgba(0, 229, 255, 0.08)',
+        'muted-gray': '#C0C0C6',
+        'blueprint': 'rgba(0, 229, 255, 0.06)',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

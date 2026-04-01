@@ -45,7 +45,7 @@ const NeuralBackground = ({ opacity = 0.15, particleCount = 60 }) => {
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle = `rgba(0, 229, 255, ${alpha})`;
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }
@@ -55,7 +55,7 @@ const NeuralBackground = ({ opacity = 0.15, particleCount = 60 }) => {
       for (const p of particles) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 229, 255, 0.4)`;
+        ctx.fillStyle = `rgba(0, 229, 255, 0.5)`;
         ctx.fill();
 
         // Move

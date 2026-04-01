@@ -5,24 +5,24 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 2%;
+  --background: 0 0% 29%;
   --foreground: 240 5% 96%;
-  --card: 240 4% 7%;
+  --card: 240 3% 24%;
   --card-foreground: 240 5% 96%;
-  --popover: 240 4% 7%;
+  --popover: 240 3% 24%;
   --popover-foreground: 240 5% 96%;
   --primary: 187 100% 50%;
   --primary-foreground: 0 0% 2%;
   --secondary: 270 62% 58%;
   --secondary-foreground: 240 5% 96%;
-  --muted: 240 4% 10%;
-  --muted-foreground: 240 5% 65%;
+  --muted: 240 2% 35%;
+  --muted-foreground: 240 3% 78%;
   --accent: 187 100% 50%;
   --accent-foreground: 0 0% 2%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 240 5% 96%;
-  --border: 240 4% 15%;
-  --input: 240 4% 15%;
+  --border: 240 2% 40%;
+  --input: 240 2% 40%;
   --ring: 187 100% 50%;
   --radius: 0rem;
 }
@@ -39,11 +39,23 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #050505;
+  background-color: #4A4A4E;
   color: #F4F4F5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* Noise/Grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
 /* Skip Link */
@@ -53,7 +65,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   background: #00E5FF;
-  color: #050505;
+  color: #1A1A1E;
   padding: 0.75rem 1.5rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.875rem;
@@ -93,11 +105,11 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #4A4A4E;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1C1C21;
+  background: #3C3C40;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -193,7 +205,7 @@ button:focus-visible {
 
 .btn-primary:hover {
   background-color: #00E5FF;
-  color: #050505;
+  color: #1A1A1E;
   letter-spacing: 0.15em;
   box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
   transform: translateY(-2px);
@@ -285,15 +297,15 @@ button:focus-visible {
 
 /* Glassmorphism utility */
 .glass {
-  background: rgba(5, 5, 5, 0.6);
+  background: rgba(74, 74, 78, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Subtle gradient background for sections */
 .gradient-section {
-  background: linear-gradient(180deg, #050505 0%, #0A0A0F 100%);
+  background: linear-gradient(180deg, #4A4A4E 0%, #525256 100%);
 }
 
 /* Neon glow for highlights */

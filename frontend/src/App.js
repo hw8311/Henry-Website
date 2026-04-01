@@ -54,7 +54,7 @@ function AppContent() {
         position="top-right"
         toastOptions={{
           style: {
-            background: '#121215',
+            background: '#3C3C40',
             border: '1px solid rgba(0, 229, 255, 0.2)',
             color: '#F4F4F5',
             fontFamily: 'Inter, sans-serif',
