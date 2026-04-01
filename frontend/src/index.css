@@ -162,6 +162,9 @@ button:focus-visible {
 
 /* Card Hover Effect */
 .card-hover {
+  background-color: rgba(50, 50, 54, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -329,23 +332,6 @@ button:focus-visible {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* Cards and panels */
-.card-hover {
-  background-color: rgba(50, 50, 54, 0.7) !important;
-  backdrop-filter: blur(6px);
-}
-
-.border.bg-navy\/30,
-.border.bg-navy-light\/20,
-.border.bg-navy\/40,
-.border.bg-navy\/50,
-.border.bg-navy-light\/40,
-.border.bg-navy-light\/30,
-.border.bg-navy-light\/50 {
-  background-color: rgba(50, 50, 54, 0.65) !important;
-  backdrop-filter: blur(6px);
 }
 
 @layer base {
