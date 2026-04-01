@@ -316,18 +316,27 @@ button:focus-visible {
   }
 }
 
-/* Concrete texture shows through - sections are transparent */
+/* Concrete texture shows through - sections get glassmorphic backdrop */
 #main-content section {
-  background-color: transparent !important;
+  background: rgba(35, 35, 38, 0.6) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
-/* Cards and panels get semi-transparent dark backgrounds for content readability */
+/* Glass panel utility for content containers */
+.glass-panel {
+  background: rgba(35, 35, 38, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Cards and panels */
 .card-hover {
-  background-color: rgba(74, 74, 78, 0.55) !important;
-  backdrop-filter: blur(4px);
+  background-color: rgba(50, 50, 54, 0.7) !important;
+  backdrop-filter: blur(6px);
 }
 
-/* Form and content boxes */
 .border.bg-navy\/30,
 .border.bg-navy-light\/20,
 .border.bg-navy\/40,
@@ -335,8 +344,8 @@ button:focus-visible {
 .border.bg-navy-light\/40,
 .border.bg-navy-light\/30,
 .border.bg-navy-light\/50 {
-  background-color: rgba(74, 74, 78, 0.5) !important;
-  backdrop-filter: blur(4px);
+  background-color: rgba(50, 50, 54, 0.65) !important;
+  backdrop-filter: blur(6px);
 }
 
 @layer base {
