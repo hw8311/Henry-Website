@@ -45,7 +45,7 @@ function AppContent() {
   const isAdmin = pathname === '/admin';
 
   return (
-    <div className="App bg-navy min-h-screen" data-testid="app-container">
+    <div className="App min-h-screen relative z-[2]" data-testid="app-container">
       <a href="#main-content" className="skip-link">
         {language === 'de' ? 'Zum Hauptinhalt springen' : 'Skip to main content'}
       </a>

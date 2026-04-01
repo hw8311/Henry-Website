@@ -5,24 +5,24 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 29%;
+  --background: 0 0% 41%;
   --foreground: 240 5% 96%;
-  --card: 240 3% 24%;
+  --card: 0 1% 36%;
   --card-foreground: 240 5% 96%;
-  --popover: 240 3% 24%;
+  --popover: 0 1% 36%;
   --popover-foreground: 240 5% 96%;
   --primary: 187 100% 50%;
   --primary-foreground: 0 0% 2%;
   --secondary: 270 62% 58%;
   --secondary-foreground: 240 5% 96%;
-  --muted: 240 2% 35%;
-  --muted-foreground: 240 3% 78%;
+  --muted: 0 1% 45%;
+  --muted-foreground: 240 3% 85%;
   --accent: 187 100% 50%;
   --accent-foreground: 0 0% 2%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 240 5% 96%;
-  --border: 240 2% 40%;
-  --input: 240 2% 40%;
+  --border: 0 0% 48%;
+  --input: 0 0% 48%;
   --ring: 187 100% 50%;
   --radius: 0rem;
 }
@@ -39,23 +39,19 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #4A4A4E;
+  background-color: #686A69;
   color: #F4F4F5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Noise/Grain texture overlay */
-body::before {
-  content: '';
+/* Concrete texture layer - the actual page background */
+#concrete-texture-layer {
   position: fixed;
   inset: 0;
-  z-index: 9998;
+  z-index: 0;
   pointer-events: none;
-  opacity: 0.12;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
 }
 
 /* Skip Link */
@@ -105,11 +101,12 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar-track {
-  background: #4A4A4E;
+  background: #686A69;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3C3C40;
+  background: #5A5C5B;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -297,15 +294,15 @@ button:focus-visible {
 
 /* Glassmorphism utility */
 .glass {
-  background: rgba(74, 74, 78, 0.7);
+  background: rgba(104, 106, 105, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Subtle gradient background for sections */
 .gradient-section {
-  background: linear-gradient(180deg, #4A4A4E 0%, #525256 100%);
+  background: linear-gradient(180deg, #686A69 0%, #727473 100%);
 }
 
 /* Neon glow for highlights */
@@ -317,6 +314,29 @@ button:focus-visible {
   * {
     @apply border-border;
   }
+}
+
+/* Concrete texture shows through - sections are transparent */
+#main-content section {
+  background-color: transparent !important;
+}
+
+/* Cards and panels get semi-transparent dark backgrounds for content readability */
+.card-hover {
+  background-color: rgba(74, 74, 78, 0.55) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Form and content boxes */
+.border.bg-navy\/30,
+.border.bg-navy-light\/20,
+.border.bg-navy\/40,
+.border.bg-navy\/50,
+.border.bg-navy-light\/40,
+.border.bg-navy-light\/30,
+.border.bg-navy-light\/50 {
+  background-color: rgba(74, 74, 78, 0.5) !important;
+  backdrop-filter: blur(4px);
 }
 
 @layer base {

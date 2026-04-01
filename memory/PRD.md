@@ -6,13 +6,13 @@
 Premium-Website für Henry Wilke - AI-Systemarchitekt. Multi-Page-Struktur mit Barrierefreiheit, Referenzen, Blog, Sprachauswahl (DE/EN), Social-Media-Links, Lead-Magnet, Admin-Dashboard und visuellem Redesign.
 
 ## Design (Aktuell - Apr 2026)
-- **Farbschema:** Strukturiertes Grau (#4A4A4E) mit Grain-Textur + Neon Cyan (#00E5FF) + Violet (#9D4CDD)
+- **Hintergrund:** Echte Beton/Putz-Textur (Unsplash) als fixed Background-Layer, mit `brightness(0.32)` abgedunkelt. Struktur scheint durch alle Sections hindurch
+- **Farbschema:** Strukturiertes Grau (#686A69) + Neon Cyan (#00E5FF) + Violet (#9D4CDD)
 - **Typografie:** Satoshi (Headlines), Space Grotesk (Claims/Labels), Inter (Body)
 - **Hero:** Neural-Network-Canvas, sequenzieller Text-Reveal, Typing-Animation, Neon-Glow
 - **Navigation:** Glassmorphism (backdrop-blur)
-- **Cards:** TracingBeamCard – leuchtende Cyan/Violet-Linie folgt der Maus
+- **Cards:** TracingBeamCard + halbtransparentes Overlay mit Backdrop-Blur
 - **Scroll-Animationen:** LineReveal, WordReveal, SweepReveal, StaggerContainer
-- **Hintergrund:** Mitteldunkles Grau mit SVG-Noise/Grain-Textur-Overlay (edel, strukturiert)
 
 ## Vollständig Implementiert
 - [x] Multi-Page Routing (alle Seiten)
@@ -22,14 +22,13 @@ Premium-Website für Henry Wilke - AI-Systemarchitekt. Multi-Page-Struktur mit B
 - [x] Barrierefreiheit (WCAG)
 - [x] Cookie-Consent (DSGVO)
 - [x] Social Media Links (Instagram, LinkedIn)
-- [x] Visuelles Redesign: Grau + Cyan + Violet + Grain-Textur
+- [x] Visuelles Redesign: Beton-Textur + Cyan + Violet
 - [x] Neue Typografie: Satoshi + Space Grotesk
 - [x] Neural-Network Canvas, Typing-Animation, Sequential Reveal
 - [x] Glassmorphism Navigation
 - [x] Scroll-Animationen (LineReveal, SweepReveal, Stagger)
 - [x] TracingBeamCard auf Service-Cards
-- [x] Admin-Dashboard (/admin) mit Passwort-Login
-- [x] Dashboard: Übersicht (Stats), Anfragen-Tab, Downloads-Tab, Status-Management
+- [x] Admin-Dashboard (/admin) mit Passwort-Login + Status-Management
 
 ## Architecture
 - **Frontend:** React 19 + Tailwind CSS + Framer Motion + React Router + Phosphor Icons + Context API
