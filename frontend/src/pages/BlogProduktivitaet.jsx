@@ -8,8 +8,7 @@ const BlogProduktivitaet = () => {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative py-24 bg-navy overflow-hidden">
-        <BlueprintGrid opacity={0.02} />
+      <section className="relative py-24 overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
           <Link 
             to="/blog" 
@@ -19,6 +18,7 @@ const BlogProduktivitaet = () => {
             <span className="label-mono">Zurück zum Blog</span>
           </Link>
           
+          <div className="glass-card p-8 md:p-12">
           <div className="flex flex-wrap items-center gap-4 mb-6">
             <span className="px-3 py-1 bg-gold/10 text-gold text-xs font-mono uppercase tracking-wider">
               KI-Strategie
@@ -50,12 +50,14 @@ const BlogProduktivitaet = () => {
           >
             5 überraschende Erkenntnisse, die meine Arbeit mit KI für immer verändert haben
           </motion.p>
+          </div>
         </div>
       </section>
 
       {/* Article Content */}
-      <article className="relative py-16 md:py-24 bg-navy-light overflow-hidden">
+      <article className="relative py-12 md:py-16 overflow-hidden">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <div className="glass-card p-8 md:p-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -108,7 +110,7 @@ const BlogProduktivitaet = () => {
                   Wendepunkt.
                 </p>
                 
-                <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-navy/40">
+                <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-white/5">
                   <p className="text-offwhite text-xl font-display italic">
                     „Ich bin nicht defekt, sondern anders ausgestattet"
                   </p>
@@ -211,7 +213,7 @@ const BlogProduktivitaet = () => {
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
-                  <div className="p-6 bg-navy/40 border border-white/10">
+                  <div className="p-6 bg-white/5 border border-white/10">
                     <h4 className="text-offwhite font-display text-lg mb-4">Der Mensch übernimmt:</h4>
                     <ul className="space-y-2 text-muted-gray">
                       <li className="flex items-start gap-2">
@@ -228,7 +230,7 @@ const BlogProduktivitaet = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="p-6 bg-navy/40 border border-gold/20">
+                  <div className="p-6 bg-white/5 border border-gold/20">
                     <h4 className="text-gold font-display text-lg mb-4">Die KI übernimmt:</h4>
                     <ul className="space-y-2 text-muted-gray">
                       <li className="flex items-start gap-2">
@@ -306,7 +308,7 @@ const BlogProduktivitaet = () => {
                   Daten und Disziplin liefert.
                 </p>
 
-                <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-navy/40">
+                <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-white/5">
                   <p className="text-offwhite text-lg font-display italic">
                     „Die Ergebnisse entstehen nicht, weil er ‚besonders' ist, sondern weil die KI die Struktur 
                     liefert, die ihm sein ganzes Leben gefehlt hat – wodurch er sich endlich auf seine eigentlichen 
@@ -323,7 +325,7 @@ const BlogProduktivitaet = () => {
             </section>
 
             {/* Fazit */}
-            <section className="mb-16 p-8 bg-navy/40 border border-gold/20">
+            <section className="mb-16 p-8 bg-white/5 border border-gold/20">
               <h2 className="heading-display text-2xl md:text-3xl text-offwhite mb-6">
                 Fazit: Vom Werkzeug zum zweiten Ich
               </h2>
@@ -357,6 +359,7 @@ const BlogProduktivitaet = () => {
               </Link>
             </div>
           </motion.div>
+          </div>
         </div>
       </article>
     </>

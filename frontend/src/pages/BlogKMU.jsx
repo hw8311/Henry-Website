@@ -11,8 +11,7 @@ const BlogKMU = () => {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative py-24 bg-navy overflow-hidden">
-        <BlueprintGrid opacity={0.02} />
+      <section className="relative py-24 overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
           <Link 
             to="/blog" 
@@ -22,47 +21,50 @@ const BlogKMU = () => {
             <span className="label-mono">{language === 'de' ? 'Zurück zum Blog' : 'Back to blog'}</span>
           </Link>
           
-          <div className="flex flex-wrap items-center gap-4 mb-6">
-            <span className="px-3 py-1 bg-gold/10 text-gold text-xs font-mono uppercase tracking-wider">
-              {language === 'de' ? 'KI für KMU' : 'AI for SMB'}
-            </span>
-            <div className="flex items-center gap-4 text-muted-gray text-sm">
-              <span className="flex items-center gap-2">
-                <Calendar size={14} weight="light" aria-hidden="true" />
-                {language === 'de' ? '1. März 2026' : 'March 1, 2026'}
+          <div className="glass-card p-8 md:p-12">
+            <div className="flex flex-wrap items-center gap-4 mb-6">
+              <span className="px-3 py-1 bg-gold/10 text-gold text-xs font-mono uppercase tracking-wider">
+                {language === 'de' ? 'KI für KMU' : 'AI for SMB'}
               </span>
-              <span className="flex items-center gap-2">
-                <Clock size={14} weight="light" aria-hidden="true" />
-                {language === 'de' ? '15 min Lesezeit' : '15 min read'}
-              </span>
+              <div className="flex items-center gap-4 text-muted-gray text-sm">
+                <span className="flex items-center gap-2">
+                  <Calendar size={14} weight="light" aria-hidden="true" />
+                  {language === 'de' ? '1. März 2026' : 'March 1, 2026'}
+                </span>
+                <span className="flex items-center gap-2">
+                  <Clock size={14} weight="light" aria-hidden="true" />
+                  {language === 'de' ? '15 min Lesezeit' : '15 min read'}
+                </span>
+              </div>
             </div>
-          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite mb-4"
-          >
-            {language === 'de' 
-              ? 'KI-Automatisierung im kleinen Unternehmen'
-              : 'AI Automation in Small Business'}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-muted-gray"
-          >
-            {language === 'de'
-              ? 'Ein ehrlicher Blick auf die nächsten Jahre'
-              : 'An honest look at the years ahead'}
-          </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite mb-4"
+            >
+              {language === 'de' 
+                ? 'KI-Automatisierung im kleinen Unternehmen'
+                : 'AI Automation in Small Business'}
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-xl text-muted-gray"
+            >
+              {language === 'de'
+                ? 'Ein ehrlicher Blick auf die nächsten Jahre'
+                : 'An honest look at the years ahead'}
+            </motion.p>
+          </div>
         </div>
       </section>
 
       {/* Article Content */}
-      <article className="relative py-16 md:py-24 bg-navy-light overflow-hidden">
+      <article className="relative py-12 md:py-16 overflow-hidden">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <div className="glass-card p-8 md:p-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -149,7 +151,7 @@ const BlogKMU = () => {
                       Das bedeutet nicht, dass Menschen ersetzt werden. Aber viele Aufgaben lassen sich deutlich 
                       effizienter erledigen.
                     </p>
-                    <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-navy/40">
+                    <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-white/5">
                       <p className="text-offwhite text-lg font-display italic">
                         Ein kleines Team kann plötzlich Leistungen erbringen, für die früher ein deutlich größerer 
                         Mitarbeiterstab notwendig gewesen wäre.
@@ -241,7 +243,7 @@ const BlogKMU = () => {
                       Statt nur eine einzelne Aufgabe auszuführen, kann ein solcher Agent mehrere Schritte 
                       selbstständig koordinieren.
                     </p>
-                    <div className="p-6 bg-navy/40 border border-gold/20 my-8">
+                    <div className="p-6 bg-white/5 border border-gold/20 my-8">
                       <p className="text-offwhite mb-4">Ein Beispiel aus unserem Autohändler-Szenario:</p>
                       <p className="text-muted-gray">
                         Ein neues Fahrzeug wird aufgenommen. Das System erstellt automatisch eine Anzeige, lädt 
@@ -265,7 +267,7 @@ const BlogKMU = () => {
                       Viele führende Stimmen aus der Technologiebranche erwarten, dass künstliche Intelligenz 
                       die Produktivität von Unternehmen stark verändern wird.
                     </p>
-                    <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-navy/40">
+                    <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-white/5">
                       <p className="text-offwhite text-lg font-display italic">
                         Der OpenAI-Chef Sam Altman beschreibt KI häufig als Werkzeug, das es kleinen Teams ermöglicht, 
                         Leistungen zu erbringen, für die früher ganze Abteilungen nötig waren.
@@ -351,19 +353,19 @@ const BlogKMU = () => {
                       nächsten Jahre in mehreren Schritten entwickeln werden.
                     </p>
                     <div className="grid gap-4 my-8">
-                      <div className="p-4 bg-navy/40 border-l-2 border-gold/50">
+                      <div className="p-4 bg-white/5 border-l-2 border-gold/50">
                         <p className="text-offwhite">Zunächst</p>
                         <p className="text-sm mt-1">werden KI-Assistenten immer stärker in den Büroalltag integriert. Sie helfen beim Schreiben, Auswerten und Strukturieren von Informationen.</p>
                       </div>
-                      <div className="p-4 bg-navy/40 border-l-2 border-gold/50">
+                      <div className="p-4 bg-white/5 border-l-2 border-gold/50">
                         <p className="text-offwhite">Darauf folgt</p>
                         <p className="text-sm mt-1">eine Phase stärkerer Automatisierung. Ganze Arbeitsabläufe werden digital unterstützt oder teilweise übernommen.</p>
                       </div>
-                      <div className="p-4 bg-navy/40 border-l-2 border-gold/50">
+                      <div className="p-4 bg-white/5 border-l-2 border-gold/50">
                         <p className="text-offwhite">Später</p>
                         <p className="text-sm mt-1">werden autonome Systeme entstehen, die bestimmte Aufgabenketten selbstständig durchführen können.</p>
                       </div>
-                      <div className="p-4 bg-navy/40 border-l-2 border-gold/50">
+                      <div className="p-4 bg-white/5 border-l-2 border-gold/50">
                         <p className="text-offwhite">Irgendwann</p>
                         <p className="text-sm mt-1">wird es völlig normal sein, dass ein kleines Unternehmen mit wenigen Mitarbeitern von mehreren intelligenten Software-Systemen unterstützt wird.</p>
                       </div>
@@ -372,7 +374,7 @@ const BlogKMU = () => {
                 </section>
 
                 {/* Fazit */}
-                <section className="mb-16 p-8 bg-navy/40 border border-gold/20">
+                <section className="mb-16 p-8 bg-white/5 border border-gold/20">
                   <h2 className="heading-display text-2xl md:text-3xl text-offwhite mb-6">
                     Fazit
                   </h2>
@@ -467,7 +469,7 @@ const BlogKMU = () => {
                       accelerated. Creating texts, analyzing data, answering inquiries, or structuring 
                       information – all of this can already be supported by AI today.
                     </p>
-                    <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-navy/40">
+                    <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-white/5">
                       <p className="text-offwhite text-lg font-display italic">
                         A small team can suddenly deliver performance that previously required a much larger staff.
                       </p>
@@ -476,7 +478,7 @@ const BlogKMU = () => {
                 </section>
 
                 {/* Fazit English */}
-                <section className="mb-16 p-8 bg-navy/40 border border-gold/20">
+                <section className="mb-16 p-8 bg-white/5 border border-gold/20">
                   <h2 className="heading-display text-2xl md:text-3xl text-offwhite mb-6">
                     Conclusion
                   </h2>
@@ -511,6 +513,7 @@ const BlogKMU = () => {
               </Link>
             </div>
           </motion.div>
+          </div>
         </div>
       </article>
     </>

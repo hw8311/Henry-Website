@@ -25,7 +25,7 @@ export const Footer = () => {
       data-testid="footer"
       role="contentinfo"
       aria-label={language === 'de' ? 'Fußbereich' : 'Footer'}
-      className="relative py-16 bg-navy border-t border-white/5"
+      className="relative py-16 border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">

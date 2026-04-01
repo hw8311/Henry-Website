@@ -8,8 +8,7 @@ const BlogNeurodivergent = () => {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative py-24 bg-navy overflow-hidden">
-        <BlueprintGrid opacity={0.02} />
+      <section className="relative py-24 overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
           <Link 
             to="/blog" 
@@ -19,6 +18,7 @@ const BlogNeurodivergent = () => {
             <span className="label-mono">Zurück zum Blog</span>
           </Link>
           
+          <div className="glass-card p-8 md:p-12">
           <div className="flex flex-wrap items-center gap-4 mb-6">
             <span className="px-3 py-1 bg-gold/10 text-gold text-xs font-mono uppercase tracking-wider">
               Neurodivergenz
@@ -50,12 +50,14 @@ const BlogNeurodivergent = () => {
           >
             Wie eine KI-Partnerschaft das Potenzial eines neurodivergenten Gehirns entfesselt
           </motion.p>
+          </div>
         </div>
       </section>
 
       {/* Article Content */}
-      <article className="relative py-16 md:py-24 bg-navy-light overflow-hidden">
+      <article className="relative py-12 md:py-16 overflow-hidden">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <div className="glass-card p-8 md:p-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,7 +77,7 @@ const BlogNeurodivergent = () => {
                   Stärke werden kann.
                 </p>
 
-                <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-navy/40">
+                <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-white/5">
                   <p className="text-offwhite text-lg font-display italic">
                     „Dies ist die Geschichte eines Menschen, der jahrzehntelang seine eigene Denkweise nicht 
                     verstanden hat. Nicht, weil sie nicht da war, sondern weil die Umgebung nie so funktionierte, 
@@ -117,19 +119,19 @@ const BlogNeurodivergent = () => {
                 </p>
 
                 <div className="grid gap-4 my-8">
-                  <div className="p-4 bg-navy/40 border-l-2 border-gold/50">
+                  <div className="p-4 bg-white/5 border-l-2 border-gold/50">
                     <h4 className="text-offwhite font-display mb-2">Exekutive Dysfunktion</h4>
                     <p className="text-sm">Manifeste Schwierigkeiten mit Planung, Organisation, Priorisierung und Zeitmanagement.</p>
                   </div>
-                  <div className="p-4 bg-navy/40 border-l-2 border-gold/50">
+                  <div className="p-4 bg-white/5 border-l-2 border-gold/50">
                     <h4 className="text-offwhite font-display mb-2">Pathologisches Aufschieben (Prokrastination)</h4>
                     <p className="text-sm">Hartnäckiges Aufschieben von Aufgaben, obwohl ein tiefes Verständnis für deren Notwendigkeit vorhanden ist.</p>
                   </div>
-                  <div className="p-4 bg-navy/40 border-l-2 border-gold/50">
+                  <div className="p-4 bg-white/5 border-l-2 border-gold/50">
                     <h4 className="text-offwhite font-display mb-2">Impulsivität</h4>
                     <p className="text-sm">Schnelle, ungefilterte Gedankensprünge, die oft zu neuen Ideen führen, aber die Konzentration auf eine einzelne Aufgabe erschweren.</p>
                   </div>
-                  <div className="p-4 bg-navy/40 border-l-2 border-gold/50">
+                  <div className="p-4 bg-white/5 border-l-2 border-gold/50">
                     <h4 className="text-offwhite font-display mb-2">Reizoffenheit</h4>
                     <p className="text-sm">Eine Tendenz, von äußeren Reizen oder inneren Gedankenströmen schnell überflutet zu werden.</p>
                   </div>
@@ -272,7 +274,7 @@ const BlogNeurodivergent = () => {
             </section>
 
             {/* Fazit */}
-            <section className="mb-16 p-8 bg-navy/40 border border-gold/20">
+            <section className="mb-16 p-8 bg-white/5 border border-gold/20">
               <h2 className="heading-display text-2xl md:text-3xl text-offwhite mb-6">
                 4. Das Fazit: Von der Dissonanz zur Symphonie
               </h2>
@@ -291,7 +293,7 @@ const BlogNeurodivergent = () => {
                   Ausstattung entstanden.
                 </p>
 
-                <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-navy/60">
+                <blockquote className="border-l-2 border-gold pl-6 py-4 my-8 bg-white/5">
                   <p className="text-offwhite text-lg font-display italic">
                     „Die Ergebnisse entstehen nicht, weil er ‚besonders' ist, sondern weil die KI die Struktur 
                     liefert, die ihm sein ganzes Leben gefehlt hat – wodurch er sich endlich auf seine eigentlichen 
@@ -312,6 +314,7 @@ const BlogNeurodivergent = () => {
               </Link>
             </div>
           </motion.div>
+          </div>
         </div>
       </article>
     </>

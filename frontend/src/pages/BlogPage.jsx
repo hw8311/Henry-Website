@@ -53,41 +53,32 @@ const BlogPage = () => {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative py-32 bg-navy overflow-hidden">
-        <BlueprintGrid opacity={0.02} />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <motion.span
+      <section className="relative py-24 overflow-hidden">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
+          <motion.div className="glass-card p-8 md:p-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="label-mono text-gold block mb-4"
+            transition={{ duration: 0.6 }}
           >
-            Blog
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite mb-6"
-          >
-            {language === 'de' ? 'Gedanken & Erkenntnisse' : 'Thoughts & Insights'}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-gray text-lg max-w-2xl mx-auto"
-          >
-            {language === 'de' 
-              ? 'Strategische Perspektiven auf KI-Implementierung, Systemdenken und die Zukunft der Wissensarbeit.'
-              : 'Strategic perspectives on AI implementation, systems thinking, and the future of knowledge work.'}
-          </motion.p>
+            <span className="label-mono text-gold block mb-4">
+              Blog
+            </span>
+            <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite mb-6">
+              {language === 'de' ? 'Gedanken & Erkenntnisse' : 'Thoughts & Insights'}
+            </h1>
+            <p className="text-muted-gray text-lg max-w-2xl mx-auto">
+              {language === 'de' 
+                ? 'Strategische Perspektiven auf KI-Implementierung, Systemdenken und die Zukunft der Wissensarbeit.'
+                : 'Strategic perspectives on AI implementation, systems thinking, and the future of knowledge work.'}
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Blog Posts */}
-      <section className="relative py-24 md:py-32 bg-navy-light overflow-hidden">
+      <section className="relative py-12 md:py-16 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
-          <div className="space-y-12">
+          <div className="space-y-6">
             {blogPosts.map((post, index) => (
               <motion.article
                 key={post.id}
@@ -98,9 +89,7 @@ const BlogPage = () => {
                 className="group"
               >
                 <Link to={`/blog/${post.id}`} className="block">
-                  <div className="relative p-8 md:p-10 bg-navy/40 border border-white/5 hover:border-gold/30 transition-all duration-500">
-                    {/* Decorative corner */}
-                    <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-gold/20 group-hover:border-gold/50 transition-colors duration-500" aria-hidden="true" />
+                  <div className="relative glass-card p-8 md:p-10 hover:border-gold/30 transition-all duration-500">
                     
                     {/* Category & Meta */}
                     <div className="flex flex-wrap items-center gap-4 mb-6">

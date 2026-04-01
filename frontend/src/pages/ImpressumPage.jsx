@@ -11,7 +11,7 @@ const ImpressumPage = () => {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative py-24 bg-navy overflow-hidden">
+      <section className="relative py-24 overflow-hidden">
         <BlueprintGrid opacity={0.02} />
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
           <Link 
@@ -32,7 +32,7 @@ const ImpressumPage = () => {
       </section>
 
       {/* Content */}
-      <section className="relative py-16 md:py-24 bg-navy-light overflow-hidden">
+      <section className="relative py-12 md:py-16 overflow-hidden">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -11,9 +11,8 @@ const DatenschutzPage = () => {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative py-24 bg-navy overflow-hidden">
-        <BlueprintGrid opacity={0.02} />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+      <section className="relative py-24 overflow-hidden">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
           <Link 
             to="/" 
             className="inline-flex items-center gap-2 text-muted-gray hover:text-gold transition-colors mb-8"
@@ -21,6 +20,7 @@ const DatenschutzPage = () => {
             <ArrowLeft size={20} />
             <span className="label-mono">Zurück zur Startseite</span>
           </Link>
+          <div className="glass-card p-8 md:p-12">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,12 +28,14 @@ const DatenschutzPage = () => {
           >
             Datenschutzerklärung
           </motion.h1>
+          </div>
         </div>
       </section>
 
       {/* Content */}
-      <section className="relative py-16 md:py-24 bg-navy-light overflow-hidden">
+      <section className="relative py-12 md:py-16 overflow-hidden">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <div className="glass-card p-8 md:p-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

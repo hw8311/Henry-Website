@@ -79,15 +79,13 @@ export const KIAutomationSection = () => {
     <section 
       id="ki-automatisierung"
       data-testid="ki-automation-section"
-      className="relative py-32 md:py-40 bg-navy overflow-hidden"
+      className="relative py-20 md:py-28 overflow-hidden"
       ref={ref}
     >
-      <BlueprintGrid opacity={0.015} />
-      
-      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 space-y-8">
         {/* Header */}
         <motion.div 
-          className="mb-20"
+          className="glass-card p-8 md:p-12"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -104,7 +102,7 @@ export const KIAutomationSection = () => {
 
         {/* Intro Paragraphs */}
         <motion.div
-          className="mb-16"
+          className="glass-card p-8 md:p-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -122,7 +120,7 @@ export const KIAutomationSection = () => {
           
           {/* Highlight Box */}
           <motion.div 
-            className="relative p-6 md:p-8 bg-navy-light/40 border-l-2 border-gold my-10"
+            className="relative p-6 md:p-8 bg-white/5 border-l-2 border-gold my-8 rounded-lg"
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -137,7 +135,7 @@ export const KIAutomationSection = () => {
 
         {/* Application Fields */}
         <motion.div
-          className="mb-20"
+          className="glass-card p-8 md:p-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -154,7 +152,7 @@ export const KIAutomationSection = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                  className="flex items-center gap-4 p-4 bg-navy-light/20 border border-white/5 hover:border-gold/30 transition-colors duration-300 group"
+                  className="flex items-center gap-4 p-4 glass-panel hover:border-gold/30 transition-colors duration-300 group"
                 >
                   <div className="w-10 h-10 flex items-center justify-center bg-gold/10 group-hover:bg-gold/20 transition-colors">
                     <Icon size={20} weight="light" className="text-gold" />
@@ -168,12 +166,11 @@ export const KIAutomationSection = () => {
 
         {/* Key Difference */}
         <motion.div
-          className="mb-20 p-8 md:p-10 bg-navy-light/30 border border-white/5 relative"
+          className="glass-card p-8 md:p-10"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-gold" />
           <Lightbulb size={32} weight="light" className="text-gold mb-4" />
           <p className="text-muted-gray leading-relaxed">
             {language === 'de'
@@ -184,7 +181,7 @@ export const KIAutomationSection = () => {
 
         {/* Benefits Section */}
         <motion.div
-          className="mb-20"
+          className="glass-card p-8 md:p-12"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.7 }}
@@ -201,7 +198,7 @@ export const KIAutomationSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                  className="group flex gap-6 p-6 bg-navy-light/20 border border-white/5 hover:border-gold/30 transition-all duration-300"
+                  className="group flex gap-6 p-6 glass-panel hover:border-gold/30 transition-all duration-300"
                 >
                   <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-gold/30 group-hover:border-gold/60 group-hover:bg-gold/5 transition-all duration-300">
                     <Icon size={24} weight="light" className="text-gold" />
@@ -222,7 +219,7 @@ export const KIAutomationSection = () => {
 
         {/* Why Tools Are Not Enough */}
         <motion.div
-          className="mb-20"
+          className="glass-card p-8 md:p-12"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.9 }}
@@ -254,7 +251,7 @@ export const KIAutomationSection = () => {
               const Icon = point.icon;
               return (
                 <StaggerItem key={index}>
-                  <div className="text-center p-4 border border-white/5 hover:border-gold/30 transition-colors duration-300 group">
+                  <div className="text-center p-4 glass-panel hover:border-gold/30 transition-colors duration-300 group">
                     <Icon size={28} weight="thin" className="text-gold mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
                     <span className="text-sm text-muted-gray group-hover:text-offwhite transition-colors duration-300">{point[language]}</span>
                   </div>
@@ -272,12 +269,11 @@ export const KIAutomationSection = () => {
 
         {/* Reality Section */}
         <motion.div
-          className="mb-20 relative p-8 md:p-12 bg-navy-light/40 border border-gold/20"
+          className="glass-card p-8 md:p-12"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <div className="absolute top-0 right-0 w-20 h-20 border-t border-r border-blueprint opacity-40" />
           <span className="label-mono text-gold block mb-4">
             {language === 'de' ? 'Stand heute' : 'State of today'}
           </span>
@@ -311,7 +307,7 @@ export const KIAutomationSection = () => {
 
         {/* Conclusion */}
         <motion.div
-          className="text-center"
+          className="glass-card p-8 md:p-12 text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.3 }}

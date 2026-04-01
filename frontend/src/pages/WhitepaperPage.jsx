@@ -92,12 +92,16 @@ const WhitepaperPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 bg-navy overflow-hidden">
-        <BlueprintGrid opacity={0.02} />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className="relative py-20 md:py-24 overflow-hidden">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left - Content */}
-            <div>
+            <motion.div 
+              className="glass-card p-8 md:p-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -153,7 +157,7 @@ const WhitepaperPage = () => {
                   </div>
                 ))}
               </motion.div>
-            </div>
+            </motion.div>
 
             {/* Right - Download Form */}
             <motion.div
@@ -161,10 +165,7 @@ const WhitepaperPage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <div className="relative p-8 md:p-10 bg-navy-light border border-white/10">
-                {/* Corner decorations */}
-                <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-gold" />
-                <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-gold" />
+              <div className="glass-card p-8 md:p-10">
 
                 {!isSuccess ? (
                   <>
@@ -191,7 +192,7 @@ const WhitepaperPage = () => {
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           required
-                          className="w-full px-4 py-3 bg-navy border border-white/10 text-offwhite placeholder:text-muted-gray/50 focus:outline-none focus:border-gold/50 transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 text-offwhite placeholder:text-muted-gray/50 focus:outline-none focus:border-gold/50 transition-colors rounded-lg"
                           placeholder={language === 'de' ? 'ihre@email.de' : 'your@email.com'}
                         />
                       </div>
@@ -205,7 +206,7 @@ const WhitepaperPage = () => {
                           id="name"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          className="w-full px-4 py-3 bg-navy border border-white/10 text-offwhite placeholder:text-muted-gray/50 focus:outline-none focus:border-gold/50 transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 text-offwhite placeholder:text-muted-gray/50 focus:outline-none focus:border-gold/50 transition-colors rounded-lg"
                           placeholder={language === 'de' ? 'Ihr Name' : 'Your name'}
                         />
                       </div>
@@ -219,7 +220,7 @@ const WhitepaperPage = () => {
                           id="company"
                           value={company}
                           onChange={(e) => setCompany(e.target.value)}
-                          className="w-full px-4 py-3 bg-navy border border-white/10 text-offwhite placeholder:text-muted-gray/50 focus:outline-none focus:border-gold/50 transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 text-offwhite placeholder:text-muted-gray/50 focus:outline-none focus:border-gold/50 transition-colors rounded-lg"
                           placeholder={language === 'de' ? 'Ihr Unternehmen' : 'Your company'}
                         />
                       </div>
@@ -289,13 +290,13 @@ const WhitepaperPage = () => {
       </section>
 
       {/* Chapters Preview */}
-      <section className="relative py-24 md:py-32 bg-navy-light overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="relative py-12 md:py-16 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <span className="label-mono text-gold block mb-4">
               {language === 'de' ? 'Inhaltsvorschau' : 'Content Preview'}
@@ -305,7 +306,7 @@ const WhitepaperPage = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {chapters.map((chapter, index) => {
               const Icon = chapter.icon;
               return (
@@ -315,11 +316,10 @@ const WhitepaperPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="relative p-6 bg-navy/40 border border-white/5"
+                  className="glass-card p-6"
                 >
-                  <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-gold/20" />
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-gold/10 flex-shrink-0">
+                    <div className="p-3 bg-gold/10 flex-shrink-0 rounded-lg">
                       <Icon size={24} weight="light" className="text-gold" />
                     </div>
                     <div>
@@ -339,13 +339,13 @@ const WhitepaperPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 md:py-32 bg-navy overflow-hidden">
-        <BlueprintGrid opacity={0.02} />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-12 text-center">
+      <section className="relative py-16 md:py-20 overflow-hidden">
+        <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="glass-card p-10 md:p-14 text-center"
           >
             <h2 className="heading-display text-3xl md:text-4xl text-offwhite mb-6">
               {language === 'de'

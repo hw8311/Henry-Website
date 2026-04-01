@@ -56,50 +56,39 @@ const KontaktPage = () => {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative py-32 bg-navy overflow-hidden">
-        <BlueprintGrid opacity={0.02} />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <motion.span
+      <section className="relative py-24 overflow-hidden">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
+          <motion.div className="glass-card p-8 md:p-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="label-mono text-gold block mb-4"
+            transition={{ duration: 0.6 }}
           >
-            {language === 'de' ? 'Kontakt' : 'Contact'}
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite mb-6"
-          >
-            {language === 'de' ? 'Systemgespräch anfragen.' : 'Request a consultation.'}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-gray text-lg max-w-2xl mx-auto"
-          >
-            {language === 'de'
-              ? 'Lassen Sie uns über Ihre Herausforderungen sprechen – und wie durchdachte KI-Architektur sie lösen kann.'
-              : 'Let\'s talk about your challenges – and how thoughtful AI architecture can solve them.'}
-          </motion.p>
+            <span className="label-mono text-gold block mb-4">
+              {language === 'de' ? 'Kontakt' : 'Contact'}
+            </span>
+            <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite mb-6">
+              {language === 'de' ? 'Systemgespräch anfragen.' : 'Request a consultation.'}
+            </h1>
+            <p className="text-muted-gray text-lg max-w-2xl mx-auto">
+              {language === 'de'
+                ? 'Lassen Sie uns über Ihre Herausforderungen sprechen – und wie durchdachte KI-Architektur sie lösen kann.'
+                : 'Let\'s talk about your challenges – and how thoughtful AI architecture can solve them.'}
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="relative py-24 md:py-32 bg-navy-light overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 md:px-12">
+      <section className="relative py-12 md:py-16 overflow-hidden">
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
           <motion.form
             data-testid="contact-form"
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative bg-navy/30 border border-white/5 p-8 md:p-12"
+            className="glass-card p-8 md:p-12"
           >
-            <div className="absolute top-0 right-0 w-24 h-24 border-t border-r border-blueprint opacity-30" />
-            <div className="absolute bottom-0 left-0 w-24 h-24 border-b border-l border-blueprint opacity-30" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>

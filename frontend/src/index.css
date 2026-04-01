@@ -24,7 +24,7 @@
   --border: 0 0% 48%;
   --input: 0 0% 48%;
   --ring: 187 100% 50%;
-  --radius: 0rem;
+  --radius: 1rem;
 }
 
 * {
@@ -39,7 +39,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #686A69;
+  background-color: #3A3A3D;
   color: #F4F4F5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -101,11 +101,11 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar-track {
-  background: #686A69;
+  background: #3A3A3D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #5A5C5B;
+  background: #555;
   border-radius: 3px;
 }
 
@@ -162,9 +162,10 @@ button:focus-visible {
 
 /* Card Hover Effect */
 .card-hover {
-  background-color: rgba(50, 50, 54, 0.7);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background-color: rgba(30, 30, 34, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 1.25rem;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -295,12 +296,12 @@ button:focus-visible {
   animation: draw-line 2s ease-out forwards;
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism utility (navigation) */
 .glass {
-  background: rgba(104, 106, 105, 0.8);
+  background: rgba(30, 30, 34, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Subtle gradient background for sections */
@@ -319,19 +320,24 @@ button:focus-visible {
   }
 }
 
-/* Concrete texture shows through - sections get glassmorphic backdrop */
-#main-content section {
-  background: rgba(35, 35, 38, 0.6) !important;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+/* Concrete texture shows through - NO global section overlay */
+
+/* Compact glassmorphic card for individual content containers */
+.glass-card {
+  background: rgba(30, 30, 34, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
 }
 
 /* Glass panel utility for content containers */
 .glass-panel {
-  background: rgba(35, 35, 38, 0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(30, 30, 34, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
 }
 
 @layer base {

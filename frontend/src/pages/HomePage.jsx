@@ -59,18 +59,13 @@ const HomePage = () => {
       {/* Hero Section */}
       <section 
         data-testid="hero-section"
-        className="relative min-h-screen flex items-center overflow-hidden bg-navy"
+        className="relative min-h-screen flex items-center overflow-hidden"
       >
         {/* Neural Network Background */}
-        <NeuralBackground opacity={0.2} particleCount={50} />
+        <NeuralBackground opacity={0.15} particleCount={50} />
         
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-navy to-transparent pointer-events-none" />
-        
-        {/* Subtle violet gradient accent */}
-        <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-violet/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-gold/3 rounded-full blur-[120px] pointer-events-none" />
+        {/* Subtle gradient overlays */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
@@ -141,19 +136,11 @@ const HomePage = () => {
               transition={{ duration: 1, delay: 0.4 }}
             >
               <motion.div 
-                className="relative group"
+                className="relative group glass-card p-2"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.6 }}
               >
-                {/* Border frames with new accent */}
-                <motion.div 
-                  className="absolute -inset-4 border border-white/[0.06]"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                />
-                
-                <div className="relative aspect-[4/5] overflow-hidden bg-navy-light">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
                   <div 
                     className="absolute inset-0 scale-110"
                     style={{
@@ -166,18 +153,12 @@ const HomePage = () => {
                   <motion.img
                     src="https://customer-assets.emergentagent.com/job_ai-systems-henry/artifacts/4tf3zkmz_file_000000005b706246860393db18f7484a~7.png"
                     alt={language === 'de' ? 'Henry Wilke - AI-Systemarchitekt' : 'Henry Wilke - AI System Architect'}
-                    className="relative w-full h-full object-cover object-center"
+                    className="relative w-full h-full object-cover object-center rounded-lg"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.8 }}
                   />
-                  {/* Gradient overlay with cyan/violet tint */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-navy/30 via-transparent to-violet/10 mix-blend-overlay" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-70" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-lg" />
                 </div>
-                
-                {/* Corner accents */}
-                <motion.div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-gold" />
-                <motion.div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-gold" />
               </motion.div>
             </motion.div>
           </div>
@@ -201,67 +182,56 @@ const HomePage = () => {
       </section>
 
       {/* Positioning Section */}
-      <section className="relative py-32 md:py-40 bg-navy-light overflow-hidden">
-        <BlueprintGrid opacity={0.015} />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
-            <motion.div 
-              className="md:col-span-4"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <span className="label-mono text-gold block mb-4">
-                {t.positioning.label[language]}
-              </span>
-              <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite whitespace-pre-line">
-                <LineReveal text={t.positioning.title[language]} delay={0.1} />
-              </h2>
-            </motion.div>
-
-            <motion.div 
-              className="md:col-span-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <SweepReveal delay={0.5}>
-                <p className="text-lg md:text-xl leading-relaxed text-muted-gray">
-                  {t.positioning.text[language]}
-                </p>
-              </SweepReveal>
-
-              <motion.div 
-                className="mt-12 h-px bg-gradient-to-r from-gold via-violet/50 to-transparent"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.8 }}
-                style={{ transformOrigin: 'left' }}
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Whitepaper CTA Banner */}
-      <section className="relative py-16 bg-navy overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-gold/3 via-transparent to-violet/3" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative p-8 md:p-10 border border-white/[0.08] bg-navy-light/50 backdrop-blur-sm"
+            className="glass-card p-8 md:p-12"
           >
-            {/* Corner decorations */}
-            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold" />
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-violet" />
-            
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14">
+              <div className="md:col-span-4">
+                <span className="label-mono text-gold block mb-4">
+                  {t.positioning.label[language]}
+                </span>
+                <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite whitespace-pre-line">
+                  <LineReveal text={t.positioning.title[language]} delay={0.1} />
+                </h2>
+              </div>
+
+              <div className="md:col-span-8">
+                <SweepReveal delay={0.5}>
+                  <p className="text-lg md:text-xl leading-relaxed text-muted-gray">
+                    {t.positioning.text[language]}
+                  </p>
+                </SweepReveal>
+
+                <motion.div 
+                  className="mt-10 h-px bg-gradient-to-r from-gold via-violet/50 to-transparent"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                  style={{ transformOrigin: 'left' }}
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Whitepaper CTA Banner */}
+      <section className="relative py-10 overflow-hidden">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="glass-card p-8 md:p-10"
+          >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div className="flex-1">
                 <span className="label-mono text-gold block mb-2">

@@ -55,32 +55,28 @@ const LeistungenPage = () => {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative py-32 bg-navy overflow-hidden">
-        <BlueprintGrid opacity={0.02} />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <motion.span
+      <section className="relative py-24 overflow-hidden">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
+          <motion.div className="glass-card p-8 md:p-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="label-mono text-gold block mb-4"
+            transition={{ duration: 0.6 }}
           >
-            {language === 'de' ? 'Leistungen' : 'Services'}
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite"
-          >
-            {language === 'de' ? 'Was ich anbiete' : 'What I offer'}
-          </motion.h1>
+            <span className="label-mono text-gold block mb-4">
+              {language === 'de' ? 'Leistungen' : 'Services'}
+            </span>
+            <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite">
+              {language === 'de' ? 'Was ich anbiete' : 'What I offer'}
+            </h1>
+          </motion.div>
         </div>
       </section>
 
       {/* Difference Section */}
-      <section className="relative py-24 md:py-32 bg-navy-light overflow-hidden" ref={ref}>
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="relative py-16 md:py-20 overflow-hidden" ref={ref}>
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
@@ -93,20 +89,18 @@ const LeistungenPage = () => {
             </h2>
           </motion.div>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" stagger={0.15} delay={0.2}>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6" stagger={0.15} delay={0.2}>
             {cards.map((card, index) => {
               const Icon = icons[index];
               return (
                 <StaggerItem key={index}>
-                  <TracingBeamCard className="bg-navy/50 backdrop-blur-sm border border-white/5 card-hover h-full">
-                    <div className="p-8 md:p-10 relative">
-                      <div className="absolute top-0 right-0 w-20 h-20 border-t border-r border-blueprint opacity-30" />
-                      
-                      <div className="mb-6">
-                        <Icon size={40} weight="thin" className="text-gold opacity-80" />
+                  <TracingBeamCard className="glass-card border-white/5 card-hover h-full">
+                    <div className="p-6 md:p-8 relative">
+                      <div className="mb-5">
+                        <Icon size={36} weight="thin" className="text-gold opacity-80" />
                       </div>
 
-                      <h3 className="font-display text-xl md:text-2xl text-offwhite mb-4">
+                      <h3 className="font-display text-xl md:text-2xl text-offwhite mb-3">
                         {card.title[language]}
                       </h3>
 
@@ -123,12 +117,10 @@ const LeistungenPage = () => {
       </section>
 
       {/* Workflow Section */}
-      <section className="relative py-24 md:py-32 bg-navy overflow-hidden">
-        <BlueprintGrid opacity={0.02} />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
           <motion.div 
-            className="text-center mb-20"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -143,99 +135,63 @@ const LeistungenPage = () => {
           </motion.div>
 
           {/* Desktop Workflow */}
-          <div className="hidden lg:block relative">
-            <motion.div 
-              className="absolute top-12 left-[10%] right-[10%] h-px bg-gradient-to-r from-gold/10 via-gold/40 to-gold/10"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, delay: 0.5 }}
-            />
-            
-            <div className="grid grid-cols-5 gap-8 lg:gap-12">
-              {steps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
-                  className="relative text-center group cursor-pointer"
-                >
-                  <motion.div 
-                    className="relative z-10 mx-auto w-20 h-20 mb-8"
-                    whileHover={{ scale: 1.15 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="absolute inset-0 border-2 border-gold/40 rotate-45 group-hover:border-gold/80 transition-colors duration-300" />
-                    <div className="absolute inset-0 rotate-45 bg-gold/0 group-hover:bg-gold/10 transition-colors duration-300" />
-                    <div className="absolute inset-2 bg-navy flex items-center justify-center">
-                      <span className="font-mono text-gold text-base">{step.number}</span>
-                    </div>
-                  </motion.div>
-
-                  <h3 className="font-display text-xl text-offwhite mb-3 group-hover:text-gold transition-colors duration-300">
-                    {step.title[language]}
-                  </h3>
-
-                  <p className="text-sm text-muted-gray leading-relaxed group-hover:text-offwhite/80 transition-colors duration-300 px-2">
-                    {step.description[language]}
-                  </p>
-
-                  {index < steps.length - 1 && (
-                    <motion.div 
-                      className="absolute top-10 -right-4 lg:-right-6 text-gold/40 text-xl"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.8 + index * 0.15 }}
-                    >
-                      <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 2, delay: index * 0.2 }}>
-                        &rarr;
-                      </motion.span>
-                    </motion.div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile Workflow */}
-          <div className="lg:hidden px-2">
-            <div className="relative">
-              <motion.div 
-                className="absolute left-7 top-0 bottom-0 w-px bg-gradient-to-b from-gold/50 via-gold/30 to-transparent"
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, delay: 0.3 }}
-                style={{ transformOrigin: 'top' }}
-              />
-              
-              <div className="space-y-10">
+          <div className="hidden lg:block">
+            <div className="glass-card p-8 md:p-10">
+              <div className="grid grid-cols-5 gap-6 lg:gap-8">
                 {steps.map((step, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                    className="relative pl-20"
+                    transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
+                    className="relative text-center group cursor-pointer"
                   >
-                    <div className="absolute left-0 top-0 w-14 h-14 flex items-center justify-center">
-                      <div className="w-12 h-12 border-2 border-gold/50 rotate-45 flex items-center justify-center bg-navy">
-                        <span className="font-mono text-gold text-sm -rotate-45 font-medium">{step.number}</span>
+                    <motion.div 
+                      className="relative z-10 mx-auto w-16 h-16 mb-6"
+                      whileHover={{ scale: 1.15 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="absolute inset-0 border-2 border-gold/40 rotate-45 group-hover:border-gold/80 transition-colors duration-300 rounded-md" />
+                      <div className="absolute inset-0 rotate-45 bg-gold/0 group-hover:bg-gold/10 transition-colors duration-300 rounded-md" />
+                      <div className="absolute inset-2 flex items-center justify-center">
+                        <span className="font-mono text-gold text-sm">{step.number}</span>
                       </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="pt-1">
-                      <h3 className="font-display text-xl text-offwhite mb-3">{step.title[language]}</h3>
-                      <p className="text-muted-gray leading-relaxed text-base">{step.description[language]}</p>
-                    </div>
+                    <h3 className="font-display text-lg text-offwhite mb-2 group-hover:text-gold transition-colors duration-300">
+                      {step.title[language]}
+                    </h3>
+
+                    <p className="text-xs text-muted-gray leading-relaxed group-hover:text-offwhite/80 transition-colors duration-300">
+                      {step.description[language]}
+                    </p>
                   </motion.div>
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Mobile Workflow */}
+          <div className="lg:hidden space-y-4">
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
+                className="glass-card p-5 flex items-start gap-5"
+              >
+                <div className="w-12 h-12 flex-shrink-0 border-2 border-gold/50 rotate-45 flex items-center justify-center rounded-md">
+                  <span className="font-mono text-gold text-sm -rotate-45 font-medium">{step.number}</span>
+                </div>
+                <div className="pt-1">
+                  <h3 className="font-display text-lg text-offwhite mb-1">{step.title[language]}</h3>
+                  <p className="text-muted-gray leading-relaxed text-sm">{step.description[language]}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
