@@ -121,7 +121,7 @@ const ReferenzenPage = () => {
                         </p>
 
                         {/* Highlight Box */}
-                        <div className="relative p-6 bg-navy/60 border-l-2 border-gold mb-8">
+                        <div className="relative p-6 bg-white/5 border-l-2 border-gold mb-8 rounded-lg">
                           <div className="flex items-start gap-4">
                             <Icon size={32} weight="light" className="text-gold flex-shrink-0 mt-1" aria-hidden="true" />
                             <div>

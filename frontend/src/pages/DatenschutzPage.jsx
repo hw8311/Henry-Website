@@ -115,6 +115,7 @@ const DatenschutzPage = () => {
               </p>
             </div>
           </motion.div>
+          </div>
         </div>
       </section>
     </>
