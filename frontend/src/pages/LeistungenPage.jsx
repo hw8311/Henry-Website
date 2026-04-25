@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Blueprint, Brain, ChartLine, TreeStructure } from '@phosphor-icons/react';
-import BlueprintGrid from '../components/BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
 import { LineReveal, StaggerContainer, StaggerItem } from '../components/animations/ScrollAnimations';
 import TracingBeamCard from '../components/TracingBeamCard';

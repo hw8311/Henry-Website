@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from '@phosphor-icons/react';
-import BlueprintGrid from '../components/BlueprintGrid';
 
 const BlogProduktivitaet = () => {
   return (

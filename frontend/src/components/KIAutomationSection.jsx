@@ -17,7 +17,6 @@ import {
   CheckSquare,
   TreeStructure
 } from '@phosphor-icons/react';
-import BlueprintGrid from './BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
 import { LineReveal, StaggerContainer, StaggerItem } from './animations/ScrollAnimations';
 

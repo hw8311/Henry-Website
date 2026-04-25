@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FileArrowDown, CheckCircle, Spinner, BookOpen, Gear, ShieldCheck, ChartLineUp, ArrowRight } from '@phosphor-icons/react';
-import BlueprintGrid from '../components/BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;

@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from '@phosphor-icons/react';
-import BlueprintGrid from '../components/BlueprintGrid';
 import { useSEO } from '../components/SEO';
 
 const AGBPage = () => {

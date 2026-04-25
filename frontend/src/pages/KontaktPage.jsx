@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { PaperPlaneTilt, CircleNotch, CheckCircle, WarningCircle } from '@phosphor-icons/react';
 import axios from 'axios';
 import { toast } from 'sonner';
-import BlueprintGrid from '../components/BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
 import { trackEvents } from '../utils/analytics';
 

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { ArrowDown, FileArrowDown } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import NeuralBackground from '../components/NeuralBackground';
-import BlueprintGrid from '../components/BlueprintGrid';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 import { LineReveal, SweepReveal } from '../components/animations/ScrollAnimations';
