@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ai-strategist-12.emergent.host/sitemap.xml
+
+# Crawl-delay fuer respektvolles Crawling
+Crawl-delay: 1
+
+# Admin-Bereich nicht indexieren
+Disallow: /admin
+Disallow: /admin/
