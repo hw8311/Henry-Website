@@ -86,11 +86,9 @@ const HomePage = () => {
 
             {/* Single H1 - no animation, instant display for LCP */}
             <h1 className="claim-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-offwhite mb-8">
-              {language === 'de' ? (
-                <>Systeme bauen, <span className="gold-text">die denken.</span></>
-              ) : (
-                <>Building systems <span className="gold-text">that think.</span></>
-              )}
+              {language === 'de' 
+                ? 'Henry Wilke – AI-Systemarchitekt für KMU'
+                : 'Henry Wilke – AI System Architect for SMEs'}
             </h1>
 
             {/* Subtitle - no typing animation, instant display */}
