@@ -197,6 +197,93 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Kundenstimmen / Testimonials - Google Review Style */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="label-mono text-gold block mb-4">
+              {language === 'de' ? 'Kundenstimmen' : 'Client Reviews'}
+            </span>
+            <h2 className="heading-display text-3xl md:text-4xl text-offwhite">
+              {language === 'de' ? 'Was Kunden sagen.' : 'What clients say.'}
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                name: 'Thomas B.',
+                text: language === 'de' 
+                  ? 'Henry Wilke hat uns in nur 8 Wochen eine KI-gestützte Prozessautomatisierung aufgebaut, die unsere Auftragsabwicklung von 3 Tagen auf unter 4 Stunden reduziert hat. Die ROI-Berechnung hat sich bereits nach 4 Monaten amortisiert. Extrem kompetent, praxisnah und immer auf Augenhöhe mit uns Mittelständlern.'
+                  : 'Henry Wilke built us an AI-powered process automation in just 8 weeks that reduced our order processing from 3 days to under 4 hours. The ROI paid off after just 4 months. Extremely competent, practical, and always on eye level with us SMEs.',
+              },
+              {
+                name: 'Anna-Maria S.',
+                text: language === 'de'
+                  ? 'Dank Henrys KI-Strategie konnten wir unsere Lager- und Versandprozesse intelligent automatisieren. Die Fehlerquote ist um über 85 % gesunken und unsere Mitarbeiter können sich endlich auf wertschöpfende Tätigkeiten konzentrieren. Sehr empfehlenswert für jedes Unternehmen, das skalieren will, ohne blind Personal aufzubauen.'
+                  : 'Thanks to Henry\'s AI strategy, we were able to intelligently automate our warehouse and shipping processes. The error rate dropped by over 85% and our employees can finally focus on value-adding activities. Highly recommended for any company that wants to scale without blindly hiring.',
+              },
+              {
+                name: 'Michael H.',
+                text: language === 'de'
+                  ? 'Henry versteht es meisterhaft, komplexe KI-Möglichkeiten in konkrete, sofort einsetzbare Systemarchitekturen zu übersetzen. Seine Begleitung bei der Implementierung unserer intelligenten Dokumenten- und Kundenanalyse war Gold wert. Professionell, transparent und mit messbaren Ergebnissen.'
+                  : 'Henry masterfully understands how to translate complex AI possibilities into concrete, immediately deployable system architectures. His guidance in implementing our intelligent document and customer analysis was worth its weight in gold. Professional, transparent, and with measurable results.',
+              },
+              {
+                name: 'Markus L.',
+                text: language === 'de'
+                  ? 'Vor der Zusammenarbeit mit Henry Wilke war KI für mich ein Buzzword. Heute läuft bei uns eine automatisierte Preisanpassung, Bedarfsprognose und Angebotserstellung. Umsatzsteigerung von 18 % im ersten Quartal. Henry denkt unternehmerisch und liefert keine Theorie, sondern Ergebnisse.'
+                  : 'Before working with Henry Wilke, AI was just a buzzword to me. Today we run automated pricing, demand forecasting, and quote generation. Revenue increase of 18% in the first quarter. Henry thinks entrepreneurially and delivers results, not theory.',
+              },
+              {
+                name: 'Julia von B.',
+                text: language === 'de'
+                  ? 'Henry hat unsere internen Workflows komplett neu gestaltet. Was früher manuell und zeitintensiv war, läuft jetzt KI-gestützt und skalierbar. Besonders beeindruckend: Seine Fähigkeit, die Lösungen so zu gestalten, dass sie von unserem Team wirklich angenommen werden. Top-Empfehlung!'
+                  : 'Henry completely redesigned our internal workflows. What used to be manual and time-intensive now runs AI-powered and scalable. Especially impressive: his ability to design solutions that are truly adopted by our team. Top recommendation!',
+              },
+            ].map((review, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-lg shadow-black/10 flex flex-col"
+                data-testid={`testimonial-${index}`}
+              >
+                {/* Google-style 5 Stars */}
+                <div className="flex items-center gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Review Text */}
+                <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-4">
+                  &ldquo;{review.text}&rdquo;
+                </p>
+
+                {/* Reviewer Name */}
+                <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
+                  <div className="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center">
+                    <span className="text-gray-600 font-medium text-sm">{review.name.charAt(0)}</span>
+                  </div>
+                  <span className="text-gray-900 font-medium text-sm">{review.name}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Whitepaper CTA Banner */}
       <section className="relative py-10 overflow-hidden">
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
