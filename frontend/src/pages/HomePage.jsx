@@ -60,105 +60,81 @@ const HomePage = () => {
         data-testid="hero-section"
         className="relative min-h-screen flex items-center overflow-hidden"
       >
+        {/* Chess Portrait Background - 40% opacity, smooth & dezent */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: 'url(https://customer-assets.emergentagent.com/job_ecbd67ad-0a69-4164-b768-2e37571f9a4f/artifacts/kxm166sn_grok_image_1771589320374.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center top',
+              opacity: 0.4,
+            }}
+          />
+          {/* Gradient overlays for smooth blending into dark bg */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+        </div>
+
         {/* Neural Network Background */}
-        <NeuralBackground opacity={0.15} particleCount={50} />
+        <NeuralBackground opacity={0.1} particleCount={50} />
         
-        {/* Subtle gradient overlays */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
-        
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-            {/* Text Content */}
-            <div className="lg:col-span-7 order-2 lg:order-1">
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="label-mono text-gold mb-6 block"
-              >
-                {t.hero.label[language]}
-              </motion.span>
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 py-24 md:py-32">
+          <div className="max-w-2xl">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="label-mono text-gold mb-6 block"
+            >
+              {t.hero.label[language]}
+            </motion.span>
 
-              {/* Main title with sequential reveal */}
-              <div className="mb-8">
-                <motion.h1
-                  initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  className="claim-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-offwhite"
-                >
-                  {heroTitle}
-                </motion.h1>
-                <motion.h1
-                  initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  transition={{ duration: 0.8, delay: 0.55 }}
-                  className="claim-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl gold-text neon-glow mt-1"
-                >
-                  {heroTitleAccent}
-                </motion.h1>
-              </div>
-
-              {/* Typing subtitle */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 1 }}
-                className="text-base md:text-xl text-muted-gray max-w-xl mb-10 md:mb-12 leading-relaxed px-1 min-h-[3rem]"
+            {/* Main title with sequential reveal */}
+            <div className="mb-8">
+              <motion.h1
+                initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="claim-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-offwhite"
               >
-                <TypingText 
-                  text={t.hero.subtitle[language]} 
-                  delay={1.2}
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 2.2 }}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-5"
+                {heroTitle}
+              </motion.h1>
+              <motion.h1
+                initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: 0.8, delay: 0.55 }}
+                className="claim-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl gold-text neon-glow mt-1"
               >
-                <Link to="/kontakt" className="btn-primary text-center" data-testid="hero-cta-primary">
-                  {t.hero.cta[language]}
-                </Link>
-                <Link to="/leistungen" className="btn-secondary text-center" data-testid="hero-cta-secondary">
-                  {language === 'de' ? 'Mehr erfahren' : 'Learn more'}
-                </Link>
-              </motion.div>
+                {heroTitleAccent}
+              </motion.h1>
             </div>
 
-            {/* Hero Image */}
-            <motion.div 
-              className="lg:col-span-5 order-1 lg:order-2"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
+            {/* Typing subtitle */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1 }}
+              className="text-base md:text-xl text-muted-gray max-w-xl mb-10 md:mb-12 leading-relaxed px-1 min-h-[3rem]"
             >
-              <motion.div 
-                className="relative group glass-card p-2"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
-                  <div 
-                    className="absolute inset-0 scale-110"
-                    style={{
-                      backgroundImage: 'url(https://customer-assets.emergentagent.com/job_ai-systems-henry/artifacts/4tf3zkmz_file_000000005b706246860393db18f7484a~7.png)',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(20px) brightness(0.3)',
-                    }}
-                  />
-                  <motion.img
-                    src="https://customer-assets.emergentagent.com/job_ai-systems-henry/artifacts/4tf3zkmz_file_000000005b706246860393db18f7484a~7.png"
-                    alt={language === 'de' ? 'Henry Wilke - AI-Systemarchitekt' : 'Henry Wilke - AI System Architect'}
-                    className="relative w-full h-full object-cover object-center rounded-lg"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.8 }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-lg" />
-                </div>
-              </motion.div>
+              <TypingText 
+                text={t.hero.subtitle[language]} 
+                delay={1.2}
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 2.2 }}
+              className="flex flex-col sm:flex-row gap-4 sm:gap-5"
+            >
+              <Link to="/kontakt" className="btn-primary text-center" data-testid="hero-cta-primary">
+                {t.hero.cta[language]}
+              </Link>
+              <Link to="/leistungen" className="btn-secondary text-center" data-testid="hero-cta-secondary">
+                {language === 'de' ? 'Mehr erfahren' : 'Learn more'}
+              </Link>
             </motion.div>
           </div>
 
