@@ -156,50 +156,9 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Positioning Section */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="glass-card p-8 md:p-12"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14">
-              <div className="md:col-span-4">
-                <span className="label-mono text-gold block mb-4">
-                  {t.positioning.label[language]}
-                </span>
-                <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite whitespace-pre-line">
-                  <LineReveal text={t.positioning.title[language]} delay={0.1} />
-                </h2>
-              </div>
-
-              <div className="md:col-span-8">
-                <SweepReveal delay={0.5}>
-                  <p className="text-lg md:text-xl leading-relaxed text-muted-gray">
-                    {t.positioning.text[language]}
-                  </p>
-                </SweepReveal>
-
-                <motion.div 
-                  className="mt-10 h-px bg-gradient-to-r from-gold via-violet/50 to-transparent"
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.8 }}
-                  style={{ transformOrigin: 'left' }}
-                />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Kundenstimmen / Testimonials - Google Review Style */}
       <section className="relative py-16 md:py-24 overflow-hidden">
-        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -281,6 +240,47 @@ const HomePage = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Positioning Section */}
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="glass-card p-8 md:p-12"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14">
+              <div className="md:col-span-4">
+                <span className="label-mono text-gold block mb-4">
+                  {t.positioning.label[language]}
+                </span>
+                <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-offwhite whitespace-pre-line">
+                  <LineReveal text={t.positioning.title[language]} delay={0.1} />
+                </h2>
+              </div>
+
+              <div className="md:col-span-8">
+                <SweepReveal delay={0.5}>
+                  <p className="text-lg md:text-xl leading-relaxed text-muted-gray">
+                    {t.positioning.text[language]}
+                  </p>
+                </SweepReveal>
+
+                <motion.div 
+                  className="mt-10 h-px bg-gradient-to-r from-gold via-violet/50 to-transparent"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                  style={{ transformOrigin: 'left' }}
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
