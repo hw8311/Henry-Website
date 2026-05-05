@@ -110,7 +110,7 @@ const DatenschutzPage = () => {
 
             <div className="pt-4">
               <p className="label-mono text-muted-gray/60">
-                Stand: Rostock, 2. Februar 2026
+                Stand: New York, 2. Februar 2026
               </p>
             </div>
           </motion.div>
