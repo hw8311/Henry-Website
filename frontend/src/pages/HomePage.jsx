@@ -50,8 +50,7 @@ const HomePage = () => {
   const { language } = useLanguage();
   const t = translations;
 
-  const heroTitle = language === 'de' ? 'Systeme bauen,' : 'Building systems';
-  const heroTitleAccent = language === 'de' ? 'die denken.' : 'that think.';
+  const heroTitle = language === 'de' ? 'Systeme bauen, die denken.' : 'Building systems that think.';
 
   return (
     <>
@@ -81,68 +80,39 @@ const HomePage = () => {
         
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 py-24 md:py-32">
           <div className="max-w-2xl">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="label-mono text-gold mb-6 block"
-            >
+            <span className="label-mono text-gold mb-6 block">
               {t.hero.label[language]}
-            </motion.span>
+            </span>
 
-            {/* Main title with sequential reveal */}
-            <div className="mb-8">
-              <motion.h1
-                initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="claim-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-offwhite"
-              >
-                {heroTitle}
-              </motion.h1>
-              <motion.h1
-                initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 0.8, delay: 0.55 }}
-                className="claim-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl gold-text neon-glow mt-1"
-              >
-                {heroTitleAccent}
-              </motion.h1>
-            </div>
+            {/* Single H1 - no animation, instant display for LCP */}
+            <h1 className="claim-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-offwhite mb-8">
+              {language === 'de' ? (
+                <>Systeme bauen, <span className="gold-text">die denken.</span></>
+              ) : (
+                <>Building systems <span className="gold-text">that think.</span></>
+              )}
+            </h1>
 
-            {/* Typing subtitle */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
-              className="text-base md:text-xl text-muted-gray max-w-xl mb-10 md:mb-12 leading-relaxed px-1 min-h-[3rem]"
-            >
-              <TypingText 
-                text={t.hero.subtitle[language]} 
-                delay={1.2}
-              />
-            </motion.div>
+            {/* Subtitle - no typing animation, instant display */}
+            <p className="text-base md:text-xl text-muted-gray max-w-xl mb-10 md:mb-12 leading-relaxed">
+              {t.hero.subtitle[language]}
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 2.2 }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-5"
-            >
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
               <Link to="/kontakt" className="btn-primary text-center" data-testid="hero-cta-primary">
                 {t.hero.cta[language]}
               </Link>
               <Link to="/leistungen" className="btn-secondary text-center" data-testid="hero-cta-secondary">
                 {language === 'de' ? 'Mehr erfahren' : 'Learn more'}
               </Link>
-            </motion.div>
+            </div>
           </div>
 
           {/* Scroll Indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 3 }}
+            transition={{ delay: 1.5 }}
             className="absolute bottom-12 left-1/2 -translate-x-1/2"
           >
             <motion.div
