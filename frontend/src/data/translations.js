@@ -27,8 +27,8 @@ export const translations = {
     label: { de: 'Positionierung', en: 'Positioning' },
     title: { de: 'Kein Tool-Sammler.\nKein Hype-Follower.', en: 'Not a tool collector.\nNot a hype follower.' },
     text: { 
-      de: 'KI ist kein Selbstzweck. Ich analysiere Ihre Prozesse, identifiziere Hebelwirkungen und baue Systeme, die echte Probleme lösen – nicht Lösungen, die nach Problemen suchen.',
-      en: 'AI is not an end in itself. I analyze your processes, identify leverage points, and build systems that solve real problems – not solutions looking for problems.'
+      de: 'KI ist kein Selbstzweck. Ich analysiere Ihre Prozesse, identifiziere Hebelwirkungen und baue KI-Agenten für Prozessautomatisierung, die echte Probleme lösen – nicht Lösungen, die nach Problemen suchen.',
+      en: 'AI is not an end in itself. I analyze your processes, identify leverage points, and build AI agents for process automation that solve real problems – not solutions looking for problems.'
     },
   },
 
@@ -142,14 +142,14 @@ export const translations = {
     analysisLabel: { de: 'Analyse & Strategie', en: 'Analysis & Strategy' },
     analysisTitle: { de: 'Verstehen, bevor wir bauen', en: 'Understand before we build' },
     analysisText: { 
-      de: 'Jedes erfolgreiche KI-Projekt beginnt mit einem tiefen Verständnis Ihrer Prozesse, Ziele und Herausforderungen. Ich analysiere Ihr Geschäft, identifiziere Automatisierungspotenziale und entwickle eine maßgeschneiderte Strategie.',
-      en: 'Every successful AI project begins with a deep understanding of your processes, goals, and challenges. I analyze your business, identify automation potential, and develop a tailored strategy.'
+      de: 'Jedes erfolgreiche KI-Projekt beginnt mit einem tiefen Verständnis Ihrer Prozesse, Ziele und Herausforderungen. Ich analysiere Ihr Geschäft, identifiziere Automatisierungspotenziale und entwickle eine maßgeschneiderte Strategie – mit klarem Fokus auf den ROI von KI-Projekten im Mittelstand.',
+      en: 'Every successful AI project begins with a deep understanding of your processes, goals, and challenges. I analyze your business, identify automation potential, and develop a tailored strategy – with a clear focus on the ROI of AI projects for mid-sized companies.'
     },
     architectureLabel: { de: 'Architektur & Design', en: 'Architecture & Design' },
     architectureTitle: { de: 'Systeme, die wachsen können', en: 'Systems that can grow' },
     architectureText: { 
-      de: 'Ich entwerfe KI-Architekturen, die nicht nur heute funktionieren, sondern mit Ihrem Geschäft skalieren. Modular, wartbar, zukunftssicher.',
-      en: 'I design AI architectures that not only work today but scale with your business. Modular, maintainable, future-proof.'
+      de: 'Ich entwerfe KI-Architekturen, die nicht nur heute funktionieren, sondern mit Ihrem Geschäft skalieren. Modular, wartbar, zukunftssicher – und auf Wunsch als DSGVO-konforme KI (Souveräne KI) mit europäischem Hosting.',
+      en: 'I design AI architectures that not only work today but scale with your business. Modular, maintainable, future-proof – and on request as GDPR-compliant AI (Sovereign AI) with European hosting.'
     },
     implementationLabel: { de: 'Implementierung', en: 'Implementation' },
     implementationTitle: { de: 'Von der Vision zur Realität', en: 'From vision to reality' },

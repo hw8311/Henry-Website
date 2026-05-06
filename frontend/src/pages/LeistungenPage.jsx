@@ -11,22 +11,22 @@ const cards = [
   {
     title: { de: 'Strategische KI-Architektur', en: 'Strategic AI Architecture' },
     description: {
-      de: 'Keine isolierten Tools. Durchdachte Systemstrukturen, die alle Komponenten intelligent verbinden und skalierbar orchestrieren.',
-      en: 'No isolated tools. Thoughtful system structures that intelligently connect all components and orchestrate them scalably.'
+      de: 'Keine isolierten Tools. Durchdachte Systemstrukturen, die alle Komponenten intelligent verbinden und skalierbar orchestrieren – auf Wunsch als DSGVO-konforme KI (Souveräne KI) mit europäischem Hosting.',
+      en: 'No isolated tools. Thoughtful system structures that intelligently connect all components and orchestrate them scalably – on request as GDPR-compliant AI (Sovereign AI) with European hosting.'
     }
   },
   {
     title: { de: 'Automatisierte Denkprozesse', en: 'Automated Thinking Processes' },
     description: {
-      de: 'Regelbasierte Intelligenz, die repetitive Entscheidungen übernimmt. Ihr Team konzentriert sich auf das Wesentliche.',
-      en: 'Rule-based intelligence that handles repetitive decisions. Your team focuses on what matters.'
+      de: 'KI-Agenten für Prozessautomatisierung, die repetitive Entscheidungen übernehmen. Ihr Team konzentriert sich auf das Wesentliche.',
+      en: 'AI agents for process automation that handle repetitive decisions. Your team focuses on what matters.'
     }
   },
   {
     title: { de: 'Entscheidungsintelligenz', en: 'Decision Intelligence' },
     description: {
-      de: 'Datengetriebene Logik, die nicht rät – sondern ableitet. Fundierte Empfehlungen auf Basis realer Muster.',
-      en: 'Data-driven logic that doesn\'t guess – it derives. Informed recommendations based on real patterns.'
+      de: 'Datengetriebene Logik, die nicht rät – sondern ableitet. Fundierte Empfehlungen mit klarem Fokus auf den ROI von KI-Projekten im Mittelstand.',
+      en: 'Data-driven logic that doesn\'t guess – it derives. Informed recommendations with a clear focus on the ROI of AI projects for mid-sized companies.'
     }
   },
   {
