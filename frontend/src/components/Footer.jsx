@@ -149,8 +149,8 @@ export const Footer = () => {
             <div className="mt-6 pt-6 border-t border-white/5">
               <p className="text-muted-gray text-sm">
                 {language === 'de' ? 'E-Mail: ' : 'Email: '}
-                <a href="mailto:henry-triangle@outlook.com" className="text-gold hover:text-gold-light transition-colors" aria-label={language === 'de' ? 'E-Mail an Henry Wilke senden' : 'Send email to Henry Wilke'}>
-                  henry-triangle@outlook.com
+                <a href="mailto:info@wilke-solutions.com" className="text-gold hover:text-gold-light transition-colors" aria-label={language === 'de' ? 'E-Mail an Henry Wilke senden' : 'Send email to Henry Wilke'}>
+                  info@wilke-solutions.com
                 </a>
               </p>
             </div>

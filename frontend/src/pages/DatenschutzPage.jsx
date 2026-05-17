@@ -100,8 +100,8 @@ const DatenschutzPage = () => {
               <h2 className="font-display text-2xl text-offwhite mb-4">Kontakt</h2>
               <p>
                 Bei Fragen zum Datenschutz wenden Sie sich bitte an: <br />
-                <a href="mailto:henry-triangle@outlook.com" className="text-gold hover:text-gold-light transition-colors">
-                  henry-triangle@outlook.com
+                <a href="mailto:info@wilke-solutions.com" className="text-gold hover:text-gold-light transition-colors">
+                  info@wilke-solutions.com
                 </a>
               </p>
             </div>

@@ -214,7 +214,7 @@ const KontaktPage = () => {
           >
             <p className="text-muted-gray">
               {language === 'de' ? 'Oder direkt per E-Mail: ' : 'Or directly via email: '}
-              <a href="mailto:henry-triangle@outlook.com" className="text-gold hover:text-gold-light transition-colors">henry-triangle@outlook.com</a>
+              <a href="mailto:info@wilke-solutions.com" className="text-gold hover:text-gold-light transition-colors">info@wilke-solutions.com</a>
             </p>
           </motion.div>
         </div>
