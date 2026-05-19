@@ -163,7 +163,7 @@ async def request_whitepaper_download(input: WhitepaperDownloadCreate):
             "source": download.source,
         }
         await db.whitepaper_downloads.insert_one(doc)
-        download_url = "https://customer-assets.emergentagent.com/job_e9028209-13f7-4abf-a23f-2045f44b0be4/artifacts/p885d60c_Die%20Architektur%20der%20Effizienz.pdf"
+        download_url = os.environ['WHITEPAPER_DOWNLOAD_URL']
         return WhitepaperDownloadResponse(
             success=True, download_url=download_url,
             message="Vielen Dank! Ihr Download startet gleich.",
