@@ -524,56 +524,10 @@ const FAQPage = () => {
               KI, Prozessautomatisierung & Integration
             </h1>
             <p className="text-muted-gray text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-              Strukturierte Antworten für deutsche KMU (2026) – kuratiert nach
-              dem Inverted-Pyramid-Prinzip für maximale Klarheit und KI-Lesbarkeit.
+              Antworten auf die wichtigsten Fragen rund um KI-Einführung,
+              Automatisierung, EU AI Act, DSGVO und Förderprogramme für
+              deutsche KMU.
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* GEO-Note */}
-      <section className="relative py-4 md:py-8" data-testid="faq-geo-note">
-        <div className="max-w-4xl mx-auto px-6 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="glass-card p-6 md:p-8 border border-gold/15"
-          >
-            <span className="label-mono text-gold block mb-3">
-              Architektur der GEO-Optimierung
-            </span>
-            <p className="text-muted-gray leading-relaxed mb-3 text-sm md:text-base">
-              Die Optimierung dieses FAQ-Inhalts basiert auf aktuellen Kriterien
-              der <strong className="text-offwhite">Generative Engine Optimization (GEO)</strong> für das Jahr 2026.
-            </p>
-            <ul className="space-y-2 text-sm md:text-base text-muted-gray">
-              <li className="flex gap-2">
-                <span className="text-gold flex-shrink-0">▸</span>
-                <span>
-                  <strong className="text-offwhite">Inverted-Pyramid-Prinzip (40-Wort-Regel):</strong>{' '}
-                  Jede Antwort beginnt mit einer prägnanten, direkt extrahierbaren
-                  Definition – ideal für LLM-Featured-Snippets.
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-gold flex-shrink-0">▸</span>
-                <span>
-                  <strong className="text-offwhite">Erhöhung der Entitäts- und Datendichte:</strong>{' '}
-                  Spezifische Fachtermini, gesetzliche Grundlagen (ProdHaftG,
-                  DSFA, Art. 4 EU AI Act) und Förderprogramme („Digital Jetzt").
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-gold flex-shrink-0">▸</span>
-                <span>
-                  <strong className="text-offwhite">Strukturelle Varianz:</strong>{' '}
-                  Tabellen und strukturierte Listen erhöhen die
-                  KI-Zitations-Wahrscheinlichkeit empirisch um 30–40 %.
-                </span>
-              </li>
-            </ul>
           </motion.div>
         </div>
       </section>
