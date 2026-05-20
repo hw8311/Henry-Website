@@ -518,10 +518,11 @@ const FAQPage = () => {
           >
             <span className="label-mono text-gold block mb-4">FAQ</span>
             <h1
-              className="heading-display text-4xl md:text-5xl lg:text-6xl text-offwhite mb-5"
+              lang="de"
+              className="heading-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-offwhite mb-5 break-words hyphens-auto"
               data-testid="faq-heading"
             >
-              KI, Prozessautomatisierung & Integration
+              KI, Prozess&shy;automatisierung &amp; Integration
             </h1>
             <p className="text-muted-gray text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
               Antworten auf die wichtigsten Fragen rund um KI-Einführung,
