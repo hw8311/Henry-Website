@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from '../components/ui/accordion';
+import FAQSchema from '../components/seo/FAQSchema';
 
 // ---------------------------------------------------------------------------
 // Re-usable presentational atoms (kept inside the page to stay self-contained
@@ -462,26 +463,8 @@ Herausforderung: Akzeptanzprobleme        ──>  Lösung: Transparente Kommuni
 const FAQPage = () => {
   const { language } = useLanguage();
 
-  // Inject FAQPage JSON-LD structured data (GEO + classic SEO) on mount
+  // Update page title and meta description (FAQ JSON-LD now handled by <FAQSchema />)
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'faqpage-jsonld';
-    script.text = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqsPlain.map((f) => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: f.a,
-        },
-      })),
-    });
-    document.head.appendChild(script);
-
-    // Update title/meta for this page
     const prevTitle = document.title;
     document.title =
       language === 'de'
@@ -498,8 +481,6 @@ const FAQPage = () => {
     }
 
     return () => {
-      const existing = document.getElementById('faqpage-jsonld');
-      if (existing) existing.remove();
       document.title = prevTitle;
       if (metaDesc && prevDesc !== null) metaDesc.setAttribute('content', prevDesc);
     };
@@ -507,6 +488,7 @@ const FAQPage = () => {
 
   return (
     <>
+      <FAQSchema />
       {/* Hero */}
       <section className="relative py-24 overflow-hidden" data-testid="faq-hero">
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">

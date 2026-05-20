@@ -23,7 +23,9 @@ Home, Leistungen, Referenzen, Blog (+3 articles), Über, Automatisierung, **FAQ 
 
 ## Completed Work
 ### 2026-05 (current session)
-- **FAQ page** at `/faq` with 15 GEO-optimized Q&A (Inverted-Pyramid, EU AI Act, DSGVO, ProdHaftG, BAFA/Digital Jetzt). Rich JSX: tables, numbered lists, blockquotes, ASCII diagrams. shadcn Accordion. FAQPage JSON-LD schema injected via useEffect. Added to Navigation + sitemap.xml.
+- **FAQSchema-Komponente** extrahiert nach `src/components/seo/FAQSchema.jsx` (vorher inline in FAQPage). Wiederverwendbar, single source of truth für FAQ JSON-LD. In FAQPage als `<FAQSchema />` direkt vor Hero eingebunden.
+- **Sitemap-Index** unter `/sitemap_index.xml` + bereinigte `sitemap.xml` (15 URLs, alle auf `wilke-solutions.com`). robots.txt aktualisiert.
+- **FAQ page** at `/faq` with 15 GEO-optimized Q&A (Inverted-Pyramid, EU AI Act, DSGVO, ProdHaftG, BAFA/Digital Jetzt). Rich JSX: tables, numbered lists, blockquotes, ASCII diagrams. shadcn Accordion. FAQPage JSON-LD via dedicated FAQSchema component. Mobile-Hyphenation für „Prozess-automatisierung".
 - **Email update**: `henry-triangle@outlook.com` → `info@wilke-solutions.com` (Impressum, Datenschutz, Kontakt, Footer)
 - **SEO keyword integration**: "KI-Agenten für Prozessautomatisierung" (HomePage positioning), "ROI von KI-Projekten im Mittelstand" (Leistungen Entscheidungsintelligenz), "DSGVO-konforme KI (Souveräne KI)" (Leistungen Strategische KI-Architektur)
 - **Pre-deployment cleanup**: `.gitignore` no longer blocks `.env`; hardcoded whitepaper URL moved to `WHITEPAPER_DOWNLOAD_URL` env var
