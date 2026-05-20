@@ -12,6 +12,7 @@ const navLinks = [
   { path: '/blog', labelDe: 'Blog', labelEn: 'Blog' },
   { path: '/ueber', labelDe: 'Über mich', labelEn: 'About' },
   { path: '/automatisierung', labelDe: 'Automatisierung', labelEn: 'Automation' },
+  { path: '/faq', labelDe: 'FAQ', labelEn: 'FAQ' },
 ];
 
 const socialLinks = [

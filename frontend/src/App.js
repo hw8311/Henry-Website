@@ -22,6 +22,7 @@ import ImpressumPage from "./pages/ImpressumPage";
 import AGBPage from "./pages/AGBPage";
 import DatenschutzPage from "./pages/DatenschutzPage";
 import AdminPage from "./pages/AdminPage";
+import FAQPage from "./pages/FAQPage";
 
 const RouteChangeHandler = () => {
   const { pathname } = useLocation();
@@ -78,6 +79,7 @@ function AppContent() {
           <Route path="/blog/produktivitaet-ki-erkenntnisse" element={<BlogProduktivitaet />} />
           <Route path="/blog/neurodivergent-ki-partnerschaft" element={<BlogNeurodivergent />} />
           <Route path="/whitepaper" element={<WhitepaperPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/kontakt" element={<KontaktPage />} />
           <Route path="/impressum" element={<ImpressumPage />} />
           <Route path="/agb" element={<AGBPage />} />

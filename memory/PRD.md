@@ -1,46 +1,44 @@
 # PRD – Henry Wilke Portfolio (AI System Architect)
 
 ## Original Problem Statement
-Create a high-quality, modern, modular and maintainable multi-page website for Henry Wilke (AI System Architect). Focus areas: technical SEO, performance (LCP), customer testimonials, hero visual polish, dual-language support (DE/EN), admin dashboard.
-
-## Product Requirements
-- Dual-Language Support (DE/EN)
-- High-end AI-Architect aesthetic (Dark base, Satoshi font, Cyan/Gold accents)
-- Admin dashboard (leads + contact submissions, JWT auth)
-- Strong technical SEO: sitemap.xml, robots.txt, JSON-LD (Person + Organization), canonical URLs, hreflang, meta tags, Google site verification
-- Optimized LCP (no render-blocking animations on hero H1)
-- Customer testimonials in Google-Review style
+Modular, modern multi-page website for Henry Wilke (AI System Architect). Focus: technical SEO, performance, dual-language DE/EN, admin dashboard, GEO optimization for LLM citations.
 
 ## Architecture
-- Frontend: React 19, Tailwind CSS, Framer Motion, Context API for i18n
-- Backend: FastAPI, Motor (MongoDB async), PyJWT
-- Key files:
-  - `/app/frontend/src/data/translations.js`
-  - `/app/frontend/src/pages/HomePage.jsx`, `LeistungenPage.jsx`
-  - `/app/backend/server.py`
-  - `/app/frontend/public/sitemap.xml`, `robots.txt`, `index.html` (SEO meta + JSON-LD)
+- Frontend: React 19, Tailwind, Framer Motion, Context API i18n
+- Backend: FastAPI, Motor (MongoDB), PyJWT
+- Production: https://ai-strategist-12.emergent.host (custom domain wilke-solutions.com per DNS at Namecheap)
+- Key files: `frontend/src/data/translations.js`, `frontend/src/pages/*.jsx`, `frontend/src/components/Navigation.jsx`, `backend/server.py`, `frontend/public/sitemap.xml`, `index.html`
+
+## Pages
+Home, Leistungen, Referenzen, Blog (+3 articles), Über, Automatisierung, **FAQ (GEO-optimized, 15 questions)**, Whitepaper, Kontakt, Impressum, AGB, Datenschutz, Admin
 
 ## Key API Endpoints
 - `POST /api/contact`
-- `POST /api/whitepaper`
-- `POST /api/admin/login`
-- `GET /api/admin/leads` (JWT-protected)
+- `POST /api/whitepaper/download` (URL via `WHITEPAPER_DOWNLOAD_URL` env)
+- `POST /api/admin/login`, `GET /api/admin/contacts`
 
 ## DB Schema
 - `contact_submissions`: `{name, email, message, created_at, status}`
 - `whitepaper_downloads`: `{email, name, company, whitepaper, created_at, source}`
 
-## Completed Work (2026-02)
-- SEO keyword integration: "KI-Agenten für Prozessautomatisierung" (HomePage positioning), "ROI von KI-Projekten im Mittelstand" (Leistungen – Entscheidungsintelligenz card), "DSGVO-konforme KI (Souveräne KI)" (Leistungen – Strategische KI-Architektur card) – organic weaving in DE + EN, no layout changes
-- Hero LCP optimization: removed TypingText, single static H1 "Henry Wilke – AI-Systemarchitekt für KMU"
-- Client testimonials section (5 Google-Review-style entries) below hero
-- Technical SEO: sitemap.xml, robots.txt, canonical, hreflang, JSON-LD Person+Organization, Google site verification
-- Location update across Impressum/AGB/Datenschutz (Rostock → New York)
+## Completed Work
+### 2026-05 (current session)
+- **FAQ page** at `/faq` with 15 GEO-optimized Q&A (Inverted-Pyramid, EU AI Act, DSGVO, ProdHaftG, BAFA/Digital Jetzt). Rich JSX: tables, numbered lists, blockquotes, ASCII diagrams. shadcn Accordion. FAQPage JSON-LD schema injected via useEffect. Added to Navigation + sitemap.xml.
+- **Email update**: `henry-triangle@outlook.com` → `info@wilke-solutions.com` (Impressum, Datenschutz, Kontakt, Footer)
+- **SEO keyword integration**: "KI-Agenten für Prozessautomatisierung" (HomePage positioning), "ROI von KI-Projekten im Mittelstand" (Leistungen Entscheidungsintelligenz), "DSGVO-konforme KI (Souveräne KI)" (Leistungen Strategische KI-Architektur)
+- **Pre-deployment cleanup**: `.gitignore` no longer blocks `.env`; hardcoded whitepaper URL moved to `WHITEPAPER_DOWNLOAD_URL` env var
+- **Health check**: ✅ PASS (no blockers)
 
-## Backlog / Next Actions
-- P2: Email forwarding for contact form (user said "Um die Mail kümmern wir uns später")
-- OBSERVED (not requested): Leistungen-Seite und viele Sections rendern aktuell einen sichtbaren Concrete-Texture-Hintergrund über `#concrete-texture-layer` in `/app/frontend/src/index.css`. Laut vorheriger Übergabe sollte dieser entfernt sein ("Fertig und aus"). User bitte entscheiden, ob Layer entfernt werden soll.
+### Earlier
+- Hero LCP optimization (removed TypingText, single static H1)
+- Client testimonials (Google-Review style)
+- Technical SEO: sitemap.xml, robots.txt, canonical, hreflang, JSON-LD Person+Organization
+- Location updates in legal pages (Rostock → New York)
+
+## Backlog
+- P2: Email forwarding for contact form (Resend with DKIM/SPF)
+- (Note) Concrete texture background still present in CSS (`#concrete-texture-layer`) — user requested its removal in earlier session as "Fertig und aus"; not auto-removed pending explicit confirmation
 
 ## Credentials
-- Admin Dashboard Password: `5U7I35H3XC`
-- Admin login endpoint: `POST /api/admin/login`
+- Admin Password: `5U7I35H3XC` (in `backend/.env` as `ADMIN_PASSWORD`)
+- Login: `POST /api/admin/login` with `{password}`

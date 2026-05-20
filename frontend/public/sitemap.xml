@@ -67,6 +67,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://ai-strategist-12.emergent.host/faq</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://ai-strategist-12.emergent.host/datenschutz</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>yearly</changefreq>
