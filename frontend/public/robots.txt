@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ai-strategist-12.emergent.host/sitemap.xml
+Sitemap: https://wilke-solutions.com/sitemap_index.xml
+Sitemap: https://wilke-solutions.com/sitemap.xml
 
 # Crawl-delay fuer respektvolles Crawling
 Crawl-delay: 1
