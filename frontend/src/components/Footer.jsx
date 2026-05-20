@@ -98,13 +98,18 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/ueber" className="text-muted-gray hover:text-offwhite transition-colors">
+                <Link to="/ueber-mich" className="text-muted-gray hover:text-offwhite transition-colors">
                   {language === 'de' ? 'Über mich' : 'About'}
                 </Link>
               </li>
               <li>
                 <Link to="/automatisierung" className="text-muted-gray hover:text-offwhite transition-colors">
                   {language === 'de' ? 'Automatisierung erklärt' : 'Automation explained'}
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="text-muted-gray hover:text-offwhite transition-colors">
+                  FAQ
                 </Link>
               </li>
               <li>

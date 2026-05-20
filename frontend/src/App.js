@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Toaster } from "sonner";
 import { LanguageProvider, useLanguage } from "./context/LanguageContext";
 import Navigation from "./components/Navigation";
@@ -71,7 +71,8 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/leistungen" element={<LeistungenPage />} />
-          <Route path="/ueber" element={<UeberPage />} />
+          <Route path="/ueber-mich" element={<UeberPage />} />
+          <Route path="/ueber" element={<Navigate to="/ueber-mich" replace />} />
           <Route path="/automatisierung" element={<AutomatisierungPage />} />
           <Route path="/referenzen" element={<ReferenzenPage />} />
           <Route path="/blog" element={<BlogPage />} />
