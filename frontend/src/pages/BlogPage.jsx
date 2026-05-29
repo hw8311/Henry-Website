@@ -6,6 +6,19 @@ import { useLanguage } from '../context/LanguageContext';
 
 const blogPosts = [
   {
+    id: 'ki-mittelstand-2026',
+    titleDe: 'KI & Automatisierung im deutschen Mittelstand',
+    titleEn: 'AI & Automation in the German Mittelstand',
+    subtitleDe: 'Eine systemanalytische Betrachtung der Adaption, Potenziale und Implementierungsstrategien im Jahr 2026',
+    subtitleEn: 'A systems-analytical study on adoption, potential and implementation strategies in 2026',
+    excerptDe: 'Mit einer Verfünffachung der KI-Nutzungsrate seit 2018, einem dichten Geflecht aus Treibern und Hemmnissen sowie dem EU AI Act als regulatorischem Korsett: Eine evidenzbasierte Bestandsaufnahme des Mittelstands im KI-Zeitalter – inklusive Fallstudien, Förderlandschaft und fünf strategischen Handlungsempfehlungen.',
+    excerptEn: 'A five-fold increase in AI adoption since 2018, a dense web of drivers and barriers, and the EU AI Act as a regulatory corset: An evidence-based stocktake of the Mittelstand in the age of AI – including case studies, funding landscape and five strategic recommendations.',
+    date: '2026-05-29',
+    readTime: '35',
+    categoryDe: 'Forschungsbericht',
+    categoryEn: 'Research Report'
+  },
+  {
     id: 'ki-automatisierung-kmu',
     titleDe: 'KI-Automatisierung im kleinen Unternehmen',
     titleEn: 'AI Automation in Small Business',

@@ -28,6 +28,7 @@ const ROUTES = [
   "/leistungen",
   "/referenzen",
   "/blog",
+  "/blog/ki-mittelstand-2026",
   "/blog/ki-automatisierung-kmu",
   "/blog/produktivitaet-ki-erkenntnisse",
   "/blog/neurodivergent-ki-partnerschaft",

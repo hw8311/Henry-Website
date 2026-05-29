@@ -26,8 +26,14 @@
   </url>
   <url>
     <loc>https://wilke-solutions.com/blog</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wilke-solutions.com/blog/ki-mittelstand-2026</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>

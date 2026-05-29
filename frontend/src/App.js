@@ -17,6 +17,7 @@ import BlogPage from "./pages/BlogPage";
 import BlogProduktivitaet from "./pages/BlogProduktivitaet";
 import BlogNeurodivergent from "./pages/BlogNeurodivergent";
 import BlogKMU from "./pages/BlogKMU";
+import BlogKIMittelstand from "./pages/BlogKIMittelstand";
 import WhitepaperPage from "./pages/WhitepaperPage";
 import ImpressumPage from "./pages/ImpressumPage";
 import AGBPage from "./pages/AGBPage";
@@ -76,6 +77,7 @@ function AppContent() {
           <Route path="/automatisierung" element={<AutomatisierungPage />} />
           <Route path="/referenzen" element={<ReferenzenPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/ki-mittelstand-2026" element={<BlogKIMittelstand />} />
           <Route path="/blog/ki-automatisierung-kmu" element={<BlogKMU />} />
           <Route path="/blog/produktivitaet-ki-erkenntnisse" element={<BlogProduktivitaet />} />
           <Route path="/blog/neurodivergent-ki-partnerschaft" element={<BlogNeurodivergent />} />
