@@ -49,7 +49,7 @@ const TracingBeamCard = ({ children, className = '' }) => {
           className="absolute h-full w-[120px] transition-all duration-100 ease-out"
           style={{
             left: Math.max(0, beam.x - 60),
-            background: 'linear-gradient(90deg, transparent, #00E5FF, transparent)',
+            background: 'linear-gradient(90deg, transparent, #C77B5A, transparent)',
           }}
         />
       </div>
@@ -77,7 +77,7 @@ const TracingBeamCard = ({ children, className = '' }) => {
           className="absolute w-full h-[120px] transition-all duration-100 ease-out"
           style={{
             top: Math.max(0, beam.y - 60),
-            background: 'linear-gradient(180deg, transparent, #00E5FF, transparent)',
+            background: 'linear-gradient(180deg, transparent, #C77B5A, transparent)',
           }}
         />
       </div>

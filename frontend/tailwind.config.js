@@ -87,8 +87,8 @@ module.exports = {
           to: { opacity: '1', transform: 'translateY(0)' }
         },
         'glow-pulse': {
-          '0%, 100%': { boxShadow: '0 0 15px rgba(0, 229, 255, 0.3)' },
-          '50%': { boxShadow: '0 0 25px rgba(0, 229, 255, 0.5)' }
+          '0%, 100%': { boxShadow: '0 0 15px rgba(199, 123, 90, 0.35)' },
+          '50%': { boxShadow: '0 0 25px rgba(224, 155, 125, 0.55)' }
         }
       },
       animation: {

@@ -6,25 +6,25 @@
 
 :root {
   --background: 0 0% 41%;
-  --foreground: 240 5% 96%;
+  --foreground: 36 36% 89%;
   --card: 0 1% 36%;
-  --card-foreground: 240 5% 96%;
+  --card-foreground: 36 36% 89%;
   --popover: 0 1% 36%;
-  --popover-foreground: 240 5% 96%;
-  --primary: 187 100% 50%;
-  --primary-foreground: 0 0% 2%;
+  --popover-foreground: 36 36% 89%;
+  --primary: 17 50% 56%;
+  --primary-foreground: 0 0% 6%;
   --secondary: 270 62% 58%;
-  --secondary-foreground: 240 5% 96%;
+  --secondary-foreground: 36 36% 89%;
   --muted: 0 1% 45%;
-  --muted-foreground: 240 3% 85%;
-  --accent: 187 100% 50%;
-  --accent-foreground: 0 0% 2%;
+  --muted-foreground: 38 22% 78%;
+  --accent: 17 50% 56%;
+  --accent-foreground: 0 0% 6%;
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 240 5% 96%;
+  --destructive-foreground: 36 36% 89%;
   --border: 0 0% 48%;
   --input: 0 0% 48%;
-  --ring: 187 100% 50%;
-  --radius: 1rem;
+  --ring: 17 50% 56%;
+  --radius: 1.5rem;
 }
 
 * {
@@ -60,7 +60,7 @@ body {
   top: -100px;
   left: 50%;
   transform: translateX(-50%);
-  background: #00E5FF;
+  background: #C77B5A;
   color: #1A1A1E;
   padding: 0.75rem 1.5rem;
   font-family: 'JetBrains Mono', monospace;
@@ -72,14 +72,14 @@ body {
 
 .skip-link:focus {
   top: 1rem;
-  outline: 2px solid #00E5FF;
+  outline: 2px solid #C77B5A;
   outline-offset: 2px;
 }
 
 /* Focus States */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #00E5FF;
+  outline: 2px solid #C77B5A;
   outline-offset: 2px;
 }
 
@@ -110,26 +110,26 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00E5FF;
+  background: #C77B5A;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(0, 229, 255, 0.25);
+  background: rgba(199, 123, 90, 0.25);
   color: #F4F4F5;
 }
 
 /* Blueprint Grid Pattern - Cyan tinted */
 .blueprint-grid {
   background-image: 
-    linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(199, 123, 90, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 123, 90, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 /* Accent Gradient Text (was gold-text) */
 .gold-text {
-  background: linear-gradient(135deg, #00E5FF 0%, #9D4CDD 100%);
+  background: linear-gradient(135deg, #C77B5A 0%, #E09B7D 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -165,32 +165,32 @@ button:focus-visible {
   background-color: rgba(30, 30, 34, 0.72);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-radius: 1.25rem;
+  border-radius: 1.75rem;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover:hover {
-  border-color: rgba(0, 229, 255, 0.4);
+  border-color: rgba(199, 123, 90, 0.4);
   transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(0, 229, 255, 0.05);
+  box-shadow: 0 0 30px rgba(199, 123, 90, 0.05);
 }
 
 /* Button Primary - Neon Cyan Outline */
 .btn-primary {
   background-color: transparent;
-  color: #00E5FF;
+  color: #C77B5A;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 0.875rem 2rem;
-  border: 1px solid #00E5FF;
+  border: 1px solid #C77B5A;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+  box-shadow: 0 0 15px rgba(199, 123, 90, 0.15);
 }
 
 .btn-primary::before {
@@ -200,15 +200,15 @@ button:focus-visible {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(199, 123, 90, 0.15), transparent);
   transition: left 0.5s ease;
 }
 
 .btn-primary:hover {
-  background-color: #00E5FF;
+  background-color: #C77B5A;
   color: #1A1A1E;
   letter-spacing: 0.15em;
-  box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 30px rgba(199, 123, 90, 0.4);
   transform: translateY(-2px);
 }
 
@@ -218,7 +218,7 @@ button:focus-visible {
 
 .btn-primary:active {
   transform: translateY(0);
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 15px rgba(199, 123, 90, 0.3);
 }
 
 /* Button Secondary */
@@ -244,14 +244,14 @@ button:focus-visible {
   left: 0;
   width: 0;
   height: 1px;
-  background: linear-gradient(90deg, #00E5FF, #9D4CDD);
+  background: linear-gradient(90deg, #C77B5A, #E09B7D);
   transition: width 0.4s ease;
 }
 
 .btn-secondary:hover {
-  border-color: rgba(0, 229, 255, 0.5);
-  color: #00E5FF;
-  background-color: rgba(0, 229, 255, 0.03);
+  border-color: rgba(199, 123, 90, 0.5);
+  color: #C77B5A;
+  background-color: rgba(199, 123, 90, 0.03);
   transform: translateY(-2px);
 }
 
@@ -278,8 +278,8 @@ button:focus-visible {
 
 .input-minimal:focus {
   outline: none;
-  border-bottom-color: #00E5FF;
-  box-shadow: 0 1px 0 0 rgba(0, 229, 255, 0.3);
+  border-bottom-color: #C77B5A;
+  box-shadow: 0 1px 0 0 rgba(199, 123, 90, 0.3);
 }
 
 .input-minimal::placeholder {
@@ -311,7 +311,7 @@ button:focus-visible {
 
 /* Neon glow for highlights */
 .neon-glow {
-  text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+  text-shadow: 0 0 20px rgba(199, 123, 90, 0.3);
 }
 
 @layer base {
@@ -322,13 +322,22 @@ button:focus-visible {
 
 /* Concrete texture shows through - NO global section overlay */
 
+/* Defensive copper-token overrides — protect against stale Tailwind cache */
+.text-gold { color: #C77B5A !important; }
+.hover\:text-gold:hover { color: #C77B5A !important; }
+.border-gold { border-color: #C77B5A !important; }
+.bg-gold { background-color: #C77B5A !important; }
+.text-offwhite { color: #F2E8D5 !important; }
+.text-muted-gray { color: #D8CDB8 !important; }
+
 /* Compact glassmorphic card for individual content containers */
 .glass-card {
   background: rgba(30, 30, 34, 0.72);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.25rem;
+  border: 1px solid rgba(242, 232, 213, 0.10);
+  border-radius: 1.75rem;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.45);
 }
 
 /* Glass panel utility for content containers */
@@ -336,8 +345,8 @@ button:focus-visible {
   background: rgba(30, 30, 34, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 1rem;
+  border: 1px solid rgba(242, 232, 213, 0.08);
+  border-radius: 1.5rem;
 }
 
 @layer base {

@@ -59,20 +59,36 @@ const HomePage = () => {
         data-testid="hero-section"
         className="relative min-h-screen flex items-center overflow-hidden"
       >
-        {/* Chess Portrait Background - 40% opacity, smooth & dezent */}
+        {/* Chess Portrait Background - kräftiger sichtbar mit Tiefe durch Light & Shadow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div 
+          <div
             className="absolute inset-0"
             style={{
               backgroundImage: 'url(https://customer-assets.emergentagent.com/job_ecbd67ad-0a69-4164-b768-2e37571f9a4f/artifacts/kxm166sn_grok_image_1771589320374.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center top',
-              opacity: 0.4,
+              opacity: 0.58,
+              filter: 'contrast(1.08) saturate(0.95)',
             }}
           />
-          {/* Gradient overlays for smooth blending into dark bg */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+          {/* Linker Schattenverlauf: Text bleibt lesbar */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-black/10" />
+          {/* Kupfer-Lichtspot rechts oben für räumliche Tiefe */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(ellipse 60% 50% at 80% 20%, rgba(199, 123, 90, 0.18), transparent 60%)',
+            }}
+          />
+          {/* Vignette: dunkler Rand unten für mehr 3D-Wirkung */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(ellipse 90% 70% at 50% 40%, transparent 40%, rgba(0, 0, 0, 0.7) 100%)',
+            }}
+          />
         </div>
 
         {/* Neural Network Background */}
@@ -181,29 +197,29 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg shadow-black/10 flex flex-col"
+                className="bg-[#F5EFE2] rounded-3xl p-6 shadow-xl shadow-black/30 flex flex-col"
                 data-testid={`testimonial-${index}`}
               >
                 {/* Google-style 5 Stars */}
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
 
                 {/* Review Text */}
-                <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-4">
+                <p className="text-stone-700 text-sm leading-relaxed flex-1 mb-4">
                   &ldquo;{review.text}&rdquo;
                 </p>
 
                 {/* Reviewer Name */}
-                <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
-                  <div className="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-600 font-medium text-sm">{review.name.charAt(0)}</span>
+                <div className="flex items-center gap-3 pt-3 border-t border-stone-200/70">
+                  <div className="w-9 h-9 rounded-full bg-stone-200 flex items-center justify-center">
+                    <span className="text-stone-700 font-medium text-sm">{review.name.charAt(0)}</span>
                   </div>
-                  <span className="text-gray-900 font-medium text-sm">{review.name}</span>
+                  <span className="text-stone-900 font-medium text-sm">{review.name}</span>
                 </div>
               </motion.div>
             ))}
