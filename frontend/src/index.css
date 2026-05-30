@@ -115,21 +115,21 @@ button:focus-visible {
 
 /* Selection */
 ::selection {
-  background: rgba(199, 123, 90, 0.25);
+  background: rgba(184, 115, 51, 0.25);
   color: #F4F4F5;
 }
 
 /* Blueprint Grid Pattern - Cyan tinted */
 .blueprint-grid {
   background-image: 
-    linear-gradient(rgba(199, 123, 90, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199, 123, 90, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(184, 115, 51, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 115, 51, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 /* Accent Gradient Text (was gold-text) */
 .gold-text {
-  background: linear-gradient(135deg, #C77B5A 0%, #E09B7D 100%);
+  background: linear-gradient(135deg, #C77B5A 0%, #E8B488 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -170,9 +170,9 @@ button:focus-visible {
 }
 
 .card-hover:hover {
-  border-color: rgba(199, 123, 90, 0.4);
+  border-color: rgba(184, 115, 51, 0.4);
   transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(199, 123, 90, 0.05);
+  box-shadow: 0 0 30px rgba(184, 115, 51, 0.05);
 }
 
 /* Button Primary - Neon Cyan Outline */
@@ -190,7 +190,7 @@ button:focus-visible {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(199, 123, 90, 0.15);
+  box-shadow: 0 0 15px rgba(184, 115, 51, 0.15);
 }
 
 .btn-primary::before {
@@ -200,7 +200,7 @@ button:focus-visible {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(199, 123, 90, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(184, 115, 51, 0.15), transparent);
   transition: left 0.5s ease;
 }
 
@@ -208,7 +208,7 @@ button:focus-visible {
   background-color: #C77B5A;
   color: #1A1A1E;
   letter-spacing: 0.15em;
-  box-shadow: 0 0 30px rgba(199, 123, 90, 0.4);
+  box-shadow: 0 0 30px rgba(184, 115, 51, 0.4);
   transform: translateY(-2px);
 }
 
@@ -218,7 +218,7 @@ button:focus-visible {
 
 .btn-primary:active {
   transform: translateY(0);
-  box-shadow: 0 0 15px rgba(199, 123, 90, 0.3);
+  box-shadow: 0 0 15px rgba(184, 115, 51, 0.3);
 }
 
 /* Button Secondary */
@@ -244,14 +244,14 @@ button:focus-visible {
   left: 0;
   width: 0;
   height: 1px;
-  background: linear-gradient(90deg, #C77B5A, #E09B7D);
+  background: linear-gradient(90deg, #C77B5A, #E8B488);
   transition: width 0.4s ease;
 }
 
 .btn-secondary:hover {
-  border-color: rgba(199, 123, 90, 0.5);
+  border-color: rgba(184, 115, 51, 0.5);
   color: #C77B5A;
-  background-color: rgba(199, 123, 90, 0.03);
+  background-color: rgba(184, 115, 51, 0.03);
   transform: translateY(-2px);
 }
 
@@ -279,7 +279,7 @@ button:focus-visible {
 .input-minimal:focus {
   outline: none;
   border-bottom-color: #C77B5A;
-  box-shadow: 0 1px 0 0 rgba(199, 123, 90, 0.3);
+  box-shadow: 0 1px 0 0 rgba(184, 115, 51, 0.3);
 }
 
 .input-minimal::placeholder {
@@ -311,7 +311,7 @@ button:focus-visible {
 
 /* Neon glow for highlights */
 .neon-glow {
-  text-shadow: 0 0 20px rgba(199, 123, 90, 0.3);
+  text-shadow: 0 0 20px rgba(184, 115, 51, 0.3);
 }
 
 @layer base {
@@ -323,12 +323,33 @@ button:focus-visible {
 /* Concrete texture shows through - NO global section overlay */
 
 /* Defensive copper-token overrides — protect against stale Tailwind cache */
-.text-gold { color: #C77B5A !important; }
-.hover\:text-gold:hover { color: #C77B5A !important; }
-.border-gold { border-color: #C77B5A !important; }
-.bg-gold { background-color: #C77B5A !important; }
+.text-gold,
+.hover\:text-gold:hover {
+  /* Polished copper metallic: dark base → bright highlight → mid → dark — looks like brushed metal */
+  background: linear-gradient(135deg, #8B5028 0%, #C8893F 25%, #F2C79A 50%, #C8893F 75%, #8B5028 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+.border-gold { border-color: #C8893F !important; }
+.border-gold\/30 { border-color: rgba(200, 137, 63, 0.3) !important; }
+.border-gold\/40 { border-color: rgba(200, 137, 63, 0.4) !important; }
+.border-gold\/50 { border-color: rgba(200, 137, 63, 0.5) !important; }
+.border-gold\/60 { border-color: rgba(200, 137, 63, 0.6) !important; }
+.bg-gold { background-color: #B87333 !important; background-image: linear-gradient(135deg, #8B5028 0%, #C8893F 50%, #E8B488 100%) !important; }
+.bg-gold\/5 { background-color: rgba(184, 115, 51, 0.05) !important; }
+.bg-gold\/10 { background-color: rgba(184, 115, 51, 0.1) !important; }
+.bg-gold\/20 { background-color: rgba(184, 115, 51, 0.2) !important; }
 .text-offwhite { color: #F2E8D5 !important; }
 .text-muted-gray { color: #D8CDB8 !important; }
+.from-gold { --tw-gradient-from: #B87333 var(--tw-gradient-from-position) !important; --tw-gradient-to: rgba(184, 115, 51, 0) var(--tw-gradient-to-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
+.via-violet { --tw-gradient-stops: var(--tw-gradient-from), #E8B488 var(--tw-gradient-via-position), var(--tw-gradient-to) !important; }
+.via-violet\/50 { --tw-gradient-stops: var(--tw-gradient-from), rgba(232, 180, 136, 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to) !important; }
+.text-violet { color: #C8893F !important; }
+.bg-violet\/10 { background-color: rgba(200, 137, 63, 0.1) !important; }
+.border-violet\/30 { border-color: rgba(200, 137, 63, 0.3) !important; }
 
 /* Compact glassmorphic card for individual content containers */
 .glass-card {

@@ -20,16 +20,16 @@ module.exports = {
           card: '#5A5C5B',
         },
         'gold': {
-          DEFAULT: '#00E5FF',
-          light: '#33EEFF',
+          DEFAULT: '#B87333',
+          light: '#E8B488',
         },
         'violet': {
-          DEFAULT: '#9D4CDD',
-          light: '#B370E5',
+          DEFAULT: '#B87333',
+          light: '#E8B488',
         },
-        'offwhite': '#F4F4F5',
-        'muted-gray': '#D4D4D8',
-        'blueprint': 'rgba(0, 229, 255, 0.05)',
+        'offwhite': '#F2E8D5',
+        'muted-gray': '#D8CDB8',
+        'blueprint': 'rgba(184, 115, 51, 0.05)',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -87,8 +87,8 @@ module.exports = {
           to: { opacity: '1', transform: 'translateY(0)' }
         },
         'glow-pulse': {
-          '0%, 100%': { boxShadow: '0 0 15px rgba(199, 123, 90, 0.35)' },
-          '50%': { boxShadow: '0 0 25px rgba(224, 155, 125, 0.55)' }
+          '0%, 100%': { boxShadow: '0 0 15px rgba(184, 115, 51, 0.35)' },
+          '50%': { boxShadow: '0 0 28px rgba(232, 180, 136, 0.6)' }
         }
       },
       animation: {

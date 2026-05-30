@@ -35,7 +35,7 @@ const TracingBeamCard = ({ children, className = '' }) => {
           style={{
             left: beam.x - 150,
             top: beam.y - 150,
-            background: 'radial-gradient(circle, rgba(0,229,255,0.12) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(184,115,51,0.14) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -49,7 +49,7 @@ const TracingBeamCard = ({ children, className = '' }) => {
           className="absolute h-full w-[120px] transition-all duration-100 ease-out"
           style={{
             left: Math.max(0, beam.x - 60),
-            background: 'linear-gradient(90deg, transparent, #C77B5A, transparent)',
+            background: 'linear-gradient(90deg, transparent, #B87333, transparent)',
           }}
         />
       </div>
@@ -63,7 +63,7 @@ const TracingBeamCard = ({ children, className = '' }) => {
           className="absolute h-full w-[120px] transition-all duration-100 ease-out"
           style={{
             left: Math.max(0, beam.x - 60),
-            background: 'linear-gradient(90deg, transparent, #9D4CDD, transparent)',
+            background: 'linear-gradient(90deg, transparent, #E8B488, transparent)',
           }}
         />
       </div>
@@ -77,7 +77,7 @@ const TracingBeamCard = ({ children, className = '' }) => {
           className="absolute w-full h-[120px] transition-all duration-100 ease-out"
           style={{
             top: Math.max(0, beam.y - 60),
-            background: 'linear-gradient(180deg, transparent, #C77B5A, transparent)',
+            background: 'linear-gradient(180deg, transparent, #B87333, transparent)',
           }}
         />
       </div>
@@ -91,7 +91,7 @@ const TracingBeamCard = ({ children, className = '' }) => {
           className="absolute w-full h-[120px] transition-all duration-100 ease-out"
           style={{
             top: Math.max(0, beam.y - 60),
-            background: 'linear-gradient(180deg, transparent, #9D4CDD, transparent)',
+            background: 'linear-gradient(180deg, transparent, #E8B488, transparent)',
           }}
         />
       </div>
